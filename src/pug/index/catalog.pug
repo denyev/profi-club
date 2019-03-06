@@ -20,6 +20,8 @@ div.catalog
                     | Популяность
         div.catalog__total
     ul.catalog__list
+        - var catalog_items_count = 7
+        - while(catalog_items_count--) {
         li.catalog__item
             +job({
                 title: 'Менеджер по контекстной рекламе',
@@ -41,3 +43,4 @@ div.catalog
                     value: '31 января, 2019'
                 }
             })
+        - }
