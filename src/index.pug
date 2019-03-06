@@ -1,7 +1,11 @@
 extends pug/base
 
 append vars
-	//- ...
+    - html.classList.push('page page--index')
+    - page = 'index'
+    - title = 'Главная страница'
+    include pug/common/head/links
+    include pug/common/head/metatags
 
 block content
 	//- ...
