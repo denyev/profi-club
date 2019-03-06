@@ -2,6 +2,11 @@
 
 BACKUP_NAME="profi_club"
 BACKUP_PATH="${HOME}/_Backups/${BACKUP_NAME}"
+
+if [ ! -d ${BACKUP_PATH} ]; then
+	mkdir -pv ${BACKUP_PATH}
+fi
+
 CURRENT_DATE=$(date +"%F")
 COUNT=$(ls -1 ${BACKUP_PATH}/${BACKUP_NAME}_${CURRENT_DATE}* | wc -l )
 
