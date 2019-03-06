@@ -1,47 +1,47 @@
 div.catalog
-    div.catalog__settings
-        form.catalog__form(
-            action="?"
-            method="post"
-        )
-            button.catalog__view-btn.catalog__view-btn--list(
-                aria-label="Показать в виде списка"
-            )
-            button.catalog__view-btn.catalog__view-btn--cards(
-                aria-label="Показать в виде карточек"
-            )
-            select.catalog__sort(
-                name="sort[]"
-            )
-                option(
-                    selected=true
-                    value="Популяность"
-                )
-                    | Популяность
-        div.catalog__total
-    ul.catalog__list
-        - var catalog_items_count = 7
-        - while(catalog_items_count--) {
-        li.catalog__item
-            +job({
-                title: 'Менеджер по контекстной рекламе',
-                description: '<p>Нам нужен опытный менеджер, который не боится брать на себя ответственность. ' +
-                    'Человек, готовый учиться, развиваться и расти профессионально. ' +
-                    'Если это про тебя, отправляй резюме нам!</p>',
-                link: {
-                    href: 'https://blondinka.ru/',
-                    name: 'Blondinka.ru'
-                },
-                city: 'Москва',
-                schedule: 'Полная занятость',
-                tags: [
-                    'Маркетинг',
-                    'Реклама'
-                ],
-                date: {
-                    attribute: '2019-01-31',
-                    value: '31 января, 2019'
-                }
-            })
-        - }
-    +pagination({1: 'первую', 2: 'вторую', 3: 'третью', 4: 'четвёртую'}, 2)
+	div.catalog__settings
+		form.catalog__form(
+			action="?"
+			method="post"
+		)
+			button.catalog__view-btn.catalog__view-btn--list(
+				aria-label="Показать в виде списка"
+			)
+			button.catalog__view-btn.catalog__view-btn--cards(
+				aria-label="Показать в виде карточек"
+			)
+			select.catalog__sort(
+				name="sort[]"
+			)
+				option(
+					selected=true
+					value="Популяность"
+				)
+					| Популяность
+		div.catalog__total
+	ul.catalog__list
+		- var catalog_items_count = 7
+		- while(catalog_items_count--) {
+		li.catalog__item
+			+job({
+				title: 'Менеджер по контекстной рекламе',
+				description: '<p>Нам нужен опытный менеджер, который не боится брать на себя ответственность. ' +
+					'Человек, готовый учиться, развиваться и расти профессионально. ' +
+					'Если это про тебя, отправляй резюме нам!</p>',
+				link: {
+					href: 'https://blondinka.ru/',
+					name: 'Blondinka.ru'
+				},
+				city: 'Москва',
+				schedule: 'Полная занятость',
+				tags: [
+					'Маркетинг',
+					'Реклама'
+				],
+				date: {
+					attribute: '2019-01-31',
+					value: '31 января, 2019'
+				}
+			})
+		- }
+	+pagination({1: 'первую', 2: 'вторую', 3: 'третью', 4: 'четвёртую'}, 2)

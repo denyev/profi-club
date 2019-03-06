@@ -1,27 +1,27 @@
 //-
-    @param {Object[]} length - The list of pages and their designations.
-    @param {number} current - The number of current page.
-    @example
-    ```
-    +pagination({1: 'первую', 2: 'вторую', 3: 'третью', 4: 'четвёртую'}, 2)
-    ```
+	@param {Object[]} length - The list of pages and their designations.
+	@param {number} current - The number of current page.
+	@example
+	```
+	+pagination({1: 'первую', 2: 'вторую', 3: 'третью', 4: 'четвёртую'}, 2)
+	```
 mixin pagination(length, current)
-    div.pagination&attributes(attributes)
-        ul.pagination__list
-            each number_name, page_number in length
-                li.paginaton__item
-                    - var url = '?page=' + page_number
-                    - var title = 'Перейти на ' + number_name + ' страницу'
-                    - var active_class = null
+	div.pagination&attributes(attributes)
+		ul.pagination__list
+			each number_name, page_number in length
+				li.paginaton__item
+					- var url = '?page=' + page_number
+					- var title = 'Перейти на ' + number_name + ' страницу'
+					- var active_class = null
 
-                    if(parseInt(page_number) === current)
-                        - var url = null
-                        - var active_class= 'pagination__link--active'
-                        - var title = 'Текущая страница'
+					if(parseInt(page_number) === current)
+						- var url = null
+						- var active_class= 'pagination__link--active'
+						- var title = 'Текущая страница'
 
-                    a.paination__link(
-                        class=active_class
-                        href=url
-                        aria-label=title
-                    )
-                        | #{page_number}
+					a.paination__link(
+						class=active_class
+						href=url
+						aria-label=title
+					)
+						| #{page_number}
