@@ -14,9 +14,30 @@ div.catalog
                 name="sort[]"
             )
                 option(
-                    selected
+                    selected=true
                     value="Популяность"
                 )
                     | Популяность
         div.catalog__total
     ul.catalog__list
+        li.catalog__item
+            +job({
+                title: 'Менеджер по контекстной рекламе',
+                description: '<p>Нам нужен опытный менеджер, который не боится брать на себя ответственность. ' +
+                    'Человек, готовый учиться, развиваться и расти профессионально. ' +
+                    'Если это про тебя, отправляй резюме нам!</p>',
+                link: {
+                    href: 'https://blondinka.ru/',
+                    name: 'Blondinka.ru'
+                },
+                city: 'Москва',
+                schedule: 'Полная занятость',
+                tags: [
+                    'Маркетинг',
+                    'Реклама'
+                ],
+                date: {
+                    attribute: '2019-01-31',
+                    value: '31 января, 2019'
+                }
+            })

@@ -1,0 +1,61 @@
+//-
+    @example
+
+    ```
+    +job({
+        title: '',
+        description: '',
+        link: {
+            href: '',
+            name: ''
+        },
+        city: '',
+        schedule: '',
+        tags: [
+            ''
+        ],
+        date: {
+            attribute: '',
+            value: ''
+        }
+    })
+    ```
+
+mixin job(options)
+    div.job&attributes(attributes)
+        div.job__content
+            p.job__title
+                | #{options.title}
+            div.job__description
+                | !{options.description}
+            div.job__info
+                a.job__site(
+                    href=options.link.href
+                )
+                    | #{options.link.name}
+                p.job__city
+                    | #{options.city}
+                p.job__shedule
+                    | #{options.schedule}
+        div.job__controls
+            div.job__tags
+                each tag, index in options.tags
+                    - var last_tag = options.tags.length - 1
+
+                    if(last_tag !== index)
+                        span.job__tag
+                            | #{tag},
+                            |
+                    else
+                        span.job__tag
+                            | #{tag}
+            p.job__date
+                | Размещено:
+                time(
+                    datetime=options.date.attribute
+                )
+                    | #{options.date.value}
+            button.jub__button(
+                type="submit"
+            )
+                | Откликнуться
