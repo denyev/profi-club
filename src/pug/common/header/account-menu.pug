@@ -1,0 +1,19 @@
+ul.account-menu
+    li.account-menu__item
+        a.account-menu__link(
+            href="#notifications"
+        )
+            | Оповещения
+    li.account-menu__item(
+        class={'account-menu__item--active': page === 'account'}
+    )
+        a.account-menu__link(
+            href="account.html"
+        )
+            | Мой аккаунт
+    li.account-menu__item
+        button.button.button--blue(
+            type="button"
+        )
+            span.button__content.button__content--icon-plus
+                | Опубликовать
