@@ -1,8 +1,36 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
-// COLORS
+// colors
 
-$color-black: #000;
-$color-white: #fff;
+$black: rgba(0, 0, 0, 1);
+$white: rgba(255, 255, 255, 1);
 
-// FONTS
+// fonts
+
+$font-family-primary: "PT Sans", "Roboto", "Helvetica", "Arial", sans-serif;
+
+// font size
+
+$root-font-size: 16px;
+
+// font weights
+$font-weight-thin: 100;
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
+
+$font-weight-primary: $font-weight-normal;
+$font-weight-secondary: $font-weight-bold;
+
+// viewport
+
+$mobile-width: 320px;
+$phablet-width: 768px;
+$tablet-width: 1024px;
+$laptop-width: 1366px;
+$desktop-width: 1920px;

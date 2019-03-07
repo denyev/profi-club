@@ -4,12 +4,8 @@
 	box-sizing: inherit;
 }
 
-// debug
-
-* {
-	box-shadow: 1px 1px 0 0 #ff6347;
-}
-
 html {
 	box-sizing: border-box;
+	font-family: $font-family-primary;
+	color: $black;
 }
