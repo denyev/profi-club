@@ -1,0 +1,53 @@
+$toggler-width: rem(22);
+$toggler-element-height: rem(1);
+
+.toggler {
+	position: fixed;
+	left: rem(21);
+	top: rem(19);
+	z-index: 999;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: $toggler-width;
+	height: rem(16);
+	background-color: transparent;
+}
+
+.toggler__wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.toggler__icon {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 999;
+	display: block;
+	border: 0;
+	width: $toggler-width;
+	height: $toggler-element-height;
+	color: $royal-blue;
+	background-color: currentColor;
+	transform: translateX(-50%);
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: $toggler-width;
+		height: $toggler-element-height;
+		background-color: currentColor;
+	}
+
+	&::before {
+		top: rem(-8);
+	}
+
+	&::after {
+		top: rem(8);
+	}
+}

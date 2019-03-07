@@ -1,0 +1,33 @@
+.header {
+	display: flex;
+	flex-direction: column;
+}
+
+.header__controls {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: rem(11) rem(21);
+}
+
+.header__toggler {
+	position: relative;
+	width: rem(22);
+}
+
+.header__account {
+	position: relative;
+	display: inline-block;
+	width: rem(22);
+
+	&::before {
+		@include sprite("person");
+
+		content: "";
+	}
+}
+
+.header__search-form {
+	padding: rem(34) rem(33);
+}

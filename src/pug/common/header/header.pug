@@ -1,5 +1,15 @@
 header.header
-	include toggler
-	include ../logo
-	include navigation
-	include account-menu
+	.header__controls
+		.header__toggler
+			include toggler
+		.header__logo
+			include ../logo
+		a.header__account(
+			href="account.html"
+			aria-label="Мой аккаунт"
+		)
+	.header__search-form
+		include ../search-form
+	.header__navigation
+		include navigation
+		include account-menu

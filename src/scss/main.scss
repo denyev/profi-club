@@ -7,5 +7,8 @@
 @import "vendor";
 @import "base";
 @import "sprites";
+@import "base/common/header/header";
+@import "base/common/header/toggler";
 @import "base/common/logo";
-@import "base/index/search-form";
+@import "base/common/search-form";
+@import "base/index/intro";
