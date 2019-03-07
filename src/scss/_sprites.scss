@@ -1,4 +1,105 @@
-$sprites: ();
+$sprites: (
+	"facebook": (
+		normal: (
+			x: 0,
+			y: 0,
+			width: 32,
+			height: 32,
+			image: "sprites.png",
+			total_width: 100,
+			total_height: 66,
+		),
+		retina: (
+			x: 0,
+			y: 0,
+			width: 64,
+			height: 64,
+			image: "sprites@2x.png",
+			total_width: 200,
+			total_height: 132,
+		),
+	),
+	"instagram": (
+		normal: (
+			x: 34,
+			y: 0,
+			width: 32,
+			height: 32,
+			image: "sprites.png",
+			total_width: 100,
+			total_height: 66,
+		),
+		retina: (
+			x: 68,
+			y: 0,
+			width: 64,
+			height: 64,
+			image: "sprites@2x.png",
+			total_width: 200,
+			total_height: 132,
+		),
+	),
+	"linkedin": (
+		normal: (
+			x: 0,
+			y: 34,
+			width: 32,
+			height: 32,
+			image: "sprites.png",
+			total_width: 100,
+			total_height: 66,
+		),
+		retina: (
+			x: 0,
+			y: 68,
+			width: 64,
+			height: 64,
+			image: "sprites@2x.png",
+			total_width: 200,
+			total_height: 132,
+		),
+	),
+	"telegram": (
+		normal: (
+			x: 34,
+			y: 34,
+			width: 32,
+			height: 32,
+			image: "sprites.png",
+			total_width: 100,
+			total_height: 66,
+		),
+		retina: (
+			x: 68,
+			y: 68,
+			width: 64,
+			height: 64,
+			image: "sprites@2x.png",
+			total_width: 200,
+			total_height: 132,
+		),
+	),
+	"twitter": (
+		normal: (
+			x: 68,
+			y: 0,
+			width: 32,
+			height: 32,
+			image: "sprites.png",
+			total_width: 100,
+			total_height: 66,
+		),
+		retina: (
+			x: 136,
+			y: 0,
+			width: 64,
+			height: 64,
+			image: "sprites@2x.png",
+			total_width: 200,
+			total_height: 132,
+		),
+	),
+);
 
 @each $name in map-keys($sprites) {
 	.sprite-#{$name} {
