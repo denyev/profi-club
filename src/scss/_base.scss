@@ -1,11 +1,41 @@
+:root {
+	font-size: $root-font-size;
+}
+
+* {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 *,
 *::before,
 *::after {
 	box-sizing: inherit;
 }
 
+html,
+body {
+	@include fluid-type;
+
+	margin: 0;
+	padding: 0;
+	width: auto;
+	height: 100%;
+	max-width: 100%;
+}
+
 html {
 	box-sizing: border-box;
 	font-family: $font-family-primary;
 	color: $black;
+}
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+p:empty {
+	margin: 0;
 }

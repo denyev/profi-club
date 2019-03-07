@@ -27,13 +27,12 @@
 }
 
 @mixin sprite($name) {
-	// stylelint-disable order/order
-	display: inline-block;
-	vertical-align: middle;
-
 	@include sprite-width($name, normal);
 	@include sprite-height($name, normal);
 	@include sprite-background($name, normal);
+	// stylelint-disable order/order
+	display: inline-block;
+	vertical-align: middle;
 
 	@include retina {
 		@include sprite-background-image($name, retina);

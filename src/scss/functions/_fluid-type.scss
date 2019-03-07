@@ -1,5 +1,4 @@
-//- Mixin: Fluid Type
-///
+// - Mixin: Fluid Type
 /// @group typography
 /// @param {variable} $min-font-size [14px] - Minimum font size
 /// @param {variable} $max-font-size [18px] - Maximum font size
@@ -18,7 +17,6 @@
 
 	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
 		& {
-
 			font-size: $min-font-size;
 
 			@media screen and (min-width: $min-vw) {
