@@ -59,6 +59,26 @@ $sprites: (
 			total_height: 132,
 		),
 	),
+	"person": (
+		normal: (
+			x: 68,
+			y: 34,
+			width: 22,
+			height: 22,
+			image: "sprites.png",
+			total_width: 100,
+			total_height: 66,
+		),
+		retina: (
+			x: 136,
+			y: 68,
+			width: 44,
+			height: 44,
+			image: "sprites@2x.png",
+			total_width: 200,
+			total_height: 132,
+		),
+	),
 	"telegram": (
 		normal: (
 			x: 34,
