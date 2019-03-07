@@ -3,13 +3,14 @@
 }
 
 .search__title {
+	@include transition;
+
 	position: absolute;
 	left: 0;
 	top: 0;
 	font-weight: $font-weight-secondary;
 	font-size: rem(18);
 	color: $boulder;
-	transition: transform 0.3s cubic-bezier(0.4, 0, 1, 1);
 
 	.js-hasvalue ~ &,
 	.search__field:focus ~ & {
