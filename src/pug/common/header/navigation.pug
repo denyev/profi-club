@@ -1,30 +1,26 @@
 nav.navigation.navigation--closed
 	ul.navigation__list
-		li.navigation__item(
-			class={'navigation__item--active': page === 'index'}
-		)
+		li.navigation__item
 			a.navigation__link(
+				class={'navigation__link--active': page === 'index'}
 				href="index.html"
 			)
 				| Вакансии
-		li.navigation__item(
-			class={'navigation__item--active': page === 'companies'}
-		)
+		li.navigation__item
 			a.navigation__link(
+				class={'navigation__link--active': page === 'companies'}
 				href="companies.html"
 			)
 				| Компании
-		li.navigation__item(
-			class={'navigation__item--active': page === 'about'}
-		)
+		li.navigation__item
 			a.navigation__link(
+				class={'navigation__link--active': page === 'about'}
 				href="about.html"
 			)
 				| О компании
-		li.navigation__item(
-			class={'navigation__item--active': page === 'details'}
-		)
+		li.navigation__item
 			a.navigation__link(
+				class={'navigation__link--active': page === 'details'}
 				href="details.html"
 			)
 				| Сотрудники

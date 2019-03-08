@@ -1,0 +1,23 @@
+.navigation__list {
+	@include unstyle-list;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0;
+}
+
+.navigation__item {
+	margin-bottom: rem(16);
+}
+
+.navigation__link {
+	font-weight: $font-weight-secondary;
+	font-size: rem(18);
+	text-decoration: none;
+	color: $aluminium;
+
+	&--active {
+		color: $black;
+	}
+}

@@ -8,6 +8,7 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	margin: 0 0 rem(23) 0;
 	padding: rem(11) rem(21);
 }
 
@@ -29,5 +30,10 @@
 }
 
 .header__search-form {
-	padding: rem(34) rem(33);
+	margin: 0 0 rem(23) 0;
+	padding: rem(11) rem(33) rem(11) rem(33);
+}
+
+.header__navigation {
+	padding: 0 rem(21);
 }
