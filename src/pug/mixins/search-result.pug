@@ -1,0 +1,21 @@
+//-
+	@example
+
+	```
+	+searchResult({
+		quantity: 298,
+		result: 'предложений',
+		resultSingular: 'вакансию'
+	})
+	```
+
+mixin searchResult(options)
+	p&attributes(attributes)
+		| Мы нашли
+		|
+		span.important
+			| #{options.quantity}
+		|
+		| #{options.result} для вас
+		br
+		| найдите #{options.resultSingular} по душе
