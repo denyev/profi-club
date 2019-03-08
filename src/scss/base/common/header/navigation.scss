@@ -5,6 +5,9 @@
 	flex-direction: column;
 	justify-content: space-between;
 	margin: 0;
+	font-weight: $font-weight-secondary;
+	font-size: rem(18);
+	color: $aluminium;
 }
 
 .navigation__item {
@@ -12,10 +15,8 @@
 }
 
 .navigation__link {
-	font-weight: $font-weight-secondary;
-	font-size: rem(18);
 	text-decoration: none;
-	color: $aluminium;
+	color: currentColor;
 
 	&--active {
 		color: $black;

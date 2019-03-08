@@ -12,8 +12,9 @@
 	vertical-align: top;
 	border: 0;
 	border-bottom: rem(1) solid $royal-blue;
-	padding: 0 rem(24) rem(20) 0;
+	padding: 0 rem(27) rem(15) 0;
 	width: 100%;
+	font-size: rem(18);
 
 	&:focus {
 		outline: none;
@@ -32,12 +33,13 @@
 	top: 0;
 	font-weight: $font-weight-secondary;
 	font-size: rem(18);
+	line-height: 1;
 	color: $boulder;
 
 	.js-hasvalue ~ &,
 	.search__field:focus ~ & {
 		background-color: $white;
-		transform: translate(-10%, -75%) scale(0.75);
+		transform: translate(-14.5%, -100%) scale(0.7);
 	}
 }
 
