@@ -1,0 +1,16 @@
+.catalog__settings {
+	display: none;
+}
+
+.catalog__list {
+	@include unstyle-list;
+
+	margin: 0;
+	padding-top: rem(10);
+	background-color: $athens-gray;
+}
+
+.catalog__item {
+	margin-bottom: rem(10);
+	background-color: $white;
+}

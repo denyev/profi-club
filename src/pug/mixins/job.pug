@@ -31,6 +31,8 @@ mixin job(options)
 			div.job__info
 				a.job__site(
 					href=options.link.href
+					rel="nofollow noopener noreferrer"
+					target="_blank"
 				)
 					| #{options.link.name}
 				p.job__city
@@ -55,7 +57,7 @@ mixin job(options)
 					datetime=options.date.attribute
 				)
 					| #{options.date.value}
-			button.jub__button(
+			button.job__button(
 				type="submit"
 			)
 				| Откликнуться
