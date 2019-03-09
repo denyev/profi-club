@@ -1,4 +1,8 @@
-form.filters#filters(
-	action="?"
-	method="post"
-)
+.filters
+	p.filters__title
+		| Фильтры
+		+svg("arrow-down")(class="filters__title-icon" width="15" height="15")
+	form.filters__form#filters(
+		action="?"
+		method="post"
+	)

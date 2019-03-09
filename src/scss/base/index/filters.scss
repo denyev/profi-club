@@ -1,0 +1,29 @@
+.filters {
+	display: flex;
+	border-top: rem(1) solid $iron;
+	border-bottom: rem(1) solid $iron;
+
+	&--opened {
+		.filters__title-icon {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.filters__title {
+	position: relative;
+	display: inline-block;
+	margin: rem(18) auto;
+	font-size: rem(18);
+	text-align: center;
+}
+
+.filters__title-icon {
+	@include transition;
+
+	fill: none;
+	stroke: $black;
+	stroke-linecap: round;
+	stroke-width: rem(2);
+	transform: translate(rem(-1), rem(3));
+}
