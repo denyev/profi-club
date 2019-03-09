@@ -8,8 +8,13 @@
 mixin pagination(length, current)
 	div.pagination&attributes(attributes)
 		ul.pagination__list
+			li.pagination__item
+				button.pagination__button.pagination__button--arrow-left(
+					type="button"
+					aria-label="Назад"
+				)
 			each number_name, page_number in length
-				li.paginaton__item
+				li.pagination__item
 					- var url = '?page=' + page_number
 					- var title = 'Перейти на ' + number_name + ' страницу'
 					- var active_class = null
@@ -19,9 +24,14 @@ mixin pagination(length, current)
 						- var active_class= 'pagination__link--active'
 						- var title = 'Текущая страница'
 
-					a.paination__link(
+					a.pagination__link(
 						class=active_class
 						href=url
 						aria-label=title
 					)
 						| #{page_number}
+			li.pagination__item
+				button.pagination__button.pagination__button--arrow-right(
+					type="button"
+					aria-label="Вперёд"
+				)

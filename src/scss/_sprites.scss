@@ -1,4 +1,24 @@
 $sprites: (
+	"chevron": (
+		normal: (
+			x: 0,
+			y: 68,
+			width: 11,
+			height: 10,
+			image: "sprites.png",
+			total_width: 100,
+			total_height: 78,
+		),
+		retina: (
+			x: 0,
+			y: 136,
+			width: 22,
+			height: 20,
+			image: "sprites@2x.png",
+			total_width: 200,
+			total_height: 156,
+		),
+	),
 	"facebook": (
 		normal: (
 			x: 0,
@@ -7,7 +27,7 @@ $sprites: (
 			height: 32,
 			image: "sprites.png",
 			total_width: 100,
-			total_height: 66,
+			total_height: 78,
 		),
 		retina: (
 			x: 0,
@@ -16,7 +36,7 @@ $sprites: (
 			height: 64,
 			image: "sprites@2x.png",
 			total_width: 200,
-			total_height: 132,
+			total_height: 156,
 		),
 	),
 	"instagram": (
@@ -27,7 +47,7 @@ $sprites: (
 			height: 32,
 			image: "sprites.png",
 			total_width: 100,
-			total_height: 66,
+			total_height: 78,
 		),
 		retina: (
 			x: 68,
@@ -36,7 +56,7 @@ $sprites: (
 			height: 64,
 			image: "sprites@2x.png",
 			total_width: 200,
-			total_height: 132,
+			total_height: 156,
 		),
 	),
 	"linkedin": (
@@ -47,7 +67,7 @@ $sprites: (
 			height: 32,
 			image: "sprites.png",
 			total_width: 100,
-			total_height: 66,
+			total_height: 78,
 		),
 		retina: (
 			x: 0,
@@ -56,7 +76,7 @@ $sprites: (
 			height: 64,
 			image: "sprites@2x.png",
 			total_width: 200,
-			total_height: 132,
+			total_height: 156,
 		),
 	),
 	"person": (
@@ -67,7 +87,7 @@ $sprites: (
 			height: 22,
 			image: "sprites.png",
 			total_width: 100,
-			total_height: 66,
+			total_height: 78,
 		),
 		retina: (
 			x: 136,
@@ -76,7 +96,7 @@ $sprites: (
 			height: 44,
 			image: "sprites@2x.png",
 			total_width: 200,
-			total_height: 132,
+			total_height: 156,
 		),
 	),
 	"telegram": (
@@ -87,7 +107,7 @@ $sprites: (
 			height: 32,
 			image: "sprites.png",
 			total_width: 100,
-			total_height: 66,
+			total_height: 78,
 		),
 		retina: (
 			x: 68,
@@ -96,7 +116,7 @@ $sprites: (
 			height: 64,
 			image: "sprites@2x.png",
 			total_width: 200,
-			total_height: 132,
+			total_height: 156,
 		),
 	),
 	"twitter": (
@@ -107,7 +127,7 @@ $sprites: (
 			height: 32,
 			image: "sprites.png",
 			total_width: 100,
-			total_height: 66,
+			total_height: 78,
 		),
 		retina: (
 			x: 136,
@@ -116,7 +136,7 @@ $sprites: (
 			height: 64,
 			image: "sprites@2x.png",
 			total_width: 200,
-			total_height: 132,
+			total_height: 156,
 		),
 	),
 );
