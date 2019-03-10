@@ -1,0 +1,21 @@
+@media screen and (min-width: rem($tablet-width)) {
+	.intro {
+		display: flex;
+		flex-flow: row wrap;
+		padding: rem(56) rem(48) 0 rem(48);
+		background-color: $athens-gray;
+	}
+
+	.intro__search-result {
+		flex: 1 0 50%;
+		padding: 0;
+		text-align: left;
+	}
+
+	.intro__search-form {
+		display: flex;
+		flex: 1 0 50%;
+		align-items: center;
+		justify-content: flex-end;
+	}
+}

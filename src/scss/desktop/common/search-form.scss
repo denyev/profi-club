@@ -1,0 +1,14 @@
+@media screen and (min-width: rem($tablet-width)) {
+	.search {
+		max-width: rem(423);
+	}
+
+	.search__field {
+		background-color: $athens-gray;
+	}
+
+	.search__button {
+		right: rem(10);
+		top: rem(-4);
+	}
+}
