@@ -1,7 +1,7 @@
-$toggler-width: rem(22);
-$toggler-element-height: rem(1);
+$toggle-width: rem(22);
+$toggle-element-height: rem(1);
 
-.toggler {
+.toggle {
 	position: fixed;
 	left: rem(21);
 	top: rem(19);
@@ -9,26 +9,26 @@ $toggler-element-height: rem(1);
 	margin: 0;
 	border: 0;
 	padding: 0;
-	width: $toggler-width;
+	width: $toggle-width;
 	height: rem(16);
 	background-color: transparent;
 }
 
-.toggler__wrap {
+.toggle__wrap {
 	position: relative;
 	width: 100%;
 	height: 100%;
 }
 
-.toggler__icon {
+.toggle__icon {
 	position: absolute;
 	left: 50%;
 	top: 50%;
 	z-index: 999;
 	display: block;
 	border: 0;
-	width: $toggler-width;
-	height: $toggler-element-height;
+	width: $toggle-width;
+	height: $toggle-element-height;
 	color: $royal-blue;
 	background-color: currentColor;
 	transform: translateX(-50%);
@@ -38,8 +38,8 @@ $toggler-element-height: rem(1);
 		content: "";
 		position: absolute;
 		left: 0;
-		width: $toggler-width;
-		height: $toggler-element-height;
+		width: $toggle-width;
+		height: $toggle-element-height;
 		background-color: currentColor;
 	}
 

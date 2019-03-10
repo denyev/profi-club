@@ -1,0 +1,23 @@
+@mixin ripple-effect($hover-color, $active-color) {
+	@include transition;
+
+	background-position: center;
+
+	&:hover {
+		background-image: radial-gradient(circle at center center, transparent 1%, $hover-color 1%);
+		background-position-x: center;
+		background-position-y: center;
+		background-size: 15000% auto;
+		background-repeat: repeat;
+		background-origin: padding-box;
+		background-clip: border-box;
+		background-attachment: scroll;
+		background-color: $hover-color;
+	}
+
+	&:active {
+		background-size: 100%;
+		background-color: $active-color;
+		transition: background 0s;
+	}
+}

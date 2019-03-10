@@ -9,7 +9,7 @@
 @import "sprites";
 @import "helpers";
 @import "base/common/header/header";
-@import "base/common/header/toggler";
+@import "base/common/header/toggle";
 @import "base/common/logo";
 @import "base/common/search-form";
 @import "base/common/header/navigation";
@@ -22,3 +22,7 @@
 @import "base/index/announcement";
 @import "base/common/footer";
 @import "base/common/socials";
+@import "desktop/common/header/header";
+@import "desktop/common/logo";
+@import "desktop/common/header/navigation";
+@import "desktop/common/header/account-menu";
