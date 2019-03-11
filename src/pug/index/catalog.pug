@@ -1,15 +1,17 @@
-div.catalog
-	div.catalog__settings
+.catalog
+	.catalog__settings
 		form.catalog__form(
 			action="?"
 			method="post"
 		)
-			button.catalog__view-btn.catalog__view-btn--list(
+			button.catalog__view-btn.catalog__view-btn--active(
 				aria-label="Показать в виде списка"
 			)
-			button.catalog__view-btn.catalog__view-btn--cards(
+				+svg("list")(class="catalog__view-icon" width="30" height="16")
+			button.catalog__view-btn(
 				aria-label="Показать в виде карточек"
 			)
+				+svg("cards")(class="catalog__view-icon" width="23" height="23")
 			label.catalog__sort
 				select.catalog__sort-wrap(
 					name="sort[]"
@@ -19,7 +21,8 @@ div.catalog
 						value="Популяность"
 					)
 						| Популяность
-		div.catalog__total
+		p.catalog__total
+			| Показано 1-7 из 298 предложений
 	ul.catalog__list
 		- var catalog_items_count = 7
 		- while(catalog_items_count--) {

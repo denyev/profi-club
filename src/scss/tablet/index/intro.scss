@@ -2,8 +2,8 @@
 	.intro {
 		display: flex;
 		flex-flow: row wrap;
+		margin-bottom: rem(64);
 		padding: rem(56) rem(48) 0 rem(48);
-		background-color: $athens-gray;
 	}
 
 	.intro__search-result {
