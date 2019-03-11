@@ -1,0 +1,14 @@
+@media screen and (min-width: rem($tablet-width)) {
+	.socials__list {
+		justify-content: flex-end;
+		margin: 0;
+	}
+
+	.socials__item {
+		margin-right: rem(21);
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
