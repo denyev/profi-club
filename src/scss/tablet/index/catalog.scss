@@ -12,6 +12,7 @@
 		flex-flow: row wrap;
 		align-items: center;
 		justify-content: space-between;
+		margin-bottom: rem(40);
 		border-bottom: rem(1) solid $gallery;
 		padding-bottom: rem(37);
 	}
@@ -84,5 +85,12 @@
 
 	.catalog__list {
 		padding: 0;
+		background-color: $white;
+	}
+
+	.catalog__item {
+		margin-bottom: rem(40);
+		border-bottom: rem(1) solid $gallery;
+		padding-bottom: rem(40);
 	}
 }

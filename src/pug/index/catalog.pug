@@ -27,25 +27,22 @@
 		- var catalog_items_count = 7
 		- while(catalog_items_count--) {
 		li.catalog__item
-			+job({
-				title: 'Менеджер по контекстной рекламе',
-				description: '<p>Нам нужен опытный менеджер, который не боится брать на себя ответственность. ' +
-					'Человек, готовый учиться, развиваться и расти профессионально. ' +
-					'Если это про тебя, отправляй резюме нам!</p>',
-				link: {
-					href: 'https://blondinka.ru/',
-					name: 'Blondinka.ru'
-				},
-				city: 'Москва',
-				schedule: 'Полная занятость',
-				tags: [
-					'Маркетинг',
-					'Реклама'
-				],
-				date: {
-					attribute: '2019-01-31',
-					value: '31 января, 2019'
-				}
-			})
+			- var catalog_items_options = {}
+			- catalog_items_options.title = 'Менеджер по контекстной рекламе'
+			- catalog_items_options.description = '<p>Нам нужен опытный менеджер, который не боится брать на себя ответственность. Человек, готовый учиться, развиваться и расти профессионально. Если это про тебя, отправляй резюме нам!</p>'
+			- catalog_items_options.link = {}
+			- catalog_items_options.link.href = 'https://blondinka.ru/'
+			- catalog_items_options.link.name = 'Blondinka.ru'
+			- catalog_items_options.city = 'Москва'
+			- catalog_items_options.schedule = 'Полная занятость'
+			- catalog_items_options.tags = ['Маркетинг', 'Реклама']
+			- catalog_items_options.date = {}
+			- catalog_items_options.date.attribute = '2019-01-31'
+			- catalog_items_options.date.value = '31 января, 2019'
+
+			if(catalog_items_count % 2 !== 0)
+				- catalog_items_options.description = '<p>Нам нужен опытный менеджер, который не боится брать на себя ответственность. Человек, готовый учиться, развиваться и расти профессионально.</p>'
+
+			+job(catalog_items_options)
 		- }
 	+pagination({1: 'первую', 2: 'вторую', 3: 'третью', 4: 'четвёртую'}, 2)

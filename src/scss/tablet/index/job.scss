@@ -1,0 +1,77 @@
+@media screen and (min-width: rem($tablet-width)) {
+	.job {
+		display: flex;
+		flex-direction: row;
+		margin: auto;
+		padding: 0;
+		min-height: rem(170);
+		max-width: rem(893);
+
+		// - hack for pixel perfect
+		.catalog__item:nth-of-type(2n) & {
+			min-height: rem(152);
+		}
+	}
+
+	.job__title {
+		margin: 0 0 rem(18) 0;
+	}
+
+	.job__description {
+		margin: 0 0 auto;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.job__info {
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.job__info-item {
+		margin-right: rem(35);
+
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	.job__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 0;
+	}
+
+	.job__controls {
+		flex: 1 0 rem(217);
+		flex-direction: column;
+	}
+
+	.job__button {
+		align-self: flex-end;
+		margin: rem(28) 0 auto auto;
+		padding: rem(12) rem(15);
+	}
+
+	.job__meta {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.job__tags {
+		display: none;
+
+		&--desktop {
+			display: block;
+		}
+	}
+
+	.job__date {
+		display: unset;
+		align-self: flex-start;
+		margin: 0;
+	}
+}

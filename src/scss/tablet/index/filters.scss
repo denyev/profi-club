@@ -2,6 +2,7 @@
 	.filters {
 		flex: 1 0 rem(290);
 		border: 0;
+		max-width: rem(290);
 		box-shadow: -4px 4px 12px rgba($black, 0.12);
 		background-image: linear-gradient(90deg, $white 0%, $white-lilac 100%);
 		background-position: 50% 50%;

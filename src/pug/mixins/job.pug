@@ -21,43 +21,52 @@
 	})
 	```
 
+mixin jobTags(options)
+	.job__tags&attributes(attributes)
+		each tag, index in options.tags
+			- var last_tag = options.tags.length - 1
+
+			if(last_tag !== index)
+				span.job__tag
+					| #{tag},
+					|
+			else
+				span.job__tag
+					| #{tag}
+
 mixin job(options)
-	div.job&attributes(attributes)
-		div.job__content
+	.job&attributes(attributes)
+		.job__content
 			p.job__title
 				| #{options.title}
-			div.job__description
+			.job__description
 				| !{options.description}
-			div.job__info
-				a.job__site(
-					href=options.link.href
-					rel="nofollow noopener noreferrer"
-					target="_blank"
-				)
-					| #{options.link.name}
-				p.job__city
-					| #{options.city}
-				p.job__shedule
-					| #{options.schedule}
-		div.job__controls
-			div.job__tags
-				each tag, index in options.tags
-					- var last_tag = options.tags.length - 1
-
-					if(last_tag !== index)
-						span.job__tag
-							| #{tag},
-							|
-					else
-						span.job__tag
-							| #{tag}
-			p.job__date
-				| Размещено:
-				time(
-					datetime=options.date.attribute
-				)
-					| #{options.date.value}
+			ul.job__info
+				li.job__info-item
+					a.job__site(
+						href=options.link.href
+						rel="nofollow noopener noreferrer"
+						target="_blank"
+					)
+						| #{options.link.name}
+				li.job__info-item
+					p.job__city
+						| #{options.city}
+				li.job__info-item
+					p.job__shedule
+						| #{options.schedule}
+				li.job__info-item
+					+jobTags(options)(class="job__tags--desktop")
+		.job__controls
 			button.job__button(
-				type="submit"
+				type="button"
 			)
 				| Откликнуться
+			.job__meta
+				+jobTags(options)
+				p.job__date
+					| Размещено:
+					time(
+						datetime=options.date.attribute
+					)
+					| #{options.date.value}

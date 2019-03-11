@@ -14,6 +14,7 @@
 }
 
 .job__info {
+	@include unstyle-list;
 	@include fluid-type;
 
 	display: flex;
@@ -48,7 +49,7 @@
 	@include fluid-type;
 
 	display: flex;
-	flex-flow: row-reverse wrap;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: space-between;
 	color: $storm-gray;
@@ -56,6 +57,7 @@
 
 .job__date {
 	display: none;
+	font-style: italic;
 }
 
 .job__button {
@@ -72,4 +74,8 @@
 	border: rem(1) solid $mercury;
 	border-radius: rem(4);
 	padding: rem(3) rem(2) rem(2) rem(5);
+
+	&--desktop {
+		display: none;
+	}
 }
