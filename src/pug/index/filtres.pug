@@ -6,3 +6,145 @@
 		action="?"
 		method="post"
 	)
+		label.filters__label.filters__label--arrow.filters__label--underline
+			select.filters__select(
+				name="categories[]"
+			)
+				option.filters__option(
+					selected=true
+					value="categories"
+				)
+					| Категории
+				option.filters__option(
+					value="category_1"
+				)
+					| Категория 1
+				option.filters__option(
+					value="category_2"
+				)
+					| Категория 2
+		label.filters__label.filters__label--arrow.filters__label--underline
+			select.filters__select(
+				name="locations[]"
+			)
+				option.filters__option(
+					selected=true
+					value="location"
+				)
+					| Локация
+				option.filters__option(
+					value="location_1"
+				)
+					| Локация 1
+				option.filters__option(
+					value="location_2"
+				)
+					| Локация 2
+		fieldset.filters__group
+			legend.filters__headline
+				| Тип работы
+			label.filters__label
+				input.filters__radio(
+					name="job_type"
+					type="radio"
+					value="full_time"
+					checked=false
+				)
+				span.filters__text
+					| На постоянной основе
+			label.filters__label
+				input.filters__radio(
+					name="job_type"
+					type="radio"
+					value="underemployment"
+					checked=false
+				)
+				span.filters__text
+					| Неполная занятость
+			label.filters__label
+				input.filters__radio(
+					name="job_type"
+					type="radio"
+					value="freelance"
+					checked=false
+				)
+				span.filters__text
+					| Внештатно
+			label.filters__label
+				input.filters__radio(
+					name="job_type"
+					type="radio"
+					value="temporarily"
+					checked=false
+				)
+				span.filters__text
+					| Временно
+		fieldset.filters__group
+			legend.filters__headline
+				| Опыт
+			label.filters__label
+				input.filters__checkbox(
+					name="without_experience"
+					type="checkbox"
+					value=""
+					checked=false
+				)
+				span.filters__text
+					| Без опыта
+			label.filters__label
+				input.filters__checkbox(
+					name="less_1_year"
+					type="checkbox"
+					value=""
+					checked=false
+				)
+				span.filters__text
+					| Менее 1 года
+			label.filters__label
+				input.filters__checkbox(
+					name="2_years"
+					type="checkbox"
+					value=""
+					checked=false
+				)
+				span.filters__text
+					| 2 года
+			label.filters__label
+				input.filters__checkbox(
+					name="3_years"
+					type="checkbox"
+					value=""
+					checked=false
+				)
+				span.filters__text
+					| 3 года
+			label.filters__label
+				input.filters__checkbox(
+					name="4_years"
+					type="checkbox"
+					value=""
+					checked=false
+				)
+				span.filters__text
+					| 4_года
+			label.filters__label
+				input.filters__checkbox(
+					name="5_years"
+					type="checkbox"
+					value=""
+					checked=false
+				)
+				span.filters__text
+					| 5 лет
+			label.filters__label
+				input.filters__checkbox(
+					name="more_5_years"
+					type="checkbox"
+					value=""
+					checked=false
+				)
+				span.filters__text
+					| Более 5 лет
+		fieldset.filters__group
+			legend.filters__headline
+				| Диапазон зарплаты

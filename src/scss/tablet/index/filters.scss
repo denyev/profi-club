@@ -4,6 +4,7 @@
 		border: 0;
 		max-width: rem(290);
 		box-shadow: -4px 4px 12px rgba($black, 0.12);
+		color: $storm-gray;
 		background-image: linear-gradient(90deg, $white 0%, $white-lilac 100%);
 		background-position: 50% 50%;
 		background-size: cover;
@@ -12,5 +13,149 @@
 
 	.filters__title {
 		@include visually-hidden;
+	}
+
+	.filters__form {
+		padding: rem(36);
+		width: 100%;
+	}
+
+	.filters__group {
+		position: relative;
+		margin: 0 0 rem(36) 0;
+		border: 0;
+		padding: 0 0 rem(21) 0;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			display: block;
+			width: calc(100% + 36px);
+			height: rem(1);
+			background-color: $porcelain;
+		}
+	}
+
+	.filters__headline {
+		position: relative;
+		margin-bottom: rem(27);
+		width: 100%;
+		font-weight: $font-weight-secondary;
+		color: $black;
+
+		&::after {
+			content: "\2015";
+			position: absolute;
+			right: 0;
+			top: 0;
+			display: block;
+			font-weight: $font-weight-primary;
+			transform: translate(0, -1px) scale(0.8);
+		}
+	}
+
+	.filters__label {
+		position: relative;
+		display: block;
+		margin: 0 0 rem(16) 0;
+		width: 100%;
+		cursor: pointer;
+
+		&--arrow {
+			&::before {
+				@include triangle(to bottom, rem(7), rem(6), $storm-gray);
+
+				content: "";
+				position: absolute;
+				right: 0;
+				top: 50%;
+				display: block;
+				width: rem(7);
+				height: rem(6);
+				transform: translate(0, -300%);
+			}
+		}
+
+		&--underline {
+			&::after {
+				content: "";
+				position: absolute;
+				right: 0;
+				bottom: rem(19);
+				display: block;
+				width: 100%;
+				height: rem(2);
+				background-color: $porcelain;
+			}
+		}
+	}
+
+	.filters__select {
+		appearance: none;
+		margin: 0 0 rem(19) 0;
+		border: 0;
+		padding: 0 0 rem(14) 0;
+		width: 100%;
+		color: currentColor;
+		background-color: unset;
+	}
+
+	.filters__radio {
+		@include visually-hidden;
+		@include transition;
+	}
+
+	.filters__checkbox {
+		@include visually-hidden;
+	}
+
+	.filters__text {
+		@include transition;
+
+		margin: rem(15) 0;
+		color: currentColor;
+
+		.filters__checkbox + & {
+			position: relative;
+			padding: 0 0 0 rem(25);
+
+			&::after,
+			&::before {
+				@include transition;
+
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 50%;
+				display: block;
+				width: rem(13);
+				height: rem(1);
+				background-color: $nevada;
+				transform: translate(0, -100%);
+			}
+		}
+
+		.filters__radio:checked + & {
+			font-weight: $font-weight-secondary;
+		}
+
+		.filters__checkbox:checked + & {
+			font-weight: $font-weight-secondary;
+
+			&::after,
+			&::before {
+				height: rem(2);
+			}
+
+			&::before {
+				transform: rotate(135deg);
+			}
+
+			&::after {
+				transform: rotate(-135deg);
+			}
+		}
 	}
 }
