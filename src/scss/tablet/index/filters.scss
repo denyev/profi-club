@@ -54,6 +54,10 @@
 			font-weight: $font-weight-primary;
 			transform: translate(0, -1px) scale(0.8);
 		}
+
+		&--slider {
+			margin-bottom: rem(10);
+		}
 	}
 
 	.filters__label {
@@ -89,6 +93,10 @@
 				height: rem(2);
 				background-color: $porcelain;
 			}
+		}
+
+		.filters__group--pixel-perfect-hack & {
+			margin: 0 0 rem(14) 0;
 		}
 	}
 
@@ -157,5 +165,44 @@
 				transform: rotate(-135deg);
 			}
 		}
+	}
+
+	.filters__slider {
+		position: relative;
+		display: inline-block;
+		margin: 0 0 rem(14) 0;
+		border-radius: rem(6);
+		padding: 0;
+		width: 100%;
+		height: rem(4);
+		background-color: $mercury;
+	}
+
+	.filters__slider-handle {
+		position: absolute;
+		top: 0;
+		z-index: 2;
+		display: inline-block;
+		border: rem(4) solid $dodger-blue;
+		border-radius: 50%;
+		width: rem(20);
+		height: rem(20);
+		background-color: $white-lilac;
+		transform: translateY(-40%);
+		touch-action: none;
+	}
+
+	.filters__slider-range {
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		height: rem(4);
+		background-color: $dodger-blue;
+	}
+
+	.filters__amount {
+		margin: 0 0 rem(32) 0;
+		border: 0;
+		background-color: unset;
 	}
 }
