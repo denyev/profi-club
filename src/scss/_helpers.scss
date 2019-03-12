@@ -1,3 +1,7 @@
 .important {
 	color: $royal-blue;
 }
+
+.visually-hidden {
+	@include visually-hidden;
+}
