@@ -36,6 +36,10 @@
 			height: rem(1);
 			background-color: $porcelain;
 		}
+
+		&:nth-of-type(2) {
+			margin-bottom: rem(44);
+		}
 	}
 
 	.filters__headline {
@@ -95,7 +99,8 @@
 			}
 		}
 
-		.filters__group--pixel-perfect-hack & {
+		// pixel perfect hack
+		.filters__group:nth-of-type(2) & {
 			margin: 0 0 rem(14) 0;
 		}
 	}

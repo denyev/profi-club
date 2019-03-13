@@ -8,36 +8,36 @@
 	)
 		label.filters__label.filters__label--arrow.filters__label--underline
 			select.filters__select(
-				name="categories[]"
+				name="category"
 			)
 				option.filters__option(
 					selected=true
-					value="categories"
+					value="0"
 				)
 					| Категории
 				option.filters__option(
-					value="category_1"
+					value="1"
 				)
 					| Категория 1
 				option.filters__option(
-					value="category_2"
+					value="2"
 				)
 					| Категория 2
 		label.filters__label.filters__label--arrow.filters__label--underline
 			select.filters__select(
-				name="locations[]"
+				name="location"
 			)
 				option.filters__option(
 					selected=true
-					value="location"
+					value="0"
 				)
 					| Локация
 				option.filters__option(
-					value="location_1"
+					value="1"
 				)
 					| Локация 1
 				option.filters__option(
-					value="location_2"
+					value="2"
 				)
 					| Локация 2
 		fieldset.filters__group
@@ -84,63 +84,63 @@
 				| Опыт
 			label.filters__label
 				input.filters__checkbox(
-					name="without_experience"
+					name="experience"
 					type="checkbox"
-					value=""
+					value="without_experience"
 					checked=false
 				)
 				span.filters__text
 					| Без опыта
 			label.filters__label
 				input.filters__checkbox(
-					name="less_1_year"
+					name="experience"
 					type="checkbox"
-					value=""
+					value="less_1_year"
 					checked=false
 				)
 				span.filters__text
 					| Менее 1 года
 			label.filters__label
 				input.filters__checkbox(
-					name="2_years"
+					name="experience"
 					type="checkbox"
-					value=""
+					value="2_years"
 					checked=false
 				)
 				span.filters__text
 					| 2 года
 			label.filters__label
 				input.filters__checkbox(
-					name="3_years"
+					name="experience"
 					type="checkbox"
-					value=""
+					value="3_years"
 					checked=false
 				)
 				span.filters__text
 					| 3 года
 			label.filters__label
 				input.filters__checkbox(
-					name="4_years"
+					name="experience"
 					type="checkbox"
-					value=""
+					value="3_years"
 					checked=false
 				)
 				span.filters__text
 					| 4 года
 			label.filters__label
 				input.filters__checkbox(
-					name="4_years"
+					name="experience"
 					type="checkbox"
-					value=""
+					value="4_years"
 					checked=false
 				)
 				span.filters__text
 					| 5 лет
 			label.filters__label
 				input.filters__checkbox(
-					name="more_5_years"
+					name="experience"
 					type="checkbox"
-					value=""
+					value="more_5_years"
 					checked=false
 				)
 				span.filters__text
@@ -155,3 +155,102 @@
 					type="text"
 					readonly=true
 				)
+		fieldset.filters__group
+			legend.filters__headline
+				| Дата размещения
+			label.filters__label
+				input.filters__checkbox(
+					name="posted"
+					type="checkbox"
+					value="1"
+					checked=false
+				)
+				span.filters__text
+					| Час назад
+			label.filters__label
+				input.filters__checkbox(
+					name="posted"
+					type="checkbox"
+					value="24"
+					checked=false
+				)
+				span.filters__text
+					| 24 часа назад
+			label.filters__label
+				input.filters__checkbox(
+					name="posted"
+					type="checkbox"
+					value="168"
+					checked=false
+				)
+				span.filters__text
+					| 7 дней назад
+			label.filters__label
+				input.filters__checkbox(
+					name="posted"
+					type="checkbox"
+					value="96"
+					checked=false
+				)
+				span.filters__text
+					| 4 дня назад
+			label.filters__label
+				input.filters__checkbox(
+					name="posted"
+					type="checkbox"
+					value="720"
+					checked=false
+				)
+				span.filters__text
+					| 30 дней назад
+		fieldset.filters__group
+			legend.filters__headline
+				| Пол
+			label.filters__label
+				input.filters__checkbox(
+					name="gender"
+					type="checkbox"
+					value="male"
+					checked=false
+				)
+				span.filters__text
+					| Мужской
+			label.filters__label
+				input.filters__checkbox(
+					name="gender"
+					type="checkbox"
+					value="female"
+					checked=false
+				)
+				span.filters__text
+					| Женский
+		fieldset.filters__group
+			legend.filters__headline
+				| Квалификация
+			label.filters__label
+				input.filters__checkbox(
+					name="qualification"
+					type="checkbox"
+					value="junior"
+					checked=false
+				)
+				span.filters__text
+					| Низкий уровень
+			label.filters__label
+				input.filters__checkbox(
+					name="qualification"
+					type="checkbox"
+					value="middle"
+					checked=false
+				)
+				span.filters__text
+					| Средний уровень
+			label.filters__label
+				input.filters__checkbox(
+					name="qualification"
+					type="checkbox"
+					value="senior"
+					checked=false
+				)
+				span.filters__text
+					| Мастер
