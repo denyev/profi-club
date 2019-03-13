@@ -8,8 +8,16 @@
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	margin: 0 rem(37) rem(27) rem(37);
+}
+
+.socials__item {
+	margin-right: rem(21);
+
+	&:last-of-type {
+		margin-right: 0;
+	}
 }
 
 .socials__link {
