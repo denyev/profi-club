@@ -33,6 +33,10 @@
 	.job__info-item {
 		margin-right: rem(35);
 
+		&:nth-last-of-type(2) {
+			margin-right: rem(35);
+		}
+
 		&:last-of-type {
 			margin-right: 0;
 		}
