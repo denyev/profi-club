@@ -1,6 +1,7 @@
 @media screen and (min-width: rem($tablet-width)) {
 	.announcement {
 		display: block;
+		padding: 0 rem(16) 0 rem(16);
 		color: $white;
 		background-color: $dodger-blue;
 	}
