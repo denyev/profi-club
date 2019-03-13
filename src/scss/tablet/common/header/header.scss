@@ -34,6 +34,7 @@
 	.header__navigation {
 		display: flex;
 		flex-basis: 83.44444%;
+		flex-flow: row wrap;
 		align-items: center;
 		padding-right: 0;
 	}
