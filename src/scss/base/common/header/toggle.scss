@@ -1,40 +1,48 @@
 $toggle-width: rem(22);
+$toggle-height: rem(16);
+$toggle-top: rem(-8);
 $toggle-element-height: rem(1);
 
 .toggle {
-	position: fixed;
+	position: static;
 	left: rem(21);
 	top: rem(19);
-	z-index: 999;
 	margin: 0;
 	border: 0;
 	padding: 0;
 	width: $toggle-width;
-	height: rem(16);
+	height: $toggle-height;
 	background-color: transparent;
+
+	&:focus,
+	&:active {
+		outline: rem(1) dotted rgba($iron, 0.9);
+	}
 }
 
 .toggle__wrap {
 	position: relative;
-	width: 100%;
-	height: 100%;
+	width: $toggle-width;
+	height: $toggle-height;
 }
 
 .toggle__icon {
+	@include transition;
+
 	position: absolute;
-	left: 50%;
-	top: 50%;
-	z-index: 999;
+	left: rem(-10);
+	top: $toggle-top;
 	display: block;
 	border: 0;
 	width: $toggle-width;
 	height: $toggle-element-height;
 	color: $royal-blue;
 	background-color: currentColor;
-	transform: translateX(-50%);
 
 	&::before,
 	&::after {
+		@include transition;
+
 		content: "";
 		position: absolute;
 		left: 0;
@@ -44,10 +52,23 @@ $toggle-element-height: rem(1);
 	}
 
 	&::before {
-		top: rem(-8);
+		top: $toggle-top * -1;
+		opacity: 1;
 	}
 
 	&::after {
-		top: rem(8);
+		top: $toggle-top * -2;
+	}
+
+	.toggle--active & {
+		transform: translate(-1px, 8px) rotate(-45deg);
+
+		&::before {
+			opacity: 0;
+		}
+
+		&::after {
+			transform: translate(0, -16px) rotate(90deg);
+		}
 	}
 }

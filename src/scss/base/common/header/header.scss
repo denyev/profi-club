@@ -1,7 +1,6 @@
 .header {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: rem(19);
 }
 
 .header__controls {
@@ -36,5 +35,17 @@
 }
 
 .header__navigation {
+	margin: 0 0 rem(19) 0;
 	padding: 0 rem(21);
+	max-height: rem(1000);
+	opacity: 1;
+	transition: all 0.8s ease-out;
+
+	&--closed {
+		overflow: hidden;
+		margin-bottom: 0;
+		max-height: 0;
+		opacity: 0;
+		transition: all 0.8s ease-out;
+	}
 }

@@ -1,6 +1,5 @@
 @media screen and (min-width: rem($tablet-width)) {
 	.header {
-		display: flex;
 		flex-direction: row;
 		margin-bottom: 0;
 		border-bottom: rem(1) solid $raven;
@@ -36,6 +35,7 @@
 		flex-basis: 83.44444%;
 		flex-flow: row wrap;
 		align-items: center;
+		margin-bottom: 0;
 		padding-right: 0;
 	}
 }
