@@ -1,9 +1,9 @@
 .job {
-	padding: rem(6) rem(21) rem(29) rem(21);
+	padding: rem(6) rem(21) rem(25) rem(21);
 }
 
 .job__content {
-	margin-bottom: rem(16);
+	margin: 0 0 rem(8) 0;
 }
 
 .job__title {
@@ -19,8 +19,17 @@
 
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: space-between;
+	justify-content: flex-start;
 	color: $storm-gray;
+}
+
+.job__info-item {
+	margin: 0 rem(19) rem(8) 0;
+
+	&:nth-last-of-type(2),
+	&:last-of-type {
+		margin-right: 0;
+	}
 }
 
 .job__site {
@@ -63,6 +72,7 @@
 .job__button {
 	@include fluid-type;
 
+	margin: 0 0 rem(4) 0;
 	border: rem(1) solid $mercury;
 	border-radius: rem(4);
 	padding: rem(9);
@@ -70,12 +80,28 @@
 	background-color: $alabaster;
 }
 
+.job__meta {
+	margin: 0 0 rem(4) 0;
+}
+
 .job__tags {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
 	border: rem(1) solid $mercury;
 	border-radius: rem(4);
-	padding: rem(3) rem(2) rem(2) rem(5);
+	padding: 0 rem(2) 0 rem(5);
 
 	&--desktop {
 		display: none;
+	}
+}
+
+.job__tag {
+	margin: 0 rem(3) 0 0;
+	line-height: 1.7;
+
+	&:last-of-type {
+		margin-right: 0;
 	}
 }
