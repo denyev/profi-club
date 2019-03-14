@@ -1,0 +1,14 @@
+.headline,
+h1 {
+	@include fluid-type(rem(24), rem(36));
+
+	margin: rem(19) 0;
+	font-weight: $font-weight-primary;
+	line-height: 1.3;
+	text-align: center;
+	color: $prussian-blue;
+
+	@media screen and (min-width: rem($tablet-width)) {
+		text-align: left;
+	}
+}
