@@ -43,6 +43,29 @@ try {
 }
 
 /**
+ * Search form.
+ */
+try {
+	const searchFields = document.querySelectorAll('.search__field');
+
+	for (let i = 0; i < searchFields.length; i++) {
+		let searchField = searchFields[i];
+
+		searchField.addEventListener('change', () => {
+			let fieldValue = parseInt(searchField.value, 10);
+
+			if (fieldValue.length !== 0) {
+				searchField.classList.add('js-hasvalue');
+			} else {
+				searchField.classList.remove('js-hasvalue');
+			}
+		});
+	}
+} catch(error) {
+	console.error(error);
+}
+
+/**
  * Slider range.
  */
 try {
