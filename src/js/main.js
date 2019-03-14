@@ -7,8 +7,9 @@ const tabletScreenWidth = window.matchMedia('(min-width: 992px)');
 /**
  * Toggle navigation.
  */
-try {
-	let navigationToggle = () => {
+
+let navigationToggle = () => {
+	try {
 		const navigation = document.querySelector('.header__navigation');
 		const toggle = document.querySelector('.header__toggle .toggle');
 		let navModifier = 'header__navigation--closed';
@@ -20,6 +21,7 @@ try {
 		} else {
 			navigation.classList.add(navModifier);
 			toggle.addEventListener('click', () => {
+				console.log(toggleModifier);
 				if (navigation.classList.contains(navModifier)) {
 					navigation.classList.remove(navModifier);
 					toggle.classList.add(toggleModifier);
@@ -29,18 +31,10 @@ try {
 				}
 			});
 		}
-	};
-
-	window.onload = () => {
-		navigationToggle();
-	};
-
-	window.onresize = () => {
-		navigationToggle();
-	};
-} catch(error) {
-	console.error(error);
-}
+	} catch(error) {
+		console.error(error);
+	}
+};
 
 /**
  * Search form.
@@ -94,3 +88,44 @@ try {
 } catch(error) {
 	console.error(error);
 }
+
+/**
+ * Toggle filters
+ */
+let filtersToggle = () => {
+	try{
+		const wrapper = document.querySelector('.filters__form');
+		const toggle = document.querySelector('.filters__toggle');
+		let wrapperModifier = 'filters__form--closed';
+		let toggleModifier = 'filters__toggle--active';
+
+		if (tabletScreenWidth.matches) {
+			wrapper.classList.remove(wrapperModifier);
+			toggle.classList.remove(toggleModifier);
+		} else {
+			wrapper.classList.add(wrapperModifier);
+			toggle.addEventListener('click', () => {
+				if (wrapper.classList.contains(wrapperModifier)) {
+					wrapper.classList.remove(wrapperModifier);
+					toggle.classList.add(toggleModifier);
+				} else {
+					wrapper.classList.add(wrapperModifier);
+					toggle.classList.remove(toggleModifier);
+				}
+			});
+		}
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+window.onload = () => {
+	navigationToggle();
+	filtersToggle();
+};
+
+window.onresize = () => {
+	navigationToggle();
+	filtersToggle();
+};
+
