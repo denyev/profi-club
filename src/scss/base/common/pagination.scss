@@ -1,12 +1,12 @@
 .pagination {
-	margin: rem(28) rem(37) rem(34) rem(37);
+	margin: rem(28) auto;
 }
 
 .pagination__list {
 	@include unstyle-list;
 
 	display: flex;
-	flex-direction: row;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: center;
 	margin: 0;
