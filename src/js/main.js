@@ -5,38 +5,6 @@ import './vendor';
 const tabletScreenWidth = window.matchMedia('(min-width: 992px)');
 
 /**
- * Toggle navigation.
- */
-
-let navigationToggle = () => {
-	try {
-		const navigation = document.querySelector('.header__navigation');
-		const toggle = document.querySelector('.header__toggle .toggle');
-		let navModifier = 'header__navigation--closed';
-		let toggleModifier = 'toggle--active';
-
-		if (tabletScreenWidth.matches) {
-			navigation.classList.remove(navModifier);
-			toggle.classList.remove(toggleModifier);
-		} else {
-			navigation.classList.add(navModifier);
-			toggle.addEventListener('click', () => {
-				console.log(toggleModifier);
-				if (navigation.classList.contains(navModifier)) {
-					navigation.classList.remove(navModifier);
-					toggle.classList.add(toggleModifier);
-				} else {
-					navigation.classList.add(navModifier);
-					toggle.classList.remove(toggleModifier);
-				}
-			});
-		}
-	} catch(error) {
-		console.error(error);
-	}
-};
-
-/**
  * Search form.
  */
 try {
@@ -90,27 +58,36 @@ try {
 }
 
 /**
- * Toggle filters
+ * Action, when user press the toggle.
+ * @param {string} wrapperName - a class name for the wrapper.
+ * @param {string} handlerName - a class name for the handler.
+ * @param {string} wrapperModifierName = 'closed' - a wrapper modifier name.
+ * @param {string} handlerModifierName = 'active' - a handler modifier name.
+ * @example
+ * ```javascript
+ * switchToggle('filters__form', 'filters__toggle');
+ * ```
  */
-let filtersToggle = () => {
-	try{
-		const wrapper = document.querySelector('.filters__form');
-		const toggle = document.querySelector('.filters__toggle');
-		let wrapperModifier = 'filters__form--closed';
-		let toggleModifier = 'filters__toggle--active';
+let switchToggle = (wrapperName, handlerName, wrapperModifierName = 'closed', handlerModifierName = 'active') => {
+	const wrapper = document.querySelector('.' + wrapperName);
+	const handler = document.querySelector('.' + handlerName);
+	let wrapperModifier = wrapperName + '--' + wrapperModifierName;
+	let handlerModifier = handlerName + '--' + handlerModifierName;
 
+	try{
 		if (tabletScreenWidth.matches) {
 			wrapper.classList.remove(wrapperModifier);
-			toggle.classList.remove(toggleModifier);
+			handler.classList.remove(handlerModifier);
 		} else {
 			wrapper.classList.add(wrapperModifier);
-			toggle.addEventListener('click', () => {
+			handler.addEventListener('click', (event) => {
+				event.preventDefault();
 				if (wrapper.classList.contains(wrapperModifier)) {
 					wrapper.classList.remove(wrapperModifier);
-					toggle.classList.add(toggleModifier);
+					handler.classList.add(handlerModifier);
 				} else {
 					wrapper.classList.add(wrapperModifier);
-					toggle.classList.remove(toggleModifier);
+					handler.classList.remove(handlerModifier);
 				}
 			});
 		}
@@ -120,12 +97,17 @@ let filtersToggle = () => {
 };
 
 window.onload = () => {
-	navigationToggle();
-	filtersToggle();
+	// Toggles the navigation menu
+	switchToggle('header__navigation', 'toggle');
+
+	// Toggles the filters
+	switchToggle('filters__form', 'filters__toggle');
 };
 
 window.onresize = () => {
-	navigationToggle();
-	filtersToggle();
-};
+	// Toggles the navigation menu
+	switchToggle('header__navigation', 'toggle');
 
+	// Toggles the filters
+	switchToggle('filters__form', 'filters__toggle');
+};
