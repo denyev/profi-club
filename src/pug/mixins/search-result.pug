@@ -3,14 +3,15 @@
 
 	```
 	+searchResult({
+		wrapper: 'h1',
 		quantity: 298,
 		result: 'предложений',
 		resultSingular: 'вакансию'
-	})
+	})(class="headline")
 	```
 
 mixin searchResult(options)
-	p&attributes(attributes)
+	#{options.wrapper}&attributes(attributes)
 		| Мы нашли
 		|
 		span.important
