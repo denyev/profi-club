@@ -59,23 +59,46 @@ try {
 
 /**
  * Action, when user press the toggle.
- * @param {string} wrapperName - a class name for the wrapper.
- * @param {string} handlerName - a class name for the handler.
- * @param {string} wrapperModifierName = 'closed' - a wrapper modifier name.
- * @param {string} handlerModifierName = 'active' - a handler modifier name.
+ *
+ * @param {Object} options - Function arguments.
+ * @param {string} options.wrapperName - The class name for the wrapper.
+ * @param {string} options.handlerName - The class name for the handler.
+ * @param {string} [options.wrapperModifierName=closed] - The wrapper modifier name.
+ * @param {string} [options.handlerModifierName=active] - The handler modifier name.
+ * @param {number} [options.breakPoint=992] - The media query at which modifiers should be removed.
  * @example
  * ```javascript
- * switchToggle('filters__form', 'filters__toggle');
+ * switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
+ * ```
+ * @example
+ * ```javascript
+ * let options = {
+ *      wrapperName: 'filters__form',
+ *      handlerName: 'filters__toggle'
+ *      wrapperModifierName: 'closed',
+ *      handlerModifierName: 'active',
+ *      breakPoint: 992
+ * };
+ * switchToggle(options);
  * ```
  */
-let switchToggle = (wrapperName, handlerName, wrapperModifierName = 'closed', handlerModifierName = 'active') => {
-	const wrapper = document.querySelector('.' + wrapperName);
-	const handler = document.querySelector('.' + handlerName);
-	let wrapperModifier = wrapperName + '--' + wrapperModifierName;
-	let handlerModifier = handlerName + '--' + handlerModifierName;
+let switchToggle = (options) => {
+	let defaults = {
+		wrapperModifierName: 'closed',
+		handlerModifierName: 'active',
+		breakPoint: 992
+	};
+
+	options = $.extend(defaults, options);
+
+	let wrapper = document.querySelector('.' + options.wrapperName);
+	let handler = document.querySelector('.' + options.handlerName);
+	let wrapperModifier = options.wrapperName + '--' + options.wrapperModifierName;
+	let handlerModifier = options.handlerName + '--' + options.handlerModifierName;
+	let breakPoint = window.matchMedia('(min-width: ' + options.breakPoint + 'px)');
 
 	try{
-		if (tabletScreenWidth.matches) {
+		if (breakPoint.matches) {
 			wrapper.classList.remove(wrapperModifier);
 			handler.classList.remove(handlerModifier);
 		} else {
@@ -98,16 +121,16 @@ let switchToggle = (wrapperName, handlerName, wrapperModifierName = 'closed', ha
 
 window.onload = () => {
 	// Toggles the navigation menu
-	switchToggle('header__navigation', 'toggle');
+	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
 
 	// Toggles the filters
-	switchToggle('filters__form', 'filters__toggle');
+	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
 };
 
 window.onresize = () => {
 	// Toggles the navigation menu
-	switchToggle('header__navigation', 'toggle');
+	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
 
 	// Toggles the filters
-	switchToggle('filters__form', 'filters__toggle');
+	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
 };
