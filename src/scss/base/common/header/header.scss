@@ -5,10 +5,10 @@
 
 .header__controls {
 	display: flex;
-	flex-direction: row;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: space-between;
-	margin: 0 0 rem(23) 0;
+	margin: 0;
 	padding: rem(11) rem(21);
 }
 
@@ -31,19 +31,18 @@
 
 .header__search-form {
 	margin: 0 0 rem(22) 0;
-	padding: rem(11) rem(33) rem(11) rem(33);
+	padding: rem(11);
 }
 
 .header__navigation {
-	margin: 0 0 rem(19) 0;
-	padding: 0 rem(21);
+	margin: rem(23) rem(21) rem(19) rem(21);
 	max-height: rem(1000);
 	opacity: 1;
 	transition: all 0.8s ease-out;
 
 	&--closed {
 		overflow: hidden;
-		margin-bottom: 0;
+		margin: 0;
 		max-height: 0;
 		opacity: 0;
 		transition: all 0.8s ease-out;
