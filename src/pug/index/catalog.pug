@@ -26,7 +26,20 @@
 					)
 						| Дата
 		p.catalog__total
-			| Показано 1-7 из 298 предложений
+			| Показано
+			|
+			span.catalog__total-min
+				| 1
+			| &#45;
+			span.catalog__total-max
+				| 7
+			|
+			| из
+			|
+			span.catalog__total-count
+				| 298
+			|
+			| предложений
 	ul.catalog__list
 		- var catalog_items_count = 7
 		- while(catalog_items_count--) {
