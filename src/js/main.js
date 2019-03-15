@@ -138,6 +138,7 @@ let switchJobView = (breakPointValue) => {
 		if(breakPointValue.matches) {
 			// Default view.
 			wrapper.classList.remove(wrapperModifier);
+			handlerGrid.classList.remove(handlerModifier);
 			handlerList.classList.add(handlerModifier);
 			handlers.forEach((handler) => {
 				handler.addEventListener('click', (event) => {

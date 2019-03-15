@@ -86,6 +86,11 @@
 	.catalog__list {
 		padding: 0 0 rem(1) 0;
 		background-color: $white;
+
+		&--grid {
+			display: flex;
+			flex-flow: row wrap;
+		}
 	}
 
 	.catalog__item {
@@ -95,6 +100,19 @@
 
 		&:last-of-type {
 			margin-bottom: rem(40);
+		}
+
+		.catalog__list--grid & {
+			flex: 1 1 45%;
+			max-width: 45%;
+
+			&:nth-of-type(2n + 1) {
+				margin-right: rem(16);
+			}
+
+			&:nth-of-type(2n) {
+				margin-right: 0;
+			}
 		}
 	}
 }
