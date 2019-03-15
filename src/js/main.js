@@ -8,13 +8,11 @@ const tabletScreenWidth = window.matchMedia('(min-width: 992px)');
  * Search form.
  */
 try {
-	const searchFields = document.querySelectorAll('.search__field');
+	const searchFields = Array.prototype.slice.call(document.querySelectorAll('.search__field'));
 
-	for (let i = 0; i < searchFields.length; i++) {
-		let searchField = searchFields[i];
-
+	searchFields.forEach((searchField) => {
 		searchField.addEventListener('change', () => {
-			let fieldValue = parseInt(searchField.value, 10);
+			let fieldValue = searchField.value;
 
 			if (fieldValue.length !== 0) {
 				searchField.classList.add('js-hasvalue');
@@ -22,7 +20,7 @@ try {
 				searchField.classList.remove('js-hasvalue');
 			}
 		});
-	}
+	});
 } catch(error) {
 	console.error(error);
 }
@@ -119,12 +117,63 @@ let switchToggle = (options) => {
 	}
 };
 
+/**
+ * Toggles the view of job list items.
+ *
+ * @param {Object} breakPointValue - The result of the method of `Window.matchMedia()`.
+ * @example
+ * ```javascript
+ * switchJobView(window.matchMedia('(min-width: 992px)'));
+ * ```
+ */
+let switchJobView = (breakPointValue) => {
+	let wrapper = document.querySelector('.catalog__list');
+	let handlers = document.querySelectorAll('.catalog__view-btn');
+	let handlerList = document.querySelector('.catalog__view-btn--list');
+	let handlerGrid = document.querySelector('.catalog__view-btn--grid');
+	let wrapperModifier = 'catalog__list--grid';
+	let handlerModifier = 'catalog__view-btn--active';
+
+	try{
+		if(breakPointValue.matches) {
+			// Default view.
+			wrapper.classList.remove(wrapperModifier);
+			handlerList.classList.add(handlerModifier);
+			handlers.forEach((handler) => {
+				handler.addEventListener('click', (event) => {
+					event.preventDefault();
+					if (handlerGrid.classList.contains(handlerModifier)) {
+						// View, `handlerList` is pressed.
+						wrapper.classList.remove(wrapperModifier);
+						handlerGrid.classList.remove(handlerModifier);
+						handlerList.classList.add(handlerModifier);
+					} else {
+						// View, `handlerGrid` is pressed.
+						wrapper.classList.add(wrapperModifier);
+						handlerGrid.classList.add(handlerModifier);
+						handlerList.classList.remove(handlerModifier);
+					}
+				});
+			});
+		} else {
+			wrapper.classList.remove(wrapperModifier);
+			handlerList.classList.remove(handlerModifier);
+			handlerGrid.classList.remove(handlerModifier);
+		}
+	} catch(error) {
+		console.error(error);
+	}
+};
+
 window.onload = () => {
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
 
 	// Toggles the filters
 	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
+
+	// Toggles the view of job list items.
+	switchJobView(tabletScreenWidth);
 };
 
 window.onresize = () => {
@@ -133,4 +182,7 @@ window.onresize = () => {
 
 	// Toggles the filters
 	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
+
+	// Toggles the view of job list items.
+	switchJobView(tabletScreenWidth);
 };
