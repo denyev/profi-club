@@ -1,17 +1,17 @@
 .catalog
 	.catalog__settings
+		button.catalog__view-btn.catalog__view-btn--active(
+			aria-label="Показать в виде списка"
+		)
+			+svg("list")(class="catalog__view-icon" width="30" height="16")
+		button.catalog__view-btn(
+			aria-label="Показать в виде карточек"
+		)
+			+svg("cards")(class="catalog__view-icon" width="23" height="23")
 		form.catalog__form(
 			action="?"
 			method="post"
 		)
-			button.catalog__view-btn.catalog__view-btn--active(
-				aria-label="Показать в виде списка"
-			)
-				+svg("list")(class="catalog__view-icon" width="30" height="16")
-			button.catalog__view-btn(
-				aria-label="Показать в виде карточек"
-			)
-				+svg("cards")(class="catalog__view-icon" width="23" height="23")
 			label.catalog__sort
 				select.catalog__sort-wrap(
 					name="sort[]"

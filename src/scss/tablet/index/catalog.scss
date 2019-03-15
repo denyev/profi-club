@@ -11,7 +11,7 @@
 		display: flex;
 		flex-flow: row wrap;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: flex-start;
 		margin-bottom: rem(40);
 		border-bottom: rem(1) solid $gallery;
 		padding-bottom: rem(37);
@@ -79,7 +79,7 @@
 	}
 
 	.catalog__total {
-		margin: 0;
+		margin: 0 0 0 auto;
 		font-weight: $font-weight-secondary;
 	}
 
