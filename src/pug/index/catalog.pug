@@ -14,13 +14,17 @@
 		)
 			label.catalog__sort
 				select.catalog__sort-wrap(
-					name="sort[]"
+					name="sorting"
 				)
 					option.catalog__sort(
 						selected=true
-						value="Популяность"
+						value="popularity"
 					)
 						| Популяность
+					option.catalog__sort(
+						value="posted"
+					)
+						| Дата
 		p.catalog__total
 			| Показано 1-7 из 298 предложений
 	ul.catalog__list
