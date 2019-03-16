@@ -1,0 +1,24 @@
+.catalog__settings {
+	display: none;
+}
+
+.catalog__list {
+	@include unstyle-list;
+
+	margin: 0;
+	padding: rem(10) 0;
+	background-color: $athens-gray;
+}
+
+.catalog__item {
+	margin-bottom: rem(10);
+	background-color: $white;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

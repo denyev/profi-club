@@ -1,0 +1,10 @@
+.main {
+	background-color: $athens-gray;
+}
+
+.main__catalog {
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto rem(139) auto;
+	max-width: rem(1344);
+}

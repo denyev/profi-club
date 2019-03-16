@@ -1,0 +1,80 @@
+.pagination {
+	margin: rem(28) auto;
+}
+
+.pagination__list {
+	@include unstyle-list;
+
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	color: $storm-gray;
+}
+
+.pagination__item {
+	margin-right: rem(12);
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.pagination__button {
+	position: relative;
+	border: rem(1) solid $athens-gray;
+	border-radius: rem(3);
+	width: rem(32);
+	height: rem(32);
+	background-color: $selago;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: rem(10);
+		height: rem(10);
+		transform: translate(-50%, -50%);
+	}
+
+	&--arrow-left {
+		&::before {
+			@include sprite("chevron");
+
+			transform: translate(-50%, -50%) rotate(180deg);
+		}
+	}
+
+	&--arrow-right {
+		&::before {
+			@include sprite("chevron");
+		}
+	}
+}
+
+.pagination__link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: rem(3);
+	width: rem(32);
+	height: rem(32);
+	text-decoration: none;
+	color: currentColor;
+
+	&:hover,
+	&:active {
+		opacity: 0.75;
+	}
+
+	&--active {
+		color: $white;
+		background-color: $dodger-blue;
+	}
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

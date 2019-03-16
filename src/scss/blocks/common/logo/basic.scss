@@ -1,0 +1,8 @@
+.logo__img {
+	width: rem(113);
+	height: rem(33);
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

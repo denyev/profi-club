@@ -1,0 +1,7 @@
+.account-menu {
+	display: none;
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

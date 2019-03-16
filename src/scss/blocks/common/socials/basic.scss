@@ -1,0 +1,70 @@
+.socials {
+	width: 100%;
+}
+
+.socials__list {
+	@include unstyle-list;
+
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 0 rem(37) rem(27) rem(37);
+}
+
+.socials__item {
+	margin-right: rem(21);
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.socials__link {
+	position: relative;
+	display: block;
+	width: rem(32);
+	height: rem(32);
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	&--telegram {
+		&::before {
+			@include sprite("telegram");
+		}
+	}
+
+	&--twitter {
+		&::before {
+			@include sprite("twitter");
+		}
+	}
+
+	&--instagram {
+		&::before {
+			@include sprite("instagram");
+		}
+	}
+
+	&--facebook {
+		&::before {
+			@include sprite("facebook");
+		}
+	}
+
+	&--linkedin {
+		&::before {
+			@include sprite("linkedin");
+		}
+	}
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

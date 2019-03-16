@@ -1,0 +1,67 @@
+.search {
+	position: relative;
+	width: 100%;
+}
+
+.search__label {
+	position: relative;
+	width: 100%;
+}
+
+.search__field {
+	vertical-align: top;
+	border: 0;
+	border-bottom: rem(1) solid $royal-blue;
+	padding: 0 rem(27) rem(15) 0;
+	width: 100%;
+	font-size: rem(18);
+	background-color: transparent;
+
+	&:focus {
+		outline: none;
+	}
+
+	&[type="search"] {
+		box-sizing: border-box;
+	}
+}
+
+.search__title {
+	@include transition;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	font-weight: $font-weight-secondary;
+	font-size: rem(18);
+	line-height: 1;
+	color: $boulder;
+
+	.js-hasvalue ~ &,
+	.search__field:focus ~ & {
+		background-color: $white;
+		transform: translate(-14.5%, -100%) scale(0.7);
+	}
+}
+
+.search__button {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	background: none;
+}
+
+.search__button-icon {
+	display: inline-block;
+	vertical-align: middle;
+	width: rem(24);
+	height: rem(22);
+	fill: none;
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

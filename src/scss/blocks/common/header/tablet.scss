@@ -1,0 +1,41 @@
+.header {
+	flex-direction: row;
+	margin-bottom: 0;
+	border-bottom: rem(1) solid $raven;
+	padding: rem(24) rem(48);
+}
+
+.header__controls {
+	flex-basis: 16.55556%;
+	margin-bottom: 0;
+	padding: 0;
+}
+
+.header__logo {
+	margin-right: rem(27);
+	width: rem(197);
+	height: rem(57);
+}
+
+.header__toggle {
+	@include visually-hidden;
+}
+
+.header__account {
+	@include visually-hidden;
+}
+
+.header__search-form {
+	@include visually-hidden;
+}
+
+.header__navigation {
+	display: flex;
+	flex-basis: 83.44444%;
+	flex-flow: row wrap;
+	align-items: center;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 0;
+	padding-right: 0;
+}

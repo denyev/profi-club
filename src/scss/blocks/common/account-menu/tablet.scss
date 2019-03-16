@@ -1,0 +1,70 @@
+.account-menu {
+	@include unstyle-list;
+
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0;
+	font-weight: $font-weight-secondary;
+	font-size: rem(18);
+	color: $raven;
+}
+
+.account-menu__item {
+	margin-right: rem(30);
+	margin-bottom: 0;
+	height: 100%;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+.account-menu__link {
+	text-decoration: none;
+	color: currentColor;
+
+	&--active {
+		position: relative;
+		color: currentColor;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: rem(-3);
+			width: 101%;
+			height: rem(2);
+			background-color: $dodger-blue;
+		}
+	}
+}
+
+.account-menu__button {
+	@include ripple-effect($dodger-blue, $prussian-blue);
+
+	position: relative;
+	margin-left: rem(18);
+	border: 0;
+	border-radius: rem(8);
+	padding: rem(17) rem(20) rem(17) rem(37);
+	color: $white;
+	background-color: $dodger-blue;
+
+	&:hover {
+		opacity: 0.9;
+	}
+
+	&:active {
+		opacity: 0.75;
+	}
+
+	&--icon-plus::before {
+		content: "+";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(250%, -50%);
+	}
+}
