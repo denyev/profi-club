@@ -3,7 +3,8 @@
 
 	```
 	+job({
-		title: '',
+		titleTag: '',
+		titleText: '',
 		description: '',
 		link: {
 			href: '',
@@ -21,6 +22,10 @@
 	})
 	```
 
+mixin jobTitle(options)
+	#{options.titleTag}&attributes(attributes)
+		| #{options.titleText}
+
 mixin jobTags(options)
 	.job__tags&attributes(attributes)
 		each tag, index in options.tags
@@ -37,8 +42,7 @@ mixin jobTags(options)
 mixin job(options)
 	.job&attributes(attributes)
 		.job__content
-			p.job__title
-				| #{options.title}
+			+jobTitle(options)(class="job__title")
 			.job__description
 				| !{options.description}
 			ul.job__info
