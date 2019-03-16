@@ -1,8 +1,11 @@
-.footer {
+.footer__wrapper {
+	display: flex;
 	flex-direction: row;
 	align-items: flex-end;
-	margin: rem(78) 0;
-	padding: 0 rem(48);
+	margin: rem(78) auto rem(78) auto;
+	padding: 0 rem(16);
+	width: 100%;
+	max-width: rem($wrapper);
 }
 
 .footer__logo {

@@ -1,4 +1,4 @@
-.footer {
+.footer__wrapper {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -12,4 +12,8 @@
 
 @media screen and (min-width: rem($tablet-width)) {
 	@import "tablet";
+}
+
+@media screen and (min-width: rem($laptop-width)) {
+	@import "laptop";
 }
