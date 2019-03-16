@@ -11,7 +11,7 @@
 	justify-content: space-between;
 	margin: rem(18) auto rem(30) auto;
 	padding: rem(83) 0 rem(98) 0;
-	max-width: rem(1344);
+	max-width: rem($wrapper);
 	background-image: url("../images/announcement.svg");
 	background-position: 50% 50%;
 	background-size: contain;

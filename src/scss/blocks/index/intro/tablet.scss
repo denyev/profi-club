@@ -1,8 +1,9 @@
 .intro {
 	display: flex;
 	flex-flow: row wrap;
-	margin-bottom: rem(64);
-	padding: rem(56) rem(48) 0 rem(48);
+	margin: 0 auto rem(64) auto;
+	padding: 0 rem(16);
+	max-width: rem($wrapper);
 }
 
 .intro__search-result {
