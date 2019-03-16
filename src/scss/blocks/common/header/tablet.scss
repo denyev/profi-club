@@ -1,8 +1,15 @@
 .header {
-	flex-direction: row;
 	margin-bottom: 0;
 	border-bottom: rem(1) solid $raven;
-	padding: rem(24) rem(48);
+	padding: rem(24) 0;
+}
+
+.header__wrapper {
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	width: 100%;
+	max-width: rem($wrapper);
 }
 
 .header__controls {

@@ -1,15 +1,16 @@
 header.header
-	.header__controls
-		.header__toggle
-			include toggle
-		.header__logo
-			include ../logo
-		a.header__account(
-			href="#"
-			aria-label = "Мой аккаунт"
-		)
-	.header__navigation
-		.header__search-form
-			include ../search-form
-		include navigation
-		include account-menu
+	.header__wrapper
+		.header__controls
+			.header__toggle
+				include toggle
+			.header__logo
+				include ../logo
+			a.header__account(
+				href="#"
+				aria-label = "Мой аккаунт"
+			)
+		.header__navigation
+			.header__search-form
+				include ../search-form
+			include navigation
+			include account-menu
