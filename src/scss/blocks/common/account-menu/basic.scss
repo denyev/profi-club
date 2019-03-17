@@ -1,5 +1,57 @@
 .account-menu {
-	display: none;
+	@include unstyle-list;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin: 0;
+	font-weight: $font-weight-secondary;
+	font-size: rem(18);
+	color: $aluminium;
+}
+
+.account-menu__item {
+	margin-bottom: rem(16);
+
+	&--profile {
+		@include visually-hidden;
+	}
+}
+
+.account-menu__link {
+	text-decoration: none;
+	color: currentColor;
+
+	&--active {
+		color: $black;
+	}
+}
+
+.account-menu__button {
+	@include ripple-effect($dodger-blue, $prussian-blue);
+
+	position: relative;
+	border: 0;
+	border-radius: rem(8);
+	padding: rem(8) rem(20) rem(8) rem(27);
+	color: $white;
+	background-color: $dodger-blue;
+
+	&:hover {
+		opacity: 0.9;
+	}
+
+	&:active {
+		opacity: 0.75;
+	}
+
+	&--icon-plus::before {
+		content: "+";
+		position: absolute;
+		left: 0;
+		top: 50%;
+		transform: translate(150%, -50%);
+	}
 }
 
 @media screen and (min-width: rem($tablet-width)) {
