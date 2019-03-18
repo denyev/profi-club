@@ -4,7 +4,7 @@
 	```
 	+searchResult({
 		wrapper: 'h1',
-		quantity: 298,
+		quantity: '298<br>',
 		result: 'предложений',
 		resultSingular: 'вакансию'
 	})(class="headline")
@@ -15,8 +15,8 @@ mixin searchResult(options)
 		| Мы нашли
 		|
 		span.important
-			| #{options.quantity}
+			| !{options.quantity}
 		|
-		| #{options.result} для вас
+		| !{options.result} для вас
 		br
-		| найдите #{options.resultSingular} по душе
+		| найдите !{options.resultSingular} по душе
