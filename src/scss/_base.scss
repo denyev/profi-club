@@ -40,3 +40,28 @@ img {
 p:empty {
 	margin: 0;
 }
+
+a,
+input[type="button"],
+button {
+	transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
+}
+
+a:focus,
+input:focus,
+button:focus {
+	outline: rem(1) dotted rgba($iron, 0.9);
+	opacity: 0.8;
+}
+
+a:hover,
+input[type="button"]:hover,
+button:hover {
+	opacity: 0.75;
+}
+
+a:active,
+input[type="button"]:active,
+button:active {
+	opacity: 0.6;
+}
