@@ -1,0 +1,104 @@
+.filters
+	p.filters__toggle
+		| Фильтры
+		+svg("arrow-down")(class="filters__toggle-icon" width="15" height="15")
+	form.filters__form#filters(
+		action="?"
+		method="post"
+	)
+		label.filters__label.filters__label--arrow.filters__label--underline
+			select.filters__select(
+				name="category"
+			)
+				option.filters__option(
+					selected=true
+					disabled=true
+					value=""
+				)
+					| Категории
+				option.filters__option(
+					value="1"
+				)
+					| Категория 1
+				option.filters__option(
+					value="2"
+				)
+					| Категория 2
+		fieldset.filters__group
+			legend.filters__headline
+				| Сферы деятеьности
+			label.filters__label
+				input.filters__checkbox(
+					name="scope"
+					type="checkbox"
+					value="e-commerce"
+					checked=false
+				)
+				span.filters__text
+					| E-commerce
+			label.filters__label
+				input.filters__checkbox(
+					name="scope"
+					type="checkbox"
+					value="fmcg"
+					checked=false
+				)
+				span.filters__text
+					| FMCG
+			label.filters__label
+				input.filters__checkbox(
+					name="scope"
+					type="checkbox"
+					value="banking"
+					checked=false
+				)
+				span.filters__text
+					| Банковское дело
+			label.filters__label
+				input.filters__checkbox(
+					name="scope"
+					type="checkbox"
+					value="investments"
+					checked=false
+				)
+				span.filters__text
+					| Инвестиции
+		fieldset.filters__group
+			legend.filters__headline
+				| Размер компании
+			label.filters__label
+				input.filters__checkbox(
+					name="size"
+					type="checkbox"
+					value="50"
+					checked=false
+				)
+				span.filters__text
+					| до 50 человек
+			label.filters__label
+				input.filters__checkbox(
+					name="size"
+					type="checkbox"
+					value="50-300"
+					checked=false
+				)
+				span.filters__text
+					| 50 - 300 человек
+			label.filters__label
+				input.filters__checkbox(
+					name="size"
+					type="checkbox"
+					value="300-1000"
+					checked=false
+				)
+				span.filters__text
+					| 300 - 1000 человек
+			label.filters__label
+				input.filters__checkbox(
+					name="size"
+					type="checkbox"
+					value="1000"
+					checked=false
+				)
+				span.filters__text
+					| 300 - 1000 человек

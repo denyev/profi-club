@@ -1,0 +1,57 @@
+//-
+	@example
+
+	```
+	+company({
+		title {
+			text: '',
+			tag: ''
+		},
+		img: {
+			src: '',
+			alt: '',
+			width: '',
+			height: ''
+		},
+		logo: {
+			modifier: ''
+		},
+		scope: '',
+		jobCount: '',
+		district: ''
+	})
+	```
+
+mixin companyTitle(options)
+	#{options.title.tag}&attributes(attributes)
+		| #{options.title.text}
+
+mixin company(options)
+	article.company&attributes(attributes)
+		- var imgWidth = (options.img.width) ? options.img.width : 336
+		- var imgHeight = (options.img.height) ? options.img.height : 171
+		- var imgSrc = (options.img.src) ? options.img.src : 'https://via.placeholder.com/' + imgWidth + 'x' + imgHeight
+		- var imgAlt = (options.img.alt) ? options.img.alt : 'Фотография компании: ' + options.title.text
+
+		img.company__img(
+			src=imgSrc
+			alt=imgAlt
+			width=imgWidth
+			height=imgHeight
+		)
+		.company__content
+			.company__caption
+				+companyTitle(options)(class="company__title")
+				.company__logo(
+					class='company__logo--' + options.logo.modifier
+				)
+			ul.company__info
+				li.company__info-item
+					p.company__sope
+						| #{options.scope}
+				li.company__info-item
+					p.company__job-count
+						| #{options.jobCount}
+				li.company__info-item
+					p.company__district
+						| #{options.district}

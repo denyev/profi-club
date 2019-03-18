@@ -1,0 +1,63 @@
+.catalog
+	.catalog__settings
+		button.catalog__view-btn.catalog__view-btn--list.catalog__view-btn--active(
+			aria-label="Показать в виде списка"
+		)
+			+svg("list")(class="catalog__view-icon" width="30" height="16")
+		button.catalog__view-btn.catalog__view-btn--grid(
+			aria-label="Показать в виде карточек"
+		)
+			+svg("cards")(class="catalog__view-icon" width="23" height="23")
+		form.catalog__form(
+			action="?"
+			method="post"
+		)
+			label.catalog__sort
+				select.catalog__sort-wrap(
+					name="sorting"
+				)
+					option.catalog__sort(
+						selected=true
+						value="popularity"
+					)
+						| Популяность
+					option.catalog__sort(
+						value="posted"
+					)
+						| Дата
+		p.catalog__total
+			| Показано
+			|
+			span.catalog__total-min
+				| 1
+			| &#45;
+			span.catalog__total-max
+				| 8
+			|
+			| из
+			|
+			span.catalog__total-count
+				| 32
+			|
+			| компаний
+	ul.catalog__list
+		- var company_count = 8
+		- while(company_count--) {
+		li.catalog__item
+			- var company_options = {}
+			- company_options.title = {}
+			- company_options.title.text = 'МегаФон'
+			- company_options.title.tag = 'h2'
+			- company_options.img = {}
+			- company_options.img.src = 'images/companies/megafon.jpg'
+			- company_options.img.width = 336
+			- company_options.img.height = 171
+			- company_options.logo = {}
+			- company_options.logo.modifier = 'megafon'
+			- company_options.scope = 'Телекоммуникации'
+			- company_options.jobCount = 'более 1000'
+			- company_options.district = 'ЦАО'
+
+			+company(company_options)
+		- }
+	+pagination({1: 'первую', 2: 'вторую', 3: 'третью', 4: 'четвёртую'}, 2)

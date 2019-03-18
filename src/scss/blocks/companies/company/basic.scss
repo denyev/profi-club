@@ -1,0 +1,47 @@
+.company__content {
+	padding: rem(26) rem(8) rem(22) rem(22);
+}
+
+.company__caption {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+
+.company__title {
+	@include fluid-type(rem(24), rem(32));
+
+	margin: 0 0 rem(7) 0;
+	font-weight: $font-weight-primary;
+	color: $dodger-blue;
+}
+
+.company__info {
+	@include unstyle-list;
+
+	display: flex;
+	flex-flow: row wrap;
+	font-size: rem(14);
+	color: $storm-gray;
+}
+
+.company__info-item {
+	margin: 0 rem(6) rem(6) 0;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+
+	p {
+		margin: 0;
+	}
+}
+
+.company__logo {
+	content: "";
+
+	&--megafon {
+		@include sprite("megafon");
+	}
+}
