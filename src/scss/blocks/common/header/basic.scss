@@ -9,7 +9,7 @@
 	align-items: center;
 	justify-content: space-between;
 	margin: 0;
-	padding: rem(11) rem(21);
+	padding: rem(11) rem(16);
 }
 
 .header__toggle {
@@ -35,7 +35,7 @@
 }
 
 .header__navigation {
-	margin: rem(23) rem(21) rem(19) rem(21);
+	margin: rem(23) rem(16) rem(19) rem(16);
 	max-height: rem(10000);
 	opacity: 1;
 	transition: all 0.8s ease-out;
