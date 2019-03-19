@@ -9,6 +9,12 @@
 		},
 		img: {
 			src: '',
+			source: [
+				{
+					srcset: '',
+					media: ''
+				}
+			],
 			alt: '',
 			width: '',
 			height: ''
@@ -33,12 +39,26 @@ mixin company(options)
 		- var imgSrc = (options.img.src) ? options.img.src : 'https://via.placeholder.com/' + imgWidth + 'x' + imgHeight
 		- var imgAlt = (options.img.alt) ? options.img.alt : 'Фотография компании: ' + options.title.text
 
-		img.company__img(
-			src=imgSrc
-			alt=imgAlt
-			width=imgWidth
-			height=imgHeight
-		)
+		if options.img.source !== undefined
+			picture
+				each source in options.img.source
+					source(
+						srcset=source.srcset
+						media=source.media
+					)
+				img.company__img(
+					src=imgSrc
+					alt=imgAlt
+					width=imgWidth
+					height=imgHeight
+				)
+		else
+			img.company__img(
+				src=imgSrc
+				alt=imgAlt
+				width=imgWidth
+				height=imgHeight
+			)
 		.company__content
 			.company__caption
 				+companyTitle(options)(class="company__title")
