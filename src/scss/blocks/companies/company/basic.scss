@@ -45,3 +45,7 @@
 		@include sprite("megafon");
 	}
 }
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

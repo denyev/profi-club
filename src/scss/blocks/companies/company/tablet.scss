@@ -1,0 +1,11 @@
+.company {
+	display: flex;
+	flex-direction: row;
+}
+
+.company__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
