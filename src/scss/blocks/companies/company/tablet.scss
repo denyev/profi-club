@@ -1,6 +1,15 @@
 .company {
 	display: flex;
 	flex-direction: row;
+	width: 100%;
+}
+
+.company__picture {
+	flex: 1 1 100%;
+}
+
+.company__mig {
+	flex: 1 1 100%;
 }
 
 .company__content {
@@ -8,4 +17,42 @@
 	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
+}
+
+.company__logo {
+	&--megafon {
+		@include sprite("megafon-tablet");
+	}
+
+	&--yota {
+		@include sprite("yota-tablet");
+	}
+
+	&--mamba {
+		@include sprite("mamba-tablet");
+	}
+
+	&--bosh {
+		@include sprite("bosh-tablet");
+	}
+
+	&--adidas {
+		@include sprite("adidas-tablet");
+	}
+
+	&--gfk {
+		@include sprite("gfk-tablet");
+	}
+
+	&--jti {
+		@include sprite("jti-tablet");
+	}
+
+	&--uniqlo {
+		@include sprite("uniqlo-tablet");
+	}
+}
+
+.catalog__list--grid {
+	@import "grid";
 }

@@ -103,7 +103,10 @@
 
 	.catalog__list--grid & {
 		flex: 1 1 45%;
-		max-width: 45%;
+		margin-bottom: rem(17);
+		padding-bottom: 0;
+		max-width: 50%;
+		box-shadow: 0 rem(4) rem(10) rgba($black, 0.05);
 
 		&:nth-of-type(2n + 1) {
 			margin-right: rem(16);

@@ -44,6 +44,34 @@
 	&--megafon {
 		@include sprite("megafon");
 	}
+
+	&--yota {
+		@include sprite("yota");
+	}
+
+	&--mamba {
+		@include sprite("mamba");
+	}
+
+	&--bosh {
+		@include sprite("bosh");
+	}
+
+	&--adidas {
+		@include sprite("adidas");
+	}
+
+	&--gfk {
+		@include sprite("gfk");
+	}
+
+	&--jti {
+		@include sprite("jti");
+	}
+
+	&--uniqlo {
+		@include sprite("uniqlo");
+	}
 }
 
 @media screen and (min-width: rem($tablet-width)) {

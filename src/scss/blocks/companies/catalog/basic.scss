@@ -4,3 +4,7 @@
 		padding-top: rem(22);
 	}
 }
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

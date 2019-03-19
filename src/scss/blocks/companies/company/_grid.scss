@@ -1,0 +1,26 @@
+.company {
+	flex-direction: column;
+}
+
+.company__img {
+	width: 100%;
+}
+
+.company__content {
+	margin-bottom: rem(6);
+	padding-top: rem(32);
+	padding-right: rem(32);
+	padding-left: rem(32);
+}
+
+.company__title {
+	margin-bottom: rem(23);
+}
+
+.company__info-item {
+	margin-right: rem(19);
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}

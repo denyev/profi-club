@@ -40,7 +40,7 @@ mixin company(options)
 		- var imgAlt = (options.img.alt) ? options.img.alt : 'Фотография компании: ' + options.title.text
 
 		if options.img.source !== undefined
-			picture
+			picture.company__picture
 				each source in options.img.source
 					source(
 						srcset=source.srcset
