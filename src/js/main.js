@@ -166,6 +166,35 @@ let switchJobView = (breakPointValue) => {
 	}
 };
 
+/**
+ * Toggles active item modifier for menu items.
+ *
+ * @param {string} itemClass - A menu item class name.
+ * @param {string} activeClassName - The name of the active menu item modifier.
+ * @example
+ * ```
+ * switchTopMenu('.menu__item', 'menu__item--active');
+ * ```
+ */
+const switchMenuItem = (itemClass, activeClassName) => {
+	let items = [...document.querySelectorAll(itemClass)];
+
+	try {
+		items.forEach((item) => {
+			item.addEventListener('click', () => {
+				let activeElement = document.querySelector('.' + activeClassName);
+
+				activeElement.classList.remove(activeClassName);
+				item.classList.add(activeClassName);
+			});
+		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+switchMenuItem('.top-menu__link', 'top-menu__link--active');
+
 window.onload = () => {
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
