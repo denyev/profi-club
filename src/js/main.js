@@ -96,21 +96,23 @@ let switchToggle = (options) => {
 	let breakPoint = window.matchMedia('(min-width: ' + options.breakPoint + 'px)');
 
 	try{
-		if (breakPoint.matches) {
-			wrapper.classList.remove(wrapperModifier);
-			handler.classList.remove(handlerModifier);
-		} else {
-			wrapper.classList.add(wrapperModifier);
-			handler.addEventListener('click', (event) => {
-				event.preventDefault();
-				if (wrapper.classList.contains(wrapperModifier)) {
-					wrapper.classList.remove(wrapperModifier);
-					handler.classList.add(handlerModifier);
-				} else {
-					wrapper.classList.add(wrapperModifier);
-					handler.classList.remove(handlerModifier);
-				}
-			});
+		if(wrapper) {
+			if (breakPoint.matches) {
+				wrapper.classList.remove(wrapperModifier);
+				handler.classList.remove(handlerModifier);
+			} else {
+				wrapper.classList.add(wrapperModifier);
+				handler.addEventListener('click', (event) => {
+					event.preventDefault();
+					if (wrapper.classList.contains(wrapperModifier)) {
+						wrapper.classList.remove(wrapperModifier);
+						handler.classList.add(handlerModifier);
+					} else {
+						wrapper.classList.add(wrapperModifier);
+						handler.classList.remove(handlerModifier);
+					}
+				});
+			}
 		}
 	} catch(error) {
 		console.error(error);
@@ -135,31 +137,33 @@ let switchJobView = (breakPointValue) => {
 	let handlerModifier = 'catalog__view-btn--active';
 
 	try{
-		if(breakPointValue.matches) {
-			// Default view.
-			wrapper.classList.remove(wrapperModifier);
-			handlerGrid.classList.remove(handlerModifier);
-			handlerList.classList.add(handlerModifier);
-			handlers.forEach((handler) => {
-				handler.addEventListener('click', (event) => {
-					event.preventDefault();
-					if (handlerGrid.classList.contains(handlerModifier)) {
-						// View, `handlerList` is pressed.
-						wrapper.classList.remove(wrapperModifier);
-						handlerGrid.classList.remove(handlerModifier);
-						handlerList.classList.add(handlerModifier);
-					} else {
-						// View, `handlerGrid` is pressed.
-						wrapper.classList.add(wrapperModifier);
-						handlerGrid.classList.add(handlerModifier);
-						handlerList.classList.remove(handlerModifier);
-					}
+		if(wrapper) {
+			if (breakPointValue.matches) {
+				// Default view.
+				wrapper.classList.remove(wrapperModifier);
+				handlerGrid.classList.remove(handlerModifier);
+				handlerList.classList.add(handlerModifier);
+				handlers.forEach((handler) => {
+					handler.addEventListener('click', (event) => {
+						event.preventDefault();
+						if (handlerGrid.classList.contains(handlerModifier)) {
+							// View, `handlerList` is pressed.
+							wrapper.classList.remove(wrapperModifier);
+							handlerGrid.classList.remove(handlerModifier);
+							handlerList.classList.add(handlerModifier);
+						} else {
+							// View, `handlerGrid` is pressed.
+							wrapper.classList.add(wrapperModifier);
+							handlerGrid.classList.add(handlerModifier);
+							handlerList.classList.remove(handlerModifier);
+						}
+					});
 				});
-			});
-		} else {
-			wrapper.classList.remove(wrapperModifier);
-			handlerList.classList.remove(handlerModifier);
-			handlerGrid.classList.remove(handlerModifier);
+			} else {
+				wrapper.classList.remove(wrapperModifier);
+				handlerList.classList.remove(handlerModifier);
+				handlerGrid.classList.remove(handlerModifier);
+			}
 		}
 	} catch(error) {
 		console.error(error);
