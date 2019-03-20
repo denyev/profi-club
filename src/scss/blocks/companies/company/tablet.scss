@@ -19,6 +19,10 @@
 	width: 100%;
 }
 
+.company__caption {
+	align-items: flex-start;
+}
+
 .company__logo {
 	&--megafon {
 		@include sprite("megafon-tablet");
