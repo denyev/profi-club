@@ -71,6 +71,7 @@
 
 .job__button {
 	@include fluid-type;
+	@include ripple-effect($porcelain, $nevada);
 
 	margin: 0 0 rem(4) 0;
 	border: rem(1) solid $mercury;
