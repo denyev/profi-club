@@ -1,5 +1,4 @@
-.headline,
-h1 {
+.headline {
 	@include fluid-type(rem(24), rem(36));
 
 	margin: rem(19) 0;
@@ -8,18 +7,7 @@ h1 {
 	text-align: center;
 	color: $prussian-blue;
 
-	&--brand {
-		margin-bottom: rem(10);
-		font-size: rem(36);
-		text-align: left;
-		color: $cerulean;
-	}
-
 	@media screen and (min-width: rem($tablet-width)) {
 		text-align: left;
-
-		&--brand {
-			font-weight: $font-weight-secondary;
-		}
 	}
 }

@@ -9,6 +9,14 @@
 	}
 }
 
+.intro__headline {
+	margin-bottom: rem(10);
+	font-weight: $font-weight-primary;
+	font-size: rem(36);
+	text-align: left;
+	color: $cerulean;
+}
+
 .intro__more-button {
 	@include ripple-effect($dodger-blue, $prussian-blue);
 
@@ -33,4 +41,8 @@
 
 .page--about {
 	@import "page_about";
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
 }
