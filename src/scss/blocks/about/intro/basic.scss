@@ -1,0 +1,36 @@
+.intro__content {
+	margin-bottom: rem(35);
+	padding: 0 rem(21);
+	font-size: rem(18);
+	color: $prussian-blue;
+
+	p {
+		margin-top: 0;
+	}
+}
+
+.intro__more-button {
+	@include ripple-effect($dodger-blue, $prussian-blue);
+
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	padding: rem(16);
+	min-height: rem(70);
+	max-width: rem(260);
+	font-weight: $font-weight-secondary;
+	font-size: rem(18);
+	text-decoration: none;
+	color: $white;
+	background-color: $dodger-blue;
+}
+
+.intro__more-icon {
+	margin: 0 0 0 rem(5);
+}
+
+.page--about {
+	@import "page_about";
+}

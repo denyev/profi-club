@@ -1,22 +1,13 @@
-.top-menu
-	ul.top-menu__list
-		li.top-menu__item
-			a.top-menu__link.top-menu__link--active(
-				href="#about"
-			)
-				| О компании
-		li.top-menu__item
-			a.top-menu__link(
-				href="#office"
-			)
-				| Офис
-		li.top-menu__item
-			a.top-menu__link(
-				href="#people"
-			)
-				| Люди
-		li.top-menu__item
-			a.top-menu__link(
-				href="#vacancies"
-			)
-				| Вакансии
+.intro
+	include top-menu
+	.intro__content
+		h1.headline.headline--brand
+			| Yota
+		p
+			| Yota&nbsp;&mdash; четвёртый федеральный мобильный оператор
+	a.intro__more-button(
+		href="#"
+	)
+		| Все вакансии
+		+svg("arrow-right")(class="intro__more-icon" width="35" height="21")
+
