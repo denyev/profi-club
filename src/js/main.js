@@ -199,6 +199,26 @@ const switchMenuItem = (itemClass, activeClassName) => {
 
 switchMenuItem('.top-menu__link', 'top-menu__link--active');
 
+const gallery = () => {
+	try {
+		$('.gallery').owlCarousel({
+			items: 1,
+			loop: true,
+			dotsClass: false,
+			nav: true,
+			navContainerClass: 'gallery__controls',
+			navClass: [
+				'gallery__arrow gallery__arrow--left',
+				'gallery__arrow gallery__arrow--right'
+			]
+		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+gallery();
+
 window.onload = () => {
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});

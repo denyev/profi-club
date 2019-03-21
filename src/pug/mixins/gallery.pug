@@ -1,0 +1,33 @@
+//-
+	@example
+
+	```
+		+gallery([
+			{
+				src: '',
+				width: '',
+				height: '',
+				alt: ''
+			},
+			{
+				src: '',
+				width: '',
+				height: '',
+				alt: ''
+			}
+		])
+	```
+
+mixin gallery(options)
+	.gallery&attributes(attributes)
+		each image in options
+			- var alt = typeof image.alt !== 'undefined' ? image.alt : null
+			- var width = typeof image.width !== 'undefined' ? image.width : null
+			- var height = typeof image.height !== 'undefined' ? image.height : null
+
+			img.gallery__item(
+				src=image.src
+				width=width
+				height=height
+				alt=alt
+			)
