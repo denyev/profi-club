@@ -21,3 +21,4 @@ zip/
 aero-debug.log
 aero-deploy.tar.gz
 others/
+pnpm-lock.yaml
