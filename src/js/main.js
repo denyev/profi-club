@@ -200,26 +200,69 @@ const switchMenuItem = (itemClass, activeClassName) => {
 switchMenuItem('.top-menu__link', 'top-menu__link--active');
 
 const gallery = () => {
+	let gallery = $('.gallery');
+	let prevButton = $('.gallery__arrow--left');
+	let nextButton = $('.gallery__arrow--right');
+
 	try {
-		$('.gallery').owlCarousel({
+		gallery.owlCarousel({
 			items: 1,
+			margin: 0,
+			stagePadding: 0,
 			loop: true,
-			dotsClass: false,
-			nav: true,
-			navContainerClass: 'gallery__controls',
-			navClass: [
-				'gallery__arrow gallery__arrow--left',
-				'gallery__arrow gallery__arrow--right'
-			]
+			autoplay: 2000,
+			lazyLoad: true,
+			dots: false,
+			nav: false,
+			onInitialized: galleryCounter,
+			onTranslated: galleryCounter
+		});
+
+		prevButton.on('click', () => {
+			gallery.owlCarousel().trigger('prev.owl.carousel');
+		});
+
+		nextButton.on('click', () => {
+			gallery.owlCarousel().trigger('next.owl.carousel');
 		});
 	} catch(error) {
 		console.error(error);
 	}
 };
 
-gallery();
+/**
+ * Slide counter.
+ * @param event
+ */
+const galleryCounter = (event) => {
+	let items = event.item.count;
+	let item = event.item.index + 1;
+	let counter = $('.gallery__count');
+	const zero = 0;
+	const maxNumber = 10;
+
+	try {
+		if(item > items) {
+			item = item - items;
+		}
+
+		if(item < maxNumber) {
+			item = `${zero}${item}`;
+		}
+
+		if(items < maxNumber) {
+			items = `${zero}${items}`;
+		}
+
+		counter.text(item + ' / ' + items);
+	} catch(error) {
+		console.error(error);
+	}
+};
 
 window.onload = () => {
+	gallery();
+
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
 
