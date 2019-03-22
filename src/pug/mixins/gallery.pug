@@ -25,9 +25,27 @@ mixin gallery(options)
 			- var width = typeof image.width !== 'undefined' ? image.width : null
 			- var height = typeof image.height !== 'undefined' ? image.height : null
 
-			img.gallery__item(
-				src=image.src
+			img.gallery__item.owl-lazy(
+				data-src=image.src
 				width=width
 				height=height
 				alt=alt
 			)
+	.gallery__controls
+		button.gallery__arrow.gallery__arrow--left(
+			type="button"
+			role="presentation"
+		)
+			span.gallery__arrow-wrap(
+				aria-label="Предыдущий слайд"
+			)
+				+svg("arrow-prev")(class="gallery__arrow-icon" width="12" height="21")
+		p.gallery__count
+		button.gallery__arrow.gallery__arrow--right(
+			type="button"
+			role="presentation"
+		)
+			span.gallery__arrow-wrap(
+				aria-label="Следующий слайд"
+			)
+				+svg("arrow-next")(class="gallery__arrow-icon" width="12" height="21")
