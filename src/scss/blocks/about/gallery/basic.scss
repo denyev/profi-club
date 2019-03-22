@@ -1,0 +1,27 @@
+.gallery__controls {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: flex-end;
+	padding: rem(5) rem(3);
+	font-size: rem(18);
+	color: $white;
+	background-color: $vivid-blue;
+}
+
+.gallery__arrow {
+	display: inline-block;
+	border: 0;
+	padding: 0;
+	width: rem(18);
+	height: rem(18);
+	background: none;
+}
+
+.gallery__arrow-icon {
+	fill: none;
+}
+
+.gallery__count {
+	margin: 0 rem(27);
+}
