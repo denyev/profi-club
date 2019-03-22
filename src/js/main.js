@@ -260,8 +260,40 @@ const galleryCounter = (event) => {
 	}
 };
 
+const staffSlider = () => {
+	let slider = $('.staff-slider');
+	let prevButton = $('.staff-slider__arrow--left');
+	let nextButton = $('.staff-slider__arrow--right');
+
+	try {
+		slider.owlCarousel({
+			items: 1,
+			margin: 30,
+			stagePadding: 47,
+			loop: true,
+			// autoplay: 2000,
+			lazyLoad: true,
+			lazyLoadEager: 1,
+			dots: false,
+			nav: false
+		});
+
+		prevButton.on('click', () => {
+			slider.owlCarousel().trigger('prev.owl.carousel');
+		});
+
+		nextButton.on('click', () => {
+			slider.owlCarousel().trigger('next.owl.carousel');
+		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
 window.onload = () => {
 	gallery();
+
+	staffSlider();
 
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
