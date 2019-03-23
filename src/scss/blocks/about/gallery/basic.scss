@@ -20,6 +20,8 @@
 
 .gallery__arrow-icon {
 	fill: none;
+	stroke: $white;
+	stroke-width: rem(2);
 }
 
 .gallery__count {
