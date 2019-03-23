@@ -261,7 +261,7 @@ const galleryCounter = (event) => {
 };
 
 const staffSlider = () => {
-	let slider = $('.staff-slider');
+	let slider = $('.staff-slider__list');
 	let prevButton = $('.staff-slider__arrow--left');
 	let nextButton = $('.staff-slider__arrow--right');
 

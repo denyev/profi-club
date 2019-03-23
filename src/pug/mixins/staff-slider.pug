@@ -15,40 +15,41 @@
 				},
 				description: ''
 			}
-		])(class="owl-carousel")
+		])
 	```
 
 mixin staffSlider(options)
 	.staff-slider&attributes(attributes)
-		each slide in options
-			- var alt = typeof slide.img.alt !== 'undefined' ? slide.img.alt : null
-			- var width = typeof slide.img.width !== 'undefined' ? slide.img.width : null
-			- var height = typeof slide.img.height !== 'undefined' ? slide.img.height : null
-			- var placeholder = 'images/sprites/svg/placeholder.svg'
+		.staff-slider__list.owl-carousel
+			each slide in options
+				- var alt = typeof slide.img.alt !== 'undefined' ? slide.img.alt : null
+				- var width = typeof slide.img.width !== 'undefined' ? slide.img.width : null
+				- var height = typeof slide.img.height !== 'undefined' ? slide.img.height : null
+				- var placeholder = 'images/sprites/svg/placeholder.svg'
 
-			figure.staff-slider__item
-				img.staff-slider__img.owl-lazy(
-					src=placeholder
-					data-src=slide.img.src
-					width=width
-					height=height
-					alt=alt
-				)
-				figcaption.staff-slider__caption
-					#{slide.title.tag}.staff-slider__title
-						| !{slide.title.text}
-					p.staff-slider__descroption
-						| !{slide.description}
-	.staff-slider__controls
-		button.staff-slider__arrow.staff-slider__arrow--left(
-			type="button"
-			aria-label="Предыдущий слайд"
-		)
-			+svg("arrow-prev")(class="staff-slider__arrow-icon" width="12" height="21")
-		button.staff-slider__arrow.staff-slider__arrow--right(
-			type="button"
-			aria-label="Следующий слайд"
-		)
-			+svg("arrow-next")(class="staff-slider__arrow-icon" width="12" height="21")
+				figure.staff-slider__item
+					img.staff-slider__img.owl-lazy(
+						src=placeholder
+						data-src=slide.img.src
+						width=width
+						height=height
+						alt=alt
+					)
+					figcaption.staff-slider__caption
+						#{slide.title.tag}.staff-slider__title
+							| !{slide.title.text}
+						p.staff-slider__description
+							| !{slide.description}
+		.staff-slider__controls
+			button.staff-slider__arrow.staff-slider__arrow--left(
+				type="button"
+				aria-label="Предыдущий слайд"
+			)
+				+svg("arrow-prev")(class="staff-slider__arrow-icon" width="12" height="21")
+			button.staff-slider__arrow.staff-slider__arrow--right(
+				type="button"
+				aria-label="Следующий слайд"
+			)
+				+svg("arrow-next")(class="staff-slider__arrow-icon" width="12" height="21")
 
 
