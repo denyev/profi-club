@@ -275,7 +275,11 @@ const staffSlider = () => {
 			lazyLoad: true,
 			lazyLoadEager: 1,
 			dots: false,
-			nav: false
+			nav: false,
+			onInitialized: setControlsTopPosition,
+			onTranslated: setControlsTopPosition,
+			onLoadedLazy: setControlsTopPosition,
+			onResized: setControlsTopPosition
 		});
 
 		prevButton.on('click', () => {
@@ -285,6 +289,21 @@ const staffSlider = () => {
 		nextButton.on('click', () => {
 			slider.owlCarousel().trigger('next.owl.carousel');
 		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+/**
+ * Positioning slider controls.
+ */
+const setControlsTopPosition = () => {
+	let currentSlideImage = document.querySelector('.staff-slider__list .owl-item.active .staff-slider__img');
+	let controlsTopPosition = Math.floor(currentSlideImage.height / 2);
+	let controls = document.querySelector('.staff-slider__controls');
+
+	try {
+		controls.style.top = `${controlsTopPosition}px`;
 	} catch(error) {
 		console.error(error);
 	}
