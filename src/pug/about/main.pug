@@ -1,14 +1,6 @@
 include intro
 main.main
-	+gallery([
-		{src: 'https://via.placeholder.com/320x206', width: 320, height: 206, alt: ''},
-		{src: 'https://via.placeholder.com/320x206', width: 320, height: 206, alt: ''},
-		{src: 'https://via.placeholder.com/320x206', width: 320, height: 206, alt: ''},
-		{src: 'https://via.placeholder.com/320x206', width: 320, height: 206, alt: ''},
-		{src: 'https://via.placeholder.com/320x206', width: 320, height: 206, alt: ''},
-		{src: 'https://via.placeholder.com/320x206', width: 320, height: 206, alt: ''},
-		{src: 'https://via.placeholder.com/320x206', width: 320, height: 206, alt: ''}
-	])
+	include gallery
 	section.main__content.main__content--brand-color
 		h2.main__headline
 			| Оригинальность, радость и свобода действий
@@ -23,44 +15,4 @@ main.main
 	section.main__content
 		h2.main__title
 			| Сотрудники
-		+staffSlider([
-			{
-				img: {
-					src: 'https://via.placeholder.com/226x314',
-					width: 226,
-					height: 314,
-					alt: 'foto'
-				},
-				title: {
-					tag: 'p',
-					text: 'Аня'
-				},
-				description: 'Руководитель обслуживания клиентов'
-			},
-			{
-				img: {
-					src: 'https://via.placeholder.com/226x314',
-					width: 226,
-					height: 314,
-					alt: 'foto'
-				},
-				title: {
-					tag: 'p',
-					text: 'Артемий'
-				},
-				description: 'Директор направления “Смартфон”'
-			},
-			{
-				img: {
-					src: 'https://via.placeholder.com/226x314',
-					width: 226,
-					height: 314,
-					alt: 'foto'
-				},
-				title: {
-					tag: 'p',
-					text: 'Лена'
-				},
-				description: 'Менеджер по развитию розничной сети'
-			}
-		])
+		include staff-slider
