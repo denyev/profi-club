@@ -15,17 +15,19 @@
 				height: '',
 				alt: ''
 			}
-		])(class="owl-carousel")
+		])
 	```
 
 mixin gallery(options)
-	.gallery&attributes(attributes)
+	.gallery.owl-carousel&attributes(attributes)
 		each image in options
 			- var alt = typeof image.alt !== 'undefined' ? image.alt : null
 			- var width = typeof image.width !== 'undefined' ? image.width : null
 			- var height = typeof image.height !== 'undefined' ? image.height : null
+			- var placeholder = 'images/sprites/svg/placeholder.svg'
 
 			img.gallery__item.owl-lazy(
+				src=placeholder
 				data-src=image.src
 				width=width
 				height=height
@@ -34,18 +36,12 @@ mixin gallery(options)
 	.gallery__controls
 		button.gallery__arrow.gallery__arrow--left(
 			type="button"
-			role="presentation"
+			aria-label="Предыдущий слайд"
 		)
-			span.gallery__arrow-wrap(
-				aria-label="Предыдущий слайд"
-			)
-				+svg("arrow-prev")(class="gallery__arrow-icon" width="12" height="21")
+			+svg("arrow-prev")(class="gallery__arrow-icon" width="12" height="21")
 		p.gallery__count
 		button.gallery__arrow.gallery__arrow--right(
 			type="button"
-			role="presentation"
+			aria-label="Следующий слайд"
 		)
-			span.gallery__arrow-wrap(
-				aria-label="Следующий слайд"
-			)
-				+svg("arrow-next")(class="gallery__arrow-icon" width="12" height="21")
+			+svg("arrow-next")(class="gallery__arrow-icon" width="12" height="21")
