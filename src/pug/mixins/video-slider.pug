@@ -1,0 +1,29 @@
+//-
+	@example
+	```
+		+videoSlider([
+			{
+				href: '',
+				headline: {
+					tag: '',
+					text: ''
+				},
+				description: ''
+			}
+		])
+	```
+
+mixin videoSlider(options)
+	.video-slider&attributes(attributes)
+		.video-slider__list.owl-carousel
+			each slide in options
+
+				figure.video-slider__item.item-video
+					a.video-slider__video.owl-video(
+						href=slide.href
+					)
+					figcaption.video-slider__caption
+						#{slide.headline.tag}.video-slider__headline
+							| !{slide.headline.text}
+						p.video-slider__description
+							| !{slide.description}

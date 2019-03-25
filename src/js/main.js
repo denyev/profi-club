@@ -309,10 +309,43 @@ const setControlsTopPosition = () => {
 	}
 };
 
+const videoSlider = () => {
+	let slider = $('.video-slider__list');
+
+	try {
+		slider.owlCarousel({
+			video:true,
+			videoWidth: 226,
+			videoHeight: 314,
+			autoHeight: true,
+			items: 1,
+			margin: 30,
+			stagePadding: 47,
+			loop: true,
+			autoplay: 2000,
+			dots: false,
+			nav: false,
+			onInitialized: () => {
+				let sliderCaption = $('.video-slider__caption');
+				let sliderDescription = $('.video-slider__description');
+
+				sliderCaption.matchHeight();
+				sliderDescription.matchHeight();
+			},
+			onTranslated: $.fn.matchHeight._update(),
+			onResized: $.fn.matchHeight._update()
+		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
 window.onload = () => {
 	gallery();
 
 	staffSlider();
+
+	videoSlider();
 
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
