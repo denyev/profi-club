@@ -1,5 +1,5 @@
 .video-slider {
-	margin-bottom: rem(21);
+	margin-bottom: rem(11);
 
 	.owl-video-wrapper {
 		&::before {
@@ -42,6 +42,14 @@
 	}
 }
 
+.video-slider__headline {
+	margin: rem(14) 0;
+	font-size: rem(18);
+	color: $storm-gray;
+}
+
 .video-slider__description {
-	margin-bottom: 0;
+	@include fluid-type(rem(18), rem(22));
+
+	margin: 0;
 }
