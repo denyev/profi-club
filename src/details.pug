@@ -1,0 +1,13 @@
+extends pug/base
+
+append vars
+	- html.classList.push('page page--details')
+	- page = 'details'
+	- title = 'Сотрудники'
+	include pug/common/head/links
+	include pug/common/head/metatags
+
+block content
+	include pug/common/header/header
+	include pug/details/main
+	include pug/common/footer/footer

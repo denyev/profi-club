@@ -1,0 +1,28 @@
+.intro {
+	background-color: $athens-gray;
+}
+
+.intro__controls {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: rem(34) 0 rem(54) 0;
+	width: 100%;
+	max-width: 86.875%;
+	background-color: $athens-gray;
+}
+
+.intro__logo {
+	width: auto;
+}
+
+.intro__share {
+	border: 0;
+	background: none;
+}
+
+.intro__share-icon {
+	fill: none;
+}

@@ -1,0 +1,17 @@
+.intro
+	.intro__controls
+		a.intro__backward(
+			href="#"
+			arial-label="Вернуться назад"
+		)
+			+svg("arrow-back")(class="intro__backward-icon" width="25" height="18")
+		img.intro__logo(
+			src="images/sprites/png/yota-big.png"
+			width="33"
+			height="71"
+		)
+		button.intro__share(
+			type="button"
+			aria-label="Поделиться"
+		)
+			+svg("share")(class="intro__share-icon" width="24" height="28")
