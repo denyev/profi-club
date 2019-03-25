@@ -1,0 +1,33 @@
+//-
+	@example
+
+	```
+		+blockquoteSlider([
+			{
+				quote: '',
+				author: ''
+				position: ''
+			},
+			{
+				quote: '',
+				author: ''
+				position: ''
+			}
+		])
+	```
+
+mixin blockquoteSlider(options)
+	.blockquote-slider.owl-carousel&attributes(attributes)
+		each item in options
+			- var author = typeof item.author !== 'undefined' ? item.author : null
+			- var position = typeof item.position !== 'undefined' ? item.position : null
+
+			blockquote.blockquote-slider__item
+				| !{item.quote}
+				cite.blockquote-slider__cite
+					if author !== null
+						span.blockquote-slider__author
+							| #{author}
+							if position !== null
+								span.blockquote-slider__position
+									| #{position}

@@ -340,12 +340,31 @@ const videoSlider = () => {
 	}
 };
 
+const blockquoteSlider = () => {
+	let slider = $('.blockquote-slider');
+
+	try {
+		slider.owlCarousel({
+			items: 1,
+			margin: 17,
+			loop: true,
+			autoplay: 2000,
+			dots: true,
+			nav: false
+		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
 window.onload = () => {
 	gallery();
 
 	staffSlider();
 
 	videoSlider();
+
+	blockquoteSlider();
 
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
