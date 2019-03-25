@@ -271,7 +271,7 @@ const staffSlider = () => {
 			margin: 30,
 			stagePadding: 47,
 			loop: true,
-			// autoplay: 2000,
+			autoplay: 2000,
 			lazyLoad: true,
 			lazyLoadEager: 1,
 			dots: false,
