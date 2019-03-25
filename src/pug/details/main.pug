@@ -1,1 +1,24 @@
 include intro
+main.main
+	.video
+		video.video__file(
+			poster="https://via.placeholder.com/320x206"
+		)
+			source(
+				src="videos/details/placeholder.mp4"
+				type="video/mp4"
+			)
+			source(
+				src="videos/details/placeholder.webm"
+				type="video/webm"
+			)
+		.video__content
+			p.video__headline
+				| Лена
+			button.video__button(
+			type="button"
+			)
+				+svg("play")(class="video__button-icon" width="42" height="42")
+				span.video__button-text
+					| Смотреть ролик о работе Лены
+
