@@ -5,3 +5,11 @@
 .visually-hidden {
 	@include visually-hidden;
 }
+
+.basic-hidden {
+	@include visually-hidden;
+
+	@media screen and (min-width: rem($tablet-width)) {
+		@include visually-visible;
+	}
+}
