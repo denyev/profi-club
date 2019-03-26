@@ -1,10 +1,11 @@
 .video {
 	position: relative;
-	margin: 0 auto rem(16) auto;
+	margin: 0 auto rem(30) auto;
 	padding-top: rem(25);
 	padding-bottom: 56.25%;
 	height: 0;
 	color: $white;
+	background-color: $athens-gray;
 }
 
 .video__file {
