@@ -211,6 +211,7 @@ const gallery = () => {
 			stagePadding: 0,
 			loop: true,
 			autoplay: 2000,
+			autoplayHoverPause: true,
 			lazyLoad: true,
 			dots: false,
 			nav: false,
@@ -272,6 +273,7 @@ const staffSlider = () => {
 			stagePadding: 47,
 			loop: true,
 			autoplay: 2000,
+			autoplayHoverPause: true,
 			lazyLoad: true,
 			lazyLoadEager: 1,
 			dots: false,
@@ -323,6 +325,7 @@ const videoSlider = () => {
 			stagePadding: 47,
 			loop: true,
 			autoplay: 2000,
+			autoplayHoverPause: true,
 			dots: false,
 			nav: false,
 			onInitialized: () => {
@@ -349,6 +352,7 @@ const blockquoteSlider = () => {
 			margin: 17,
 			loop: true,
 			autoplay: 2000,
+			autoplayHoverPause: true,
 			dots: true,
 			nav: false
 		});
