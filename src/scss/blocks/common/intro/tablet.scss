@@ -1,0 +1,23 @@
+.intro__top-menu {
+	@include visually-hidden;
+}
+
+.intro__content {
+	margin-bottom: 0;
+	margin-left: 0;
+	padding: 0;
+	max-width: none;
+}
+
+.intro__headline {
+	margin: rem(20) 0;
+	font-weight: $font-weight-secondary;
+}
+
+.intro__more-button {
+	@include visually-hidden;
+}
+
+.intro__logo {
+	object-fit: contain;
+}

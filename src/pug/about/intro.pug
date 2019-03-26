@@ -1,5 +1,6 @@
 .intro
-	include top-menu
+	.intro__top-menu
+		include top-menu
 	.intro__content
 		h1.intro__headline
 			| Yota
@@ -10,4 +11,8 @@
 	)
 		| Все вакансии
 		+svg("arrow-right")(class="intro__more-icon" width="35" height="21")
-
+	img.intro__logo.basic-hidden(
+		src="images/about/yota.png"
+		width="140"
+		height="62"
+	)
