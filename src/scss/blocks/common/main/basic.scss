@@ -4,10 +4,16 @@
 	padding-top: rem(25);
 
 	&--brand-color {
+		margin-bottom: 0;
 		padding: rem(25) rem(25) rem(65) rem(30);
 		box-shadow: 0 rem(-1) 0 0 $vivid-blue;
 		color: $white;
 		background-color: $vivid-blue;
+	}
+
+	&--gray {
+		margin-bottom: rem(53);
+		padding: rem(25) rem(13) rem(1) rem(21);
 	}
 }
 
@@ -22,7 +28,21 @@
 .main__headline {
 	@include fluid-type(rem(24), rem(64));
 
-	margin: rem(22) auto;
+	margin: rem(14) 0 rem(45) 0;
+	font-weight: $font-weight-primary;
+
+	&--center {
+		margin-top: rem(43);
+		text-align: center;
+	}
+
+	.main__content--brand-color & {
+		margin: rem(22) auto;
+	}
+}
+
+.main__media-headline {
+	margin: rem(22) 0;
 	font-weight: $font-weight-primary;
 }
 
