@@ -4,15 +4,15 @@ main.main
 		.main__menu.basic-hidden
 			include top-menu
 			.main__badge
-				a.main__join-button(
+				a.main__join(
 					href="#"
 				)
 					| Присоединиться к нашей команде
-				a.more-button(
+				a.main__more(
 					href="#"
 				)
 					| Все вакансии
-					+svg("arrow-right")(class="intro__more-icon" width="35" height="21")
+					+svg("arrow-right")(class="main__more-icon" width="24" height="16" aria-hidden="true")
 		include gallery
 		section.main__content.main__content--brand-color
 			h2.main__headline
