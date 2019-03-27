@@ -177,7 +177,7 @@ let switchJobView = (breakPointValue) => {
  * @param {string} activeClassName - The name of the active menu item modifier.
  * @example
  * ```
- * switchTopMenu('.menu__item', 'menu__item--active');
+ * switchMenuItem('.menu .menu__item', 'menu__item--active');
  * ```
  */
 const switchMenuItem = (itemClass, activeClassName) => {
@@ -186,7 +186,7 @@ const switchMenuItem = (itemClass, activeClassName) => {
 	try {
 		items.forEach((item) => {
 			item.addEventListener('click', () => {
-				let activeElement = document.querySelector('.' + activeClassName);
+				let activeElement = document.querySelector(itemClass + '.' + activeClassName);
 
 				activeElement.classList.remove(activeClassName);
 				item.classList.add(activeClassName);
