@@ -197,8 +197,6 @@ const switchMenuItem = (itemClass, activeClassName) => {
 	}
 };
 
-switchMenuItem('.top-menu__link', 'top-menu__link--active');
-
 const gallery = () => {
 	let gallery = $('.gallery');
 	let prevButton = $('.gallery__arrow--left');
@@ -378,6 +376,10 @@ window.onload = () => {
 
 	// Toggles the view of job list items.
 	switchJobView(tabletScreenWidth);
+
+	switchMenuItem('.intro__top-menu .top-menu .top-menu__link', 'top-menu__link--active');
+
+	switchMenuItem('.main__menu .top-menu .top-menu__link', 'top-menu__link--active');
 };
 
 window.onresize = () => {
