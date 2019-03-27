@@ -42,6 +42,10 @@
 
 .intro__more-icon {
 	margin: 0 0 0 rem(5);
+
+	.intro__more-button:hover & {
+		animation: horizontal-sliding 1s cubic-bezier(0.4, 0, 1, 1);
+	}
 }
 
 .intro__controls {
