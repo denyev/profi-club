@@ -1,22 +1,30 @@
 .top-menu {
+	justify-content: flex-end;
+	margin-right: rem(184);
+	margin-bottom: rem(35);
+	margin-left: rem(184);
+	border-bottom: rem(1) solid $gallery;
 	padding-top: rem(34);
-	padding-right: rem(184);
-	padding-left: rem(184);
+	padding-right: rem(199);
 }
 
 .top-menu__list {
-	padding-bottom: rem(33);
-	width: 100%;
+	justify-content: flex-start;
+	margin-right: rem(93);
+	border-bottom: none;
+	padding-bottom: rem(18);
+	width: auto;
 	color: $raven;
 }
 
 .top-menu__item {
 	margin-right: rem(46);
+	margin-bottom: rem(16);
 }
 
 .top-menu__link {
 	position: relative;
-	padding-bottom: rem(3);
+	padding-bottom: 0;
 	font-weight: $font-weight-secondary;
 
 	&::after {
@@ -48,5 +56,5 @@
 	font-size: rem(14);
 	text-align: center;
 	color: $silver-sand;
-	transform: translateY(-65%);
+	transform: translateY(-50%);
 }
