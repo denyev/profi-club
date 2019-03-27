@@ -1,0 +1,43 @@
+//-
+	@example
+	```
+		+menu({
+			class: '',
+			items: [
+				{
+					href: '',
+					text: ''
+				},
+				{
+					href: '',
+					text: ''
+				}
+			]
+		})
+	```
+
+mixin menu(options)
+	- var className = options.class
+
+	div(
+		class=className
+	)&attributes(attributes)
+		ul(
+			class=className + '__list'
+		)
+			each item, index in options.items
+				- var active = ''
+				- var href = item.href !== 'undefined' ? item.href : '#'
+				- var text = item.text
+
+				if index === 0
+					- var active = ' ' + className + '__link--active'
+
+				li(
+					class=className + '__item'
+				)
+					a(
+						class=className + '__link' + active
+						href=href
+					)
+						| !{text}
