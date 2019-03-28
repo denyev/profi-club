@@ -197,25 +197,44 @@ const switchMenuItem = (itemClass, activeClassName) => {
 	}
 };
 
-const gallery = () => {
+let galleryOptions = {
+	items: 1,
+	margin: 0,
+	stagePadding: 0,
+	loop: true,
+	autoplay: 2000,
+	autoplayHoverPause: true,
+	dots: false,
+	nav: false
+};
+
+const initGallery = (options) => {
 	let gallery = $('.gallery');
 	let prevButton = $('.gallery__arrow--left');
 	let nextButton = $('.gallery__arrow--right');
+	let defaults = {
+		onInitialized: (event) => {
+			galleryCounter(event);
+			setOwlStageHeight(gallery);
+		},
+		onTranslated: (event) => {
+			galleryCounter(event);
+			setOwlStageHeight(gallery);
+		},
+		onResized: () => {
+			setOwlStageHeight(gallery);
+		},
+		onLoadedLazy: () => {
+			setOwlStageHeight(gallery);
+		}
+	};
+
+	options = $.extend(defaults, options);
 
 	try {
-		gallery.owlCarousel({
-			items: 1,
-			margin: 0,
-			stagePadding: 0,
-			loop: true,
-			autoplay: 2000,
-			autoplayHoverPause: true,
-			lazyLoad: true,
-			dots: false,
-			nav: false,
-			onInitialized: galleryCounter,
-			onTranslated: galleryCounter
-		});
+		gallery.addClass('owl-carousel');
+
+		gallery.owlCarousel(options);
 
 		prevButton.on('click', () => {
 			gallery.owlCarousel().trigger('prev.owl.carousel');
@@ -254,6 +273,67 @@ const galleryCounter = (event) => {
 		}
 
 		counter.text(item + ' / ' + items);
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+const setOwlStageHeight = (carousel) => {
+	let active = carousel.find('.owl-item.active .gallery__item-wrapper > .gallery__item');
+	let setHeight = (active, carousel) => {
+		let maxHeight = parseInt(active.height());
+
+		carousel.css('height', maxHeight);
+		carousel.find('.owl-stage-outer').css('height', maxHeight);
+	};
+
+	try {
+		if(active.length > 0) {
+			setHeight(active, carousel);
+		} else {
+			active = carousel.find('.owl-item.active > .gallery__item');
+
+			setHeight(active, carousel);
+		}
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+const destroyGallery = () => {
+	let gallery = $('.gallery');
+
+	gallery.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+	gallery.find('.owl-stage-outer').children().unwrap();
+	gallery.find('.gallery__item-wrapper').children().unwrap();
+	gallery.find('.gallery__item-container').children().unwrap();
+};
+
+const reorganizeGallery = () => {
+	let items = $('.gallery .gallery__item');
+	let step = 3;
+
+	try {
+		if (tabletScreenWidth.matches) {
+			destroyGallery();
+
+			for (let i = 0; i < items.length; i += step) {
+				items.slice(i, i + step).wrapAll('<div class="gallery__item-wrapper"></div>');
+			}
+
+			let wrappers = $('.gallery__item-wrapper .gallery__item');
+			let offset = 1;
+			step = 2;
+
+			for (let i = 0; i < wrappers.length; i += step + offset) {
+				wrappers.slice(i, i + step).wrapAll('<div class="gallery__item-container"></div>');
+			}
+
+			initGallery(galleryOptions);
+		} else {
+			destroyGallery();
+			initGallery(galleryOptions);
+		}
 	} catch(error) {
 		console.error(error);
 	}
@@ -360,7 +440,7 @@ const blockquoteSlider = () => {
 };
 
 window.onload = () => {
-	gallery();
+	reorganizeGallery();
 
 	staffSlider();
 
@@ -383,6 +463,8 @@ window.onload = () => {
 };
 
 window.onresize = () => {
+	reorganizeGallery();
+
 	// Toggles the navigation menu
 	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
 
