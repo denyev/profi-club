@@ -5,12 +5,14 @@
 		+gallery([
 			{
 				src: '',
+				srcset: '',
 				width: '',
 				height: '',
 				alt: ''
 			},
 			{
 				src: '',
+				srcset: '',
 				width: '',
 				height: '',
 				alt: ''
@@ -24,11 +26,11 @@ mixin gallery(options)
 			- var alt = typeof image.alt !== 'undefined' ? image.alt : null
 			- var width = typeof image.width !== 'undefined' ? image.width : null
 			- var height = typeof image.height !== 'undefined' ? image.height : null
-			- var placeholder = 'images/sprites/svg/placeholder.svg'
 
-			img.gallery__item.owl-lazy(
-				src=placeholder
-				data-src=image.src
+			img.gallery__item(
+				src=image.src
+				srcset=image.src + ' 320w, ' + image.srcset + ' 768w'
+				sizes="(max-width: 992px) 320w, (min-width: 992px) 768w"
 				width=width
 				height=height
 				alt=alt
