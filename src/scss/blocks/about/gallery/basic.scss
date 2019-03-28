@@ -27,3 +27,11 @@
 .gallery__count {
 	margin: 0 rem(27);
 }
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}
+
+@media screen and (min-width: rem($laptop-width)) {
+	@import "laptop";
+}
