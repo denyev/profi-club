@@ -5,6 +5,7 @@
 			{
 				img: {
 					src: '',
+					srcset: '',
 					width: '',
 					height: '',
 					alt: ''
@@ -31,6 +32,8 @@ mixin staffSlider(options)
 					img.staff-slider__img.lazyload(
 						src=placeholder
 						data-src=slide.img.src
+						data-srcset=slide.img.src + ' 220w, ' + slide.img.srcset + ' 576w'
+						sizes="(min-width: 992px) 100vw, (max-width: 992px) 50vw"
 						width=width
 						height=height
 						alt=alt
