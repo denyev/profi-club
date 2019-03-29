@@ -31,9 +31,10 @@ mixin staffSlider(options)
 				figure.staff-slider__item
 					img.staff-slider__img.lazyload(
 						src=placeholder
+						srcset=placeholder + ' 320w'
 						data-src=slide.img.src
 						data-srcset=slide.img.src + ' 220w, ' + slide.img.srcset + ' 576w'
-						sizes="(min-width: 992px) 100vw, (max-width: 992px) 50vw"
+						sizes="(max-width: 992px) 50vw, 100vw"
 						width=width
 						height=height
 						alt=alt

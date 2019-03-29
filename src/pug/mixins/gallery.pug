@@ -5,14 +5,20 @@
 		+gallery([
 			{
 				src: '',
-				srcset: '',
+				srcset: [
+					'',
+					''
+				],
 				width: '',
 				height: '',
 				alt: ''
 			},
 			{
 				src: '',
-				srcset: '',
+				srcset: [
+					'',
+					''
+				],
 				width: '',
 				height: '',
 				alt: ''
@@ -26,11 +32,14 @@ mixin gallery(options)
 			- var alt = typeof image.alt !== 'undefined' ? image.alt : null
 			- var width = typeof image.width !== 'undefined' ? image.width : null
 			- var height = typeof image.height !== 'undefined' ? image.height : null
+			- var placeholder = 'images/sprites/svg/placeholder.svg'
 
-			img.gallery__item(
-				src=image.src
-				srcset=image.src + ' 320w, ' + image.srcset + ' 768w'
-				sizes="(max-width: 992px) 320w, (min-width: 992px) 768w"
+			img.gallery__item.lazyload(
+				src=placeholder
+				srcset=placeholder + ' 320w'
+				data-src=image.src
+				data-srcset=image.src + ' 320w, ' + image.srcset[0] + ' 576w, ' + image.srcset[1] + ' 768w'
+				sizes="(max-width: 576px) 33vw, (max-width: 768px) 50vw, 100vw"
 				width=width
 				height=height
 				alt=alt
