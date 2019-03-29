@@ -238,9 +238,6 @@ const initGallery = (options) => {
 		onResized: () => {
 			setOwlStageHeight(gallery);
 		},
-		onLoadedLazy: () => {
-			setOwlStageHeight(gallery);
-		}
 	};
 
 	options = $.extend(defaults, options);
@@ -415,10 +412,6 @@ const setControlsTopPosition = () => {
 	}
 };
 
-document.addEventListener('lazyloaded', () => {
-	setControlsTopPosition();
-});
-
 const videoSlider = () => {
 	let slider = $('.video-slider__list');
 
@@ -490,6 +483,11 @@ window.onload = () => {
 	switchMenuItem('.intro__top-menu .top-menu .top-menu__link', 'top-menu__link--active');
 
 	switchMenuItem('.main__menu .top-menu .top-menu__link', 'top-menu__link--active');
+
+	document.addEventListener('lazyloaded', () => {
+		setControlsTopPosition();
+		setOwlStageHeight($('.gallery'));
+	});
 };
 
 window.onresize = () => {
