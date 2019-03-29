@@ -1,0 +1,49 @@
+.staff-slider {
+	padding: 0 rem(33);
+
+	.owl-stage-outer {
+		margin-bottom: rem(63);
+	}
+
+	.owl-dots {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: center;
+		margin-top: rem(33);
+		margin-bottom: rem(33);
+
+		.owl-dot {
+			margin-right: rem(11);
+			width: rem(26);
+			height: rem(2);
+			background-color: $silver;
+			transition: background-color 0.3s cubic-bezier(0.4, 0, 1, 1);
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			&:active,
+			&:focus {
+				opacity: 1;
+			}
+
+			&.active {
+				background-color: $ship-gray;
+			}
+		}
+	}
+}
+
+.staff-slider__title {
+	margin-bottom: rem(8);
+}
+
+.staff-slider__description {
+	margin-top: 0;
+}
+
+.staff-slider__controls {
+	@include visually-hidden;
+}
