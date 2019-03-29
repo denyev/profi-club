@@ -353,6 +353,22 @@ const staffSlider = () => {
 			autoplay: 2000,
 			autoplayHoverPause: true,
 			nav: false,
+			dots: false,
+			responsive: {
+				0: {
+					items: 1
+				},
+				576: {
+					items: 2
+				},
+				992: {
+					items: 3,
+					margin: 33,
+					stagePadding: 0,
+					dots: true,
+					dotsEach: true
+				}
+			},
 			onInitialized: setControlsTopPosition,
 			onTranslated: setControlsTopPosition,
 			onResized: setControlsTopPosition
