@@ -18,6 +18,7 @@
 
 .job__description {
 	margin: 0 0 auto;
+	max-width: rem(676); /* for IE 11 */
 
 	p {
 		margin: 0;
@@ -73,7 +74,7 @@
 }
 
 .job__date {
-	display: unset;
+	display: block;
 	align-self: flex-start;
 	margin: 0;
 }

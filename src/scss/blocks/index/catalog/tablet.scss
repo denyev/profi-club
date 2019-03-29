@@ -75,6 +75,10 @@
 	padding: rem(9) rem(59) rem(10) rem(19);
 	color: $dusty-gray;
 	background-color: transparent;
+
+	&::-ms-expand {
+		display: none;
+	}
 }
 
 .catalog__total {

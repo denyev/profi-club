@@ -141,6 +141,10 @@
 	width: 100%;
 	color: currentColor;
 	background-color: unset;
+
+	&::-ms-expand {
+		display: none;
+	}
 }
 
 .filters__radio {
