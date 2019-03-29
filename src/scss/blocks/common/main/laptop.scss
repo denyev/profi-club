@@ -1,3 +1,23 @@
 .main__badge {
 	min-height: rem(283);
 }
+
+.main__content {
+	&--brand-color {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-height: rem(627);
+	}
+}
+
+.main__content-wrap {
+	max-width: rem(896);
+}
+
+.main__headline {
+	.main__content--brand-color & {
+		margin: rem(17) 0;
+	}
+}
