@@ -352,13 +352,9 @@ const staffSlider = () => {
 			loop: true,
 			autoplay: 2000,
 			autoplayHoverPause: true,
-			lazyLoad: true,
-			lazyLoadEager: 1,
-			dots: false,
 			nav: false,
 			onInitialized: setControlsTopPosition,
 			onTranslated: setControlsTopPosition,
-			onLoadedLazy: setControlsTopPosition,
 			onResized: setControlsTopPosition
 		});
 
@@ -388,6 +384,10 @@ const setControlsTopPosition = () => {
 		console.error(error);
 	}
 };
+
+document.addEventListener('lazyloaded', () => {
+	setControlsTopPosition();
+});
 
 const videoSlider = () => {
 	let slider = $('.video-slider__list');

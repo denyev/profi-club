@@ -4,6 +4,9 @@ import $ from 'jquery';
 import 'components-jqueryui';
 import 'owl.carousel';
 import 'jquery-match-height';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import 'lazysizes/plugins/object-fit/ls.object-fit.js';
 
 svg4everybody();
 
