@@ -429,6 +429,15 @@ const videoSlider = () => {
 			autoplayHoverPause: true,
 			dots: false,
 			nav: false,
+			responsive: {
+				992: {
+					items: 2,
+					margin: 33,
+					stagePadding: 0,
+					videoWidth: 404,
+					videoHeight: 562
+				}
+			},
 			onInitialized: () => {
 				let sliderCaption = $('.video-slider__caption');
 				let sliderDescription = $('.video-slider__description');
