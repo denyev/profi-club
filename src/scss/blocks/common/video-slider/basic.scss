@@ -53,3 +53,7 @@
 
 	margin: 0;
 }
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}

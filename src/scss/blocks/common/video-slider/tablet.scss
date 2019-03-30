@@ -1,0 +1,17 @@
+.video-slider {
+	padding-left: rem(33);
+
+	.owl-video-wrapper {
+		&::before {
+			right: rem(45);
+			width: rem(73);
+			height: rem(73);
+		}
+
+		&::after {
+			@include triangle(to right, rem(24), rem(32), $white);
+
+			right: rem(62);
+		}
+	}
+}
