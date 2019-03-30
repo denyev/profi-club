@@ -38,23 +38,27 @@ mixin company(options)
 		- var imgHeight = (options.img.height) ? options.img.height : 171
 		- var imgSrc = (options.img.src) ? options.img.src : 'https://via.placeholder.com/' + imgWidth + 'x' + imgHeight
 		- var imgAlt = (options.img.alt) ? options.img.alt : 'Фотография компании: ' + options.title.text
+		- var placeholder = 'images/sprites/svg/placeholder.svg'
 
 		if options.img.source !== undefined
 			picture.company__picture
 				each source in options.img.source
-					source(
-						srcset=source.srcset
+					source.lazyload(
+						srcset=placeholder
+						data-srcset=source.srcset
 						media=source.media
 					)
-				img.company__img(
-					src=imgSrc
+				img.company__img.lazyload(
+					src=placeholder
+					data-src=imgSrc
 					alt=imgAlt
 					width=imgWidth
 					height=imgHeight
 				)
 		else
-			img.company__img(
-				src=imgSrc
+			img.company__img.lazyload(
+				src=placeholder
+				data-src=imgSrc
 				alt=imgAlt
 				width=imgWidth
 				height=imgHeight
