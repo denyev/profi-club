@@ -417,10 +417,6 @@ const videoSlider = () => {
 
 	try {
 		slider.owlCarousel({
-			video:true,
-			videoWidth: 226,
-			videoHeight: 314,
-			autoHeight: true,
 			items: 1,
 			margin: 30,
 			stagePadding: 47,

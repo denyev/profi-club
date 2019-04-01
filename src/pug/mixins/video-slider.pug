@@ -18,9 +18,11 @@ mixin videoSlider(options)
 		.video-slider__list.owl-carousel
 			each slide in options
 
-				figure.video-slider__item.item-video
-					a.video-slider__video.owl-video(
-						href=slide.href
+				figure.video-slider__item
+					iframe.video-slider__video.lazyload(
+						data-src=slide.href
+						width="100%"
+						height="auto"
 					)
 					figcaption.video-slider__caption
 						#{slide.headline.tag}.video-slider__headline
