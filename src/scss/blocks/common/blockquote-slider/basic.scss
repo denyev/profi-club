@@ -68,8 +68,9 @@
 }
 
 .blockquote-slider__position {
-	@include fluid-type(rem(14), rem(18));
+	@include visually-hidden;
+}
 
-	display: inline-block;
-	color: $dove-gray;
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
 }
