@@ -24,6 +24,16 @@ mixin videoSlider(options)
 						width="100%"
 						height="auto"
 					)
+					button.video-slider__play-button(
+						type="button"
+						aria-label="Воспроизвести"
+					)
+						+svg("play")(
+							class="video-slider__play-icon"
+							width="46"
+							height="46"
+							aria-hidden="true"
+						)
 					figcaption.video-slider__caption
 						#{slide.headline.tag}.video-slider__headline
 							| !{slide.headline.text}
