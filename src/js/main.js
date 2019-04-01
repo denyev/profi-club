@@ -429,21 +429,34 @@ const videoSlider = () => {
 				992: {
 					items: 2,
 					margin: 33,
-					stagePadding: 0,
-					videoWidth: 404,
-					videoHeight: 562
+					stagePadding: 0
 				}
 			},
 			onInitialized: () => {
 				let sliderCaption = $('.video-slider__caption');
-				let sliderDescription = $('.video-slider__description');
 
 				sliderCaption.matchHeight();
-				sliderDescription.matchHeight();
 			},
 			onTranslated: $.fn.matchHeight._update(),
-			onResized: $.fn.matchHeight._update()
+			onResized: () => {
+				$.fn.matchHeight._update();
+				setVideoSize($('.video-slider__video'));
+			}
 		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+const setVideoSize = (video) => {
+	try {
+		if(tabletScreenWidth.matches) {
+			video.css('width', '404');
+			video.css('height', '562');
+		} else {
+			video.css('width', '226');
+			video.css('height', '314');
+		}
 	} catch(error) {
 		console.error(error);
 	}
@@ -460,8 +473,29 @@ const blockquoteSlider = () => {
 			autoplay: 2000,
 			autoplayHoverPause: true,
 			dots: true,
-			nav: false
+			nav: false,
+			responsive: {
+				992: {
+					margin: 33,
+					dots: false
+				}
+			}
 		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+const setHeightBlockquoteSliderItem = () => {
+	let item = $('.blockquote-slider__item');
+	let target = $('.video-slider__video.lazyloaded');
+
+	try {
+		if(tabletScreenWidth.matches) {
+			item.matchHeight({
+				target: target
+			});
+		}
 	} catch(error) {
 		console.error(error);
 	}
@@ -492,6 +526,8 @@ window.onload = () => {
 	document.addEventListener('lazyloaded', () => {
 		setControlsTopPosition();
 		setOwlStageHeight($('.gallery'));
+		setVideoSize($('.video-slider__video'));
+		setHeightBlockquoteSliderItem();
 	});
 };
 
