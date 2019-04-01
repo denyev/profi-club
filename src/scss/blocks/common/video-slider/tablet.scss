@@ -1,17 +1,16 @@
 .video-slider {
+	margin-right: rem(23);
+	padding-top: rem(10);
 	padding-left: rem(33);
+	max-width: rem(874);
+}
 
-	.owl-video-wrapper {
-		&::before {
-			right: rem(45);
-			width: rem(73);
-			height: rem(73);
-		}
+.video-slider__play-button {
+	left: rem(288);
+	top: rem(526);
+}
 
-		&::after {
-			@include triangle(to right, rem(24), rem(32), $white);
-
-			right: rem(62);
-		}
-	}
+.video-slider__play-icon {
+	width: rem(73);
+	height: rem(73);
 }
