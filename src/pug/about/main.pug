@@ -30,9 +30,22 @@ main.main
 			h2.main__title
 				| Сотрудники
 			include staff-slider
-		.main__slider
-			include video-slider
-			include blockquote-slider
+		.main-slider
+			.main-slider__container
+				include video-slider
+				include blockquote-slider
+			.main-slider__controls
+				button.main-slider__arrow.main-slider__arrow--left(
+					type="button"
+					aria-label="Предыдущий слайд"
+				)
+					+svg("arrow-prev")(class="main-slider__arrow-icon" width="12" height="21")
+				p.main-slider__count
+				button.main-slider__arrow.main-slider__arrow--right(
+					type="button"
+					aria-label="Следующий слайд"
+				)
+					+svg("arrow-next")(class="main-slider__arrow-icon" width="12" height="21")
 		section.main__media
 			img.main__media-img(
 				src="https://via.placeholder.com/288x198"
