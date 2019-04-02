@@ -66,3 +66,8 @@ input[type="button"]:active,
 button:active {
 	opacity: 0.6;
 }
+
+[src="images/sprites/svg/placeholder.svg"] {
+	background-color: $selago;
+	object-fit: contain !important;
+}
