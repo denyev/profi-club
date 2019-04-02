@@ -484,6 +484,8 @@ const blockquoteSlider = () => {
 	} catch(error) {
 		console.error(error);
 	}
+
+	mainSliderControls(slider);
 };
 
 const setHeightBlockquoteSliderItem = () => {
@@ -494,6 +496,26 @@ const setHeightBlockquoteSliderItem = () => {
 		if(tabletScreenWidth.matches) {
 			item.matchHeight({
 				target: target
+			});
+		}
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+const mainSliderControls = (slider) => {
+	let mainSlider = $('.main-slider');
+	let prevButton = slider.closest(mainSlider).find('.main-slider__arrow--left');
+	let nextButton = slider.closest(mainSlider).find('.main-slider__arrow--right');
+
+	try {
+		if(tabletScreenWidth.matches) {
+			prevButton.on('click', () => {
+				slider.owlCarousel().trigger('prev.owl.carousel');
+			});
+
+			nextButton.on('click', () => {
+				slider.owlCarousel().trigger('next.owl.carousel');
 			});
 		}
 	} catch(error) {
