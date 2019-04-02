@@ -1,0 +1,43 @@
+.main-slider {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.main-slider__container {
+	display: flex;
+	flex-direction: row;
+}
+
+.main-slider__controls {
+	position: absolute;
+	right: rem(25);
+	bottom: rem(43);
+	z-index: 10;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: flex-end;
+	padding: rem(5) rem(3);
+	font-size: rem(18);
+	color: $black;
+}
+
+.main-slider__arrow {
+	display: inline-block;
+	border: 0;
+	padding: 0;
+	width: rem(18);
+	height: rem(18);
+	background: none;
+}
+
+.main-slider__arrow-icon {
+	fill: none;
+	stroke: $black;
+	stroke-width: rem(2);
+}
+
+.main-slider__count {
+	margin: 0 rem(27);
+}
