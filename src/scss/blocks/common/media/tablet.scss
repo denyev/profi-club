@@ -1,0 +1,32 @@
+.media {
+	position: relative;
+	display: flex;
+	flex-flow: row nowrap;
+	margin: 0 rem(33) rem(77) rem(33);
+	padding: rem(104) rem(87) rem(75) 0;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: rem(-1);
+		top: rem(-1);
+		display: block;
+		width: rem(70);
+		height: calc(100% + 2px);
+		background-color: currentColor;
+	}
+}
+
+.media__img {
+	z-index: 10;
+	margin: 0 rem(45) 0 0;
+	max-width: rem(361);
+	max-height: rem(247);
+	transform: none;
+}
+
+.media__headline {
+	margin-top: 0;
+	margin-bottom: rem(30);
+	line-height: 1.1;
+}

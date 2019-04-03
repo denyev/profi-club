@@ -41,25 +41,6 @@
 	}
 }
 
-.main__media-headline {
-	margin: rem(22) 0;
-	font-weight: $font-weight-primary;
-}
-
-.main__media {
-	@include fluid-type(rem(16), rem(24));
-
-	padding: 0 rem(16) rem(13) rem(16);
-	color: $white;
-	background-color: $vivid-blue;
-}
-
-.main__media-img {
-	margin-top: 41.8%;
-	margin-bottom: -32%;
-	transform: translateY(-50%);
-}
-
 @media screen and (min-width: rem($tablet-width)) {
 	@import "tablet";
 }
