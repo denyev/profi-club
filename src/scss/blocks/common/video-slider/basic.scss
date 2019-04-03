@@ -6,6 +6,17 @@
 	position: relative;
 }
 
+.video-slider__poster {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	cursor: pointer;
+}
+
 .video-slider__video {
 	border: 0;
 	background-image: url("../images/preloader.svg");
