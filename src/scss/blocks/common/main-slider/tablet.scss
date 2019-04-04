@@ -2,6 +2,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	margin-bottom: rem(69);
 }
 
 .main-slider__container {
@@ -10,6 +11,8 @@
 }
 
 .main-slider__controls {
+	@include visually-visible;
+
 	position: absolute;
 	right: rem(25);
 	bottom: rem(43);

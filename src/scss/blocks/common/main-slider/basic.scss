@@ -1,3 +1,7 @@
+.main-slider__controls {
+	@include visually-hidden;
+}
+
 @media screen and (min-width: rem($tablet-width)) {
 	@import "tablet";
 }
