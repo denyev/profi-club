@@ -1,38 +1,54 @@
-include intro
 main.main
-	.video
-		video.video__file(
-			poster="https://via.placeholder.com/320x206"
-		)
-			source(
-				src="videos/details/placeholder.mp4"
-				type="video/mp4"
+	include intro
+	.main__wrapper
+		.video
+			video.video__file(
+				poster="https://via.placeholder.com/320x206"
 			)
-			source(
-				src="videos/details/placeholder.webm"
-				type="video/webm"
-			)
-		.video__content
-			p.video__headline
-				| Лена
-			button.video__button(
-			type="button"
-			)
-				+svg("play")(class="video__button-icon" width="42" height="42")
-				span.video__button-text
-					| Смотреть ролик о работе Лены
-	section.main__content.main__content--gray
-		h2.main__headline
-			| Менеджер по развитию собственной розницы
-		p
-			| Основной опыт Лена получила в сфере телекома. Решив сменить место рабоы, её подруга-HR сказала,
-			| что знает подходящую по духу компанию и предложила пройти собеседование. Лена согласилась,
-			| и после общения с будущими коллегами, поняла, что Yota - классная компания, с которой ей точно по пути.
-			| Теперь она делает все, чтобы собственная розниа и команда были такими, какими должны быть,
-			| и клиенты могли познакомиться с продукцией и получить ответ на любой вопрос.
-	include video-slider
-	include blockquote-slider
-	include media
-	h2.main__headline.main__headline--center
-		| Другие люди компании
-	include staff-slider
+				source(
+					src="videos/details/placeholder.mp4"
+					type="video/mp4"
+				)
+				source(
+					src="videos/details/placeholder.webm"
+					type="video/webm"
+				)
+			.video__content
+				p.video__headline
+					| Лена
+				button.video__button(
+				type="button"
+				)
+					+svg("play")(class="video__button-icon" width="42" height="42")
+					span.video__button-text
+						| Смотреть ролик о работе Лены
+		section.main__content.main__content--gray
+			h2.main__headline
+				| Менеджер по развитию собственной розницы
+			p
+				| Основной опыт Лена получила в сфере телекома. Решив сменить место рабоы, её подруга-HR сказала,
+				| что знает подходящую по духу компанию и предложила пройти собеседование. Лена согласилась,
+				| и после общения с будущими коллегами, поняла, что Yota - классная компания,
+				| с которой ей точно по пути.
+				| Теперь она делает все, чтобы собственная розниа и команда были такими, какими должны быть,
+				| и клиенты могли познакомиться с продукцией и получить ответ на любой вопрос.
+		.main-slider
+			.main-slider__container
+				include video-slider
+				include blockquote-slider
+			.main-slider__controls
+				button.main-slider__arrow.main-slider__arrow--left(
+					type="button"
+					aria-label="Предыдущий слайд"
+				)
+					+svg("arrow-prev")(class="main-slider__arrow-icon" width="12" height="21")
+				p.main-slider__count
+				button.main-slider__arrow.main-slider__arrow--right(
+					type="button"
+					aria-label="Следующий слайд"
+				)
+					+svg("arrow-next")(class="main-slider__arrow-icon" width="12" height="21")
+		include media
+		h2.main__headline.main__headline--center
+			| Другие люди компании
+		include staff-slider
