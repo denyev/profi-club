@@ -1,8 +1,18 @@
 .video-slider {
+	flex: 1 1 50%;
 	margin-right: rem(23);
 	padding-top: rem(10);
 	padding-left: rem(33);
-	max-width: rem(874);
+	max-width: 50%;
+}
+
+.video-slider__item {
+	margin: 0 auto;
+	max-width: rem(404);
+}
+
+.video-slider__poster {
+	height: rem(562);
 }
 
 .video-slider__play-button {
@@ -13,4 +23,8 @@
 .video-slider__play-icon {
 	width: rem(73);
 	height: rem(73);
+}
+
+.video-slider__headline {
+	margin-bottom: rem(22);
 }
