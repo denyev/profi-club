@@ -436,6 +436,10 @@ const videoSlider = () => {
 			nav: false,
 			responsive: {
 				992: {
+					margin: 0,
+					stagePadding: 0
+				},
+				1366: {
 					items: 2,
 					margin: 33,
 					stagePadding: 0
