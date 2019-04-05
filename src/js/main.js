@@ -505,16 +505,31 @@ const blockquoteSlider = () => {
 	mainSliderControls(slider);
 };
 
-const setHeightBlockquoteSliderItem = () => {
-	let item = $('.blockquote-slider__item');
-	let target = $('.video-slider__video.lazyloaded');
-
+/**
+ * Sets the same height as the target element.
+ * @param {Object[]} options - The list of options.
+ * @param {Array} options.items - The list of elements that need to change the height.
+ * @param {string} options.target - The element whose height is taken as a basis.
+ * @example
+ * ```
+ * let options = {
+ *			items: [
+ *				'.blockquote-slider__item',
+ *				'.video-slider__poster'
+ *			],
+ *			target: '.video-slider__video.lazyloaded'
+ *		}
+ *
+ * setHeightLikeThis(options);
+ * ```
+ */
+const setHeightLikeThis = (options) => {
 	try {
-		if(tabletScreenWidth.matches) {
-			item.matchHeight({
-				target: target
+		$.each(options.items, (index, item) => {
+			$(item).matchHeight({
+				target: $(options.target)
 			});
-		}
+		});
 	} catch(error) {
 		console.error(error);
 	}
@@ -566,7 +581,22 @@ window.onload = () => {
 		setControlsTopPosition();
 		setOwlStageHeight($('.gallery'));
 		setVideoSize($('.video-slider__video'));
-		setHeightBlockquoteSliderItem();
+
+		setHeightLikeThis({
+			items: [
+				'.video-slider__poster.lazyloaded'
+			],
+			target: '.video-slider__video.lazyloaded'
+		});
+
+		if(tabletScreenWidth.matches) {
+			setHeightLikeThis({
+				items: [
+					'.blockquote-slider__item'
+				],
+				target: '.video-slider__video.lazyloaded'
+			});
+		}
 	});
 };
 
@@ -581,4 +611,20 @@ window.onresize = () => {
 
 	// Toggles the view of job list items.
 	switchJobView(tabletScreenWidth);
+
+	setHeightLikeThis({
+		items: [
+			'.video-slider__poster.lazyloaded'
+		],
+		target: '.video-slider__video.lazyloaded'
+	});
+
+	if(tabletScreenWidth.matches) {
+		setHeightLikeThis({
+			items: [
+				'.blockquote-slider__item'
+			],
+			target: '.video-slider__video.lazyloaded'
+		});
+	}
 };
