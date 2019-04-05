@@ -579,7 +579,9 @@ window.onload = () => {
 
 	document.addEventListener('lazyloaded', () => {
 		setControlsTopPosition();
+
 		setOwlStageHeight($('.gallery'));
+
 		setVideoSize($('.video-slider__video'));
 
 		setHeightLikeThis({
