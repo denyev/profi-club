@@ -14,10 +14,11 @@
 	```
 
 mixin videoSlider(options)
+	- var placeholder = 'images/placeholder.gif'
+
 	.video-slider&attributes(attributes)
 		.video-slider__list.owl-carousel
 			each slide in options
-
 				figure.video-slider__item
 					img.video-slider__poster.lazyload(
 						src=placeholder
