@@ -67,7 +67,19 @@ button:active {
 	opacity: 0.6;
 }
 
+[src="images/preloader.svg"],
+[src="images/placeholder.svg"],
+[src="images/placeholder.gif"],
 [src="images/sprites/svg/placeholder.svg"] {
+	// stylelint-disable declaration-no-important
 	background-color: $selago;
 	object-fit: contain !important;
+}
+
+[src="images/placeholder.gif"] {
+	background-image: url("../images/preloader.svg");
+	background-position: 50% 50%;
+	background-size: rem(64) rem(64);
+	background-repeat: no-repeat;
+	background-color: $selago;
 }
