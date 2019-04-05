@@ -445,7 +445,7 @@ const videoSlider = () => {
 					stagePadding: 0
 				}
 			},
-			onInitialized: () => {
+			onInitialized: (event) => {
 				let sliderCaption = $('.video-slider__caption');
 
 				sliderCaption.matchHeight();
