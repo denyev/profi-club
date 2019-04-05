@@ -228,11 +228,11 @@ const initGallery = (options) => {
 	let nextButton = $('.gallery__arrow--right');
 	let defaults = {
 		onInitialized: (event) => {
-			galleryCounter(event);
+			slideCounter(event, '.gallery__count');
 			setOwlStageHeight(gallery);
 		},
 		onTranslated: (event) => {
-			galleryCounter(event);
+			slideCounter(event, '.gallery__count');
 			setOwlStageHeight(gallery);
 		},
 		onResized: () => {
@@ -260,13 +260,22 @@ const initGallery = (options) => {
 };
 
 /**
- * Slide counter.
- * @param event
+ * @typedef {Object[]} event - The observable event.
  */
-const galleryCounter = (event) => {
+
+/**
+ * Slide counter.
+ * @param {event} event
+ * @param {string} counter - The class name of the element
+ *+ in which the ounter value should be displayed.
+ * @example
+ * ```
+ * slideCounter(event, '.main-slider__count');
+ * ```
+ */
+const slideCounter = (event, counter) => {
 	let items = event.item.count;
 	let item = event.item.index + 1;
-	let counter = $('.gallery__count');
 	const zero = 0;
 	const maxNumber = 10;
 
@@ -283,7 +292,7 @@ const galleryCounter = (event) => {
 			items = `${zero}${items}`;
 		}
 
-		counter.text(item + ' / ' + items);
+		$(counter).text(item + ' / ' + items);
 	} catch(error) {
 		console.error(error);
 	}
@@ -436,8 +445,12 @@ const videoSlider = () => {
 				let sliderCaption = $('.video-slider__caption');
 
 				sliderCaption.matchHeight();
+				slideCounter(event, '.main-slider__count');
 			},
-			onTranslated: $.fn.matchHeight._update(),
+			onTranslated: (event) => {
+				$.fn.matchHeight._update();
+				slideCounter(event, '.main-slider__count');
+			},
 			onResized: () => {
 				$.fn.matchHeight._update();
 				setVideoSize($('.video-slider__video'));
