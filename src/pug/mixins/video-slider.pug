@@ -3,7 +3,7 @@
 	```
 		+videoSlider([
 			{
-				href: '',
+				id: '',
 				headline: {
 					tag: '',
 					text: ''
@@ -19,8 +19,15 @@ mixin videoSlider(options)
 			each slide in options
 
 				figure.video-slider__item
+					img.video-slider__poster.lazyload(
+						src=placeholder
+						data-src='https://img.youtube.com/vi/' + slide.id + '/hqdefault.jpg'
+						width="226"
+						height="314"
+						alt="Видео: " + slide.headline.text
+					)
 					iframe.video-slider__video.lazyload(
-						data-src=slide.href
+						data-src='https://www.youtube.com/embed/' + slide.id + '?rel=0&amp;controls=0'
 						width="100%"
 						height="auto"
 					)
