@@ -18,6 +18,12 @@
 	@include visually-hidden;
 }
 
+.intro__controls {
+	padding-top: rem(15);
+	padding-bottom: rem(5);
+	max-width: 97.875%;
+}
+
 .intro__logo {
 	object-fit: contain;
 }
