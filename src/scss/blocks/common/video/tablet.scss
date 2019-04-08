@@ -1,0 +1,54 @@
+.video {
+	background-color: unset;
+}
+
+.video__wrapper {
+	left: rem(33);
+	width: calc(100% - 66px);
+}
+
+.video__content {
+	left: auto;
+	right: rem(43);
+	top: rem(-30);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	padding: rem(10);
+	max-width: 31.25%;
+}
+
+.video__headline {
+	align-self: auto;
+	margin-bottom: rem(22);
+}
+
+.video__position {
+	@include visually-visible;
+
+	display: block;
+	margin: rem(10) 0;
+	font-size: rem(18);
+}
+
+.video__description {
+	@include visually-visible;
+
+	margin-bottom: rem(51);
+	font-size: rem(18);
+}
+
+.video__button {
+	justify-content: flex-start;
+}
+
+.video__button-icon {
+	margin-right: rem(15);
+	width: rem(73);
+	height: rem(73);
+}
+
+.video__button-text {
+	max-width: none;
+}

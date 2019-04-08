@@ -8,10 +8,26 @@
 	background-color: $athens-gray;
 }
 
+.video__wrapper {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video__poster {
+	position: absolute;
+	z-index: 10;
+	object-fit: cover;
+}
+
 .video__file {
 	position: absolute;
 	left: 0;
 	top: 0;
+	z-index: 0;
+	border: 0;
 	width: 100%;
 	height: 100%;
 }
@@ -20,6 +36,7 @@
 	position: absolute;
 	left: 0;
 	top: 0;
+	z-index: 20;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -33,6 +50,14 @@
 
 	align-self: flex-end;
 	margin: 0;
+}
+
+.video__position {
+	@include visually-hidden;
+}
+
+.video__description {
+	@include visually-hidden;
 }
 
 .video__button {
@@ -56,4 +81,8 @@
 .video__button-text {
 	max-width: 44.35664%;
 	text-align: left;
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
 }
