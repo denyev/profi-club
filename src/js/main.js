@@ -463,6 +463,10 @@ const videoSlider = () => {
 	} catch(error) {
 		console.error(error);
 	}
+
+	mainSliderControls(slider);
+
+	playVideo('.video-slider__item');
 };
 
 const setVideoSize = (video) => {
@@ -475,6 +479,29 @@ const setVideoSize = (video) => {
 			video.css('height', '314');
 		}
 	} catch(error) {
+		console.error(error);
+	}
+};
+
+const playVideo = (videoWrapper) => {
+	try {
+		let wrapper = $(videoWrapper);
+		let hiddenElements = wrapper.find('[data-hide]');
+
+		hiddenElements.on('click', function () {
+			let current = $(this);
+
+			current.closest(wrapper).find('[data-hide]').hide();
+			document.addEventListener('lazyloaded', () => {
+				current.closest(wrapper).find('iframe')[0]
+					.contentWindow
+					.postMessage(
+						'{"event":"command","func":"'
+						+ 'playVideo'
+						+ '","args":""}', '*');
+			});
+		});
+	} catch (error) {
 		console.error(error);
 	}
 };
@@ -607,6 +634,8 @@ window.onload = () => {
 			target: '.video__file.lazyloaded'
 		});
 	});
+
+	playVideo('.video');
 };
 
 window.onresize = () => {
