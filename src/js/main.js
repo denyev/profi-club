@@ -599,6 +599,13 @@ window.onload = () => {
 				target: '.video-slider__video.lazyloaded'
 			});
 		}
+
+		setHeightLikeThis({
+			items: [
+				'.video__poster.lazyloaded'
+			],
+			target: '.video__file.lazyloaded'
+		});
 	});
 };
 
@@ -629,4 +636,11 @@ window.onresize = () => {
 			target: '.video-slider__video.lazyloaded'
 		});
 	}
+
+	setHeightLikeThis({
+		items: [
+			'.video__poster.lazyloaded'
+		],
+		target: '.video__file.lazyloaded'
+	});
 };
