@@ -2,18 +2,26 @@ main.main
 	include intro
 	.main__wrapper
 		.video
-			video.video__file(
-				poster="https://via.placeholder.com/320x206"
+			.video__wrapper
+				img.video__poster.lazyload(
+					src=placeholder
+					data-src="https://img.youtube.com/vi/pygGug3TCaI/hqdefault.jpg"
+					data-srcset="https://img.youtube.com/vi/pygGug3TCaI/hqdefault.jpg 320w,"
+						+ "https://img.youtube.com/vi/pygGug3TCaI/maxresdefault.jpg 992w"
+					alt="Видео"
+					data-hide=true
+				)
+				iframe.video__file.lazyload(
+					data-src='https://www.youtube.com/embed/pygGug3TCaI'
+						+ '?rel=0&controls=1&modestbranding=1&showinfo=0&enablejsapi=1'
+					width="100%"
+					height="auto"
+					allow="autoplay; encrypted-media"
+					allowfullscreen
+				)
+			.video__content(
+				data-hide=true
 			)
-				source(
-					src="videos/details/placeholder.mp4"
-					type="video/mp4"
-				)
-				source(
-					src="videos/details/placeholder.webm"
-					type="video/webm"
-				)
-			.video__content
 				p.video__headline
 					| Лена
 					span.video__position
