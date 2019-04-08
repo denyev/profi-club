@@ -48,11 +48,14 @@ button {
 	transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
 }
 
-a:focus,
-input:focus,
-button:focus {
-	outline: rem(1) dotted rgba($iron, 0.9);
-	opacity: 0.8;
+input,
+a {
+	// stylelint-disable declaration-no-important
+	outline-style:none !important;
+}
+
+:focus {
+	outline: 0;
 }
 
 a:hover,
