@@ -5,8 +5,10 @@
 			arial-label="Вернуться назад"
 		)
 			+svg("arrow-back")(class="intro__backward-icon" width="25" height="18")
-		img.intro__logo(
-			src="images/sprites/png/yota-big.png"
+		img.intro__logo.lazyload(
+			src=placeholder
+			data-src="images/details/yota.png"
+			data-srcset="images/details/yota.png 320w, images/details/yota-big.png 1440w"
 			width="33"
 			height="71"
 		)
