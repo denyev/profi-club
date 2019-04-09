@@ -49,3 +49,18 @@
 		animation: horizontal-sliding 1s cubic-bezier(0.4, 0, 1, 1);
 	}
 }
+
+.main__caption {
+	@include visually-visible;
+
+	margin-bottom: rem(22);
+	font-size: rem(18);
+	color: $storm-gray;
+}
+
+.main__headline {
+	&--small {
+		margin-bottom: rem(27);
+		font-size: rem(48);
+	}
+}
