@@ -9,9 +9,13 @@
 }
 
 .search__field {
+	// stylelint-disable declaration-no-important
+	// stylelint-disable property-no-vendor-prefix
+	-webkit-appearance: none !important; /* for mobile Safari */
 	vertical-align: top;
 	border: 0;
 	border-bottom: rem(1) solid $royal-blue;
+	border-radius: 0 !important; /* for mobile Safari */
 	padding: 0 rem(27) rem(15) 0;
 	width: 100%;
 	font-size: rem(18);
