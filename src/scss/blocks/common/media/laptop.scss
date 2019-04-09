@@ -1,0 +1,11 @@
+.media {
+	&--gray {
+		margin-top: rem(54);
+		margin-bottom: rem(135);
+		padding-right: rem(16);
+
+		&::before {
+			background-color: $athens-gray;
+		}
+	}
+}
