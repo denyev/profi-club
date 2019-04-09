@@ -1,3 +1,5 @@
+// stylelint-disable declaration-no-important
+
 :root {
 	font-size: $root-font-size;
 }
@@ -50,8 +52,7 @@ button {
 
 input,
 a {
-	// stylelint-disable declaration-no-important
-	outline-style:none !important;
+	outline-style: none !important;
 }
 
 :focus {
@@ -74,7 +75,6 @@ button:active {
 [src="images/placeholder.svg"],
 [src="images/placeholder.gif"],
 [src="images/sprites/svg/placeholder.svg"] {
-	// stylelint-disable declaration-no-important
 	background-color: $selago;
 	object-fit: contain !important;
 }
