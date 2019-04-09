@@ -140,7 +140,7 @@
 	padding: 0 0 rem(14) 0;
 	width: 100%;
 	color: currentColor;
-	background-color: unset;
+	background-color: transparent;
 
 	&::-ms-expand {
 		display: none;
@@ -240,7 +240,7 @@
 .filters__amount {
 	margin: 0 0 rem(32) 0;
 	border: 0;
-	background-color: unset;
+	background-color: transparent;
 }
 
 @media screen and (min-width: rem($tablet-width)) {
