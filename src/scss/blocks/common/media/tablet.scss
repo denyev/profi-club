@@ -25,9 +25,10 @@
 
 .media__img {
 	z-index: 10;
+	flex: 1 0 rem(361); /* for IE 11 */
 	margin: 0 rem(45) 0 0;
-	max-width: rem(361);
-	max-height: rem(247);
+	width: rem(361);
+	height: rem(247);
 	transform: none;
 }
 

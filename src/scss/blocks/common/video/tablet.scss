@@ -37,6 +37,10 @@
 
 	margin-bottom: rem(51);
 	font-size: rem(18);
+
+	.is-browser-ie & {
+		max-width: rem(360);
+	}
 }
 
 .video__button {
