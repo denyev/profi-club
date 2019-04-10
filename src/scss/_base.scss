@@ -86,3 +86,9 @@ button:active {
 	background-repeat: no-repeat;
 	background-color: $selago;
 }
+
+@media screen and (min-width: rem($tablet-width)) {
+	body {
+		background-color: $athens-gray;
+	}
+}
