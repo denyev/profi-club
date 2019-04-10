@@ -25,6 +25,7 @@ mixin videoSlider(options)
 						data-src='https://img.youtube.com/vi/' + slide.id + '/hqdefault.jpg'
 						alt="Видео: " + slide.description
 						data-hide=true
+						data-object-fit="cover"
 					)
 					iframe.video-slider__video.lazyload(
 						data-src='https://www.youtube.com/embed/' + slide.id + '?rel=0&amp;controls=0'

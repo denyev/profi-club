@@ -7,6 +7,7 @@ import 'jquery-match-height';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import 'lazysizes/plugins/object-fit/ls.object-fit.js';
+import 'object-fit-polyfill';
 
 svg4everybody();
 
