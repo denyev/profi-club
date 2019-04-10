@@ -18,12 +18,15 @@
 }
 
 .video-slider__video {
+	display: block;
+	margin: 0 auto;
 	border: 0;
 	background-image: url("../images/preloader.svg");
 	background-position: 50% 50%;
 	background-size: rem(64) rem(64);
 	background-repeat: no-repeat;
 	background-color: $selago;
+	object-fit: cover;
 }
 
 .video-slider__play-button {
