@@ -411,11 +411,14 @@ const staffSlider = () => {
  */
 const setControlsTopPosition = () => {
 	let currentSlideImage = document.querySelector('.staff-slider__list .owl-item.active .staff-slider__img');
-	let controlsTopPosition = Math.floor(currentSlideImage.height / 2);
-	let controls = document.querySelector('.staff-slider__controls');
 
 	try {
-		controls.style.top = `${controlsTopPosition}px`;
+		if(currentSlideImage) {
+			let controlsTopPosition = Math.floor(currentSlideImage.height / 2);
+			let controls = document.querySelector('.staff-slider__controls');
+
+			controls.style.top = `${controlsTopPosition}px`;
+		}
 	} catch(error) {
 		console.error(error);
 	}
