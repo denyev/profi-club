@@ -71,6 +71,10 @@
 	@include visually-hidden;
 }
 
+@media screen and (min-width: rem($phablet-width)) {
+	@import "phablet";
+}
+
 @media screen and (min-width: rem($tablet-width)) {
 	@import "tablet";
 }

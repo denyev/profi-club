@@ -12,7 +12,7 @@
 .blockquote-slider__item {
 	margin: 0 auto;
 	padding: rem(162) rem(33) rem(1) rem(48);
-	max-width: rem(424);
+	max-width: rem(391);
 	text-align: left;
 
 	&::before {
@@ -27,12 +27,4 @@
 .blockquote-slider__author {
 	margin-top: 0;
 	line-height: 1.45;
-}
-
-.blockquote-slider__position {
-	@include visually-visible;
-	@include fluid-type(rem(14), rem(18));
-
-	display: inline-block;
-	color: $dove-gray;
 }

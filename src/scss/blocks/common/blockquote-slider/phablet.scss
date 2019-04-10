@@ -1,0 +1,12 @@
+.blockquote-slider__item {
+	padding-top: rem(100);
+	max-width: rem(280);
+}
+
+.blockquote-slider__position {
+	@include visually-visible;
+	@include fluid-type(rem(14), rem(18));
+
+	display: inline-block;
+	color: $dove-gray;
+}
