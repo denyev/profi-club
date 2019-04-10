@@ -20,7 +20,9 @@
 	&--profile {
 		@include visually-visible;
 
-		margin-right: rem(30);
+		position: static;
+		margin: 0 rem(30) 0 0;
+		height: 100%;
 	}
 }
 
