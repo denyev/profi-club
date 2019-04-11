@@ -223,10 +223,12 @@
 	}
 }
 
-.filters__slider {
+.filters__slider,
+.filters__slider.ui-widget.ui-widget-content {
 	position: relative;
 	display: inline-block;
 	margin: 0 0 rem(14) 0;
+	border: 0;
 	border-radius: rem(6);
 	padding: 0;
 	width: 100%;
@@ -234,7 +236,9 @@
 	background-color: $mercury;
 }
 
-.filters__slider-handle {
+.filters__slider-handle,
+.ui-state-default,
+.ui-widget-content .ui-state-default {
 	position: absolute;
 	top: 0;
 	z-index: 2;
@@ -248,7 +252,8 @@
 	touch-action: none;
 }
 
-.filters__slider-range {
+.filters__slider-range,
+.ui-slider .ui-slider-range {
 	position: absolute;
 	top: 0;
 	z-index: 1;
