@@ -66,6 +66,12 @@
 		height: rem(6);
 		transform: translate(-50%, -50%);
 	}
+
+	&.opened {
+		&::before {
+			transform: translate(-50%, -50%) scale(-1);
+		}
+	}
 }
 
 .catalog__sort-wrap {

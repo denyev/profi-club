@@ -112,6 +112,12 @@
 			height: rem(6);
 			transform: translate(0, -300%);
 		}
+
+		&.opened {
+			&::before {
+				transform: translate(0, -300%) scale(-1);
+			}
+		}
 	}
 
 	&--underline {
