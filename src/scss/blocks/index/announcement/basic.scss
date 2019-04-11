@@ -49,6 +49,13 @@
 	text-decoration: none;
 	color: currentColor;
 	background-color: rgba($cornflower-blue, 0.5);
+
+	/* For IE 11 */
+	&::after {
+		content: "";
+		min-height: inherit;
+		font-size: 0;
+	}
 }
 
 @media screen and (min-width: rem($tablet-width)) {
