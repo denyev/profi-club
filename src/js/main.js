@@ -375,11 +375,81 @@ const staffSlider = () => {
 			nav: false,
 			dots: false,
 			responsive: {
-				0: {
-					items: 1
+				400: {
+					stagePadding: 87
 				},
-				576: {
-					items: 2
+				410: {
+					stagePadding: 92
+				},
+				420: {
+					stagePadding: 97
+				},
+				450: {
+					stagePadding: 112
+				},
+				480: {
+					items: 1,
+					stagePadding: 127
+				},
+				500: {
+					items: 2,
+					stagePadding: 9
+				},
+				530: {
+					items: 2,
+					stagePadding: 24
+				},
+				560: {
+					items: 2,
+					stagePadding: 39
+				},
+				600: {
+					items: 2,
+					stagePadding: 59
+				},
+				630: {
+					items: 2,
+					stagePadding: 74
+				},
+				660: {
+					items: 2,
+					stagePadding: 89
+				},
+				700: {
+					items: 2,
+					stagePadding: 109
+				},
+				730: {
+					items: 2,
+					stagePadding: 124
+				},
+				768: {
+					items: 3,
+					stagePadding: 15
+				},
+				800: {
+					items: 3,
+					stagePadding: 30
+				},
+				830: {
+					items: 3,
+					stagePadding: 45
+				},
+				860: {
+					items: 3,
+					stagePadding: 60
+				},
+				900: {
+					items: 3,
+					stagePadding: 80
+				},
+				930: {
+					items: 3,
+					stagePadding: 96
+				},
+				960: {
+					items: 3,
+					stagePadding: 111
 				},
 				992: {
 					items: 3,
@@ -438,6 +508,82 @@ const videoSlider = () => {
 			dots: false,
 			nav: false,
 			responsive: {
+				400: {
+					stagePadding: 87
+				},
+				410: {
+					stagePadding: 92
+				},
+				420: {
+					stagePadding: 97
+				},
+				450: {
+					stagePadding: 112
+				},
+				480: {
+					items: 1,
+					stagePadding: 127
+				},
+				500: {
+					items: 2,
+					stagePadding: 9
+				},
+				530: {
+					items: 2,
+					stagePadding: 24
+				},
+				560: {
+					items: 2,
+					stagePadding: 39
+				},
+				600: {
+					items: 2,
+					stagePadding: 59
+				},
+				630: {
+					items: 2,
+					stagePadding: 74
+				},
+				660: {
+					items: 2,
+					stagePadding: 89
+				},
+				700: {
+					items: 2,
+					stagePadding: 109
+				},
+				730: {
+					items: 2,
+					stagePadding: 124
+				},
+				768: {
+					items: 3,
+					stagePadding: 15
+				},
+				800: {
+					items: 3,
+					stagePadding: 30
+				},
+				830: {
+					items: 3,
+					stagePadding: 45
+				},
+				860: {
+					items: 3,
+					stagePadding: 60
+				},
+				900: {
+					items: 3,
+					stagePadding: 80
+				},
+				930: {
+					items: 3,
+					stagePadding: 96
+				},
+				960: {
+					items: 3,
+					stagePadding: 111
+				},
 				992: {
 					margin: 0,
 					stagePadding: 0
@@ -523,6 +669,10 @@ const blockquoteSlider = () => {
 			nav: false,
 			responsive: {
 				992: {
+					margin: 0,
+					dots: false
+				},
+				1366: {
 					margin: 33,
 					dots: false
 				}
