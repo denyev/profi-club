@@ -503,8 +503,8 @@ const videoSlider = () => {
 			margin: 30,
 			stagePadding: 47,
 			loop: true,
-			// autoplay: 2000,
-			// autoplayHoverPause: true,
+			autoplay: 2000,
+			autoplayHoverPause: true,
 			dots: false,
 			nav: false,
 			responsive: {
