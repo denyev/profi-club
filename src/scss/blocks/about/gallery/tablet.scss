@@ -33,6 +33,7 @@
 
 .gallery__item {
 	flex: 1 auto;
+	overflow: hidden;
 	max-height: rem(543);
 	object-fit: cover;
 
