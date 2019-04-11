@@ -151,18 +151,19 @@
 		width: 100%;
 		color: currentColor;
 		background-color: transparent;
+
+		.ui-icon {
+			display: none;
+			background-image: none;
+		}
+
+		.ui-selectmenu-text {
+			margin-right: 0;
+		}
 	}
 
 	&::-ms-expand {
 		display: none;
-	}
-
-	.ui-icon {
-		display: none;
-	}
-
-	.ui-selectmenu-text {
-		margin-right: 0;
 	}
 }
 
