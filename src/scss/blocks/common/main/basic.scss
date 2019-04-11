@@ -1,3 +1,9 @@
+.main__wrapper {
+	margin: 0 auto rem(30) auto;
+	padding-bottom: rem(1);
+	background-color: $athens-gray;
+}
+
 .main__content {
 	@include fluid-type(rem(16), rem(24));
 
