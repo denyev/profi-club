@@ -142,8 +142,27 @@
 	color: currentColor;
 	background-color: transparent;
 
+	+ .ui-selectmenu-button,
+	+ .ui-selectmenu-button.ui-button {
+		appearance: none;
+		margin: 0 0 rem(22) 0;
+		border: 0;
+		padding: 0 0 rem(14) 0;
+		width: 100%;
+		color: currentColor;
+		background-color: transparent;
+	}
+
 	&::-ms-expand {
 		display: none;
+	}
+
+	.ui-icon {
+		display: none;
+	}
+
+	.ui-selectmenu-text {
+		margin-right: 0;
 	}
 }
 

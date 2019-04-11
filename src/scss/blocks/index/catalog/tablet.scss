@@ -70,14 +70,38 @@
 
 .catalog__sort-wrap {
 	appearance: none;
+	margin-right: 0;
+	margin-bottom: 0;
 	border: rem(1) solid $silver-chalice;
 	border-radius: rem(8);
 	padding: rem(9) rem(59) rem(10) rem(19);
+	width: auto;
 	color: $dusty-gray;
 	background-color: transparent;
 
 	&::-ms-expand {
 		display: none;
+	}
+
+	+ .ui-selectmenu-button,
+	+ .ui-selectmenu-button.ui-button {
+		appearance: none;
+		margin-right: 0;
+		margin-bottom: 0;
+		border: rem(1) solid $silver-chalice;
+		border-radius: rem(8);
+		padding: rem(9) rem(59) rem(10) rem(19);
+		width: auto;
+		color: $dusty-gray;
+		background-color: transparent;
+	}
+
+	.ui-icon {
+		display: none;
+	}
+
+	.ui-selectmenu-text {
+		margin-right: 0;
 	}
 }
 

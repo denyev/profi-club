@@ -789,6 +789,8 @@ window.onload = () => {
 	});
 
 	playVideo('.video');
+
+	$('select').selectmenu();
 };
 
 window.onresize = () => {
