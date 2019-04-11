@@ -8,6 +8,7 @@
 
 .main__menu {
 	position: relative;
+	overflow: inherit;
 }
 
 .main__badge {
@@ -19,6 +20,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	padding: rem(34) rem(39) rem(33) rem(37);
+	height: 100%; /* For IE 11 */
 	min-height: rem(233);
 	max-width: rem(297);
 	color: $white;
