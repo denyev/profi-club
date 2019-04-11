@@ -6,11 +6,8 @@
 	padding: rem(104) rem(87) rem(75) 0;
 
 	&::before {
-		content: "";
-		position: absolute;
 		left: rem(-1);
 		top: rem(-1);
-		display: block;
 		width: rem(70);
 		height: calc(100% + 2px);
 		background-color: currentColor;
@@ -24,12 +21,10 @@
 }
 
 .media__img {
-	z-index: 10;
 	flex: 1 0 rem(361); /* for IE 11 */
 	margin: 0 rem(45) 0 0;
 	width: rem(361);
 	height: rem(247);
-	transform: none;
 }
 
 .media__headline {

@@ -1,22 +1,37 @@
 .media {
 	@include fluid-type(rem(16), rem(24));
 
+	position: relative;
+	margin-top: rem(22);
 	padding: 0 rem(16) rem(13) rem(16);
 	color: $white;
 	background-color: $vivid-blue;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 0;
+		display: block;
+		width: 100%;
+		height: rem(100);
+		background-color: $athens-gray;
+	}
 }
 
 .media__headline {
 	@include fluid-type(rem(24), rem(64));
 
-	margin: rem(22) 0;
+	margin: rem(28) 0 rem(22) 0;
 	font-weight: $font-weight-primary;
 }
 
 .media__img {
-	margin-top: 41.8%;
-	margin-bottom: -32%;
-	transform: translateY(-50%);
+	position: relative;
+	z-index: 10;
+	margin: 0 auto;
+	max-width: rem(400);
 }
 
 @media screen and (min-width: rem($tablet-width)) {
