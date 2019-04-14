@@ -9,7 +9,6 @@
 node_modules/
 npm-debug.*
 Thumbs.db
-resources/
 shrinkwrap.yaml
 .sass-cache/
 libs/
