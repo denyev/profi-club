@@ -1,5 +1,5 @@
 .job {
-	padding: rem(6) rem(16) rem(25) rem(16);
+	padding: rem(6) rem(13) rem(25) rem(20);
 }
 
 .job__content {
@@ -9,7 +9,7 @@
 .job__title {
 	@include fluid-type(rem(18), rem(24));
 
-	margin: rem(18) 0 rem(14) 0;
+	margin: rem(18) rem(10) rem(14) 0;
 	font-weight: $font-weight-secondary;
 }
 
@@ -24,7 +24,7 @@
 }
 
 .job__info-item {
-	margin: 0 rem(19) rem(8) 0;
+	margin: 0 rem(21) rem(8) 0;
 
 	&:nth-last-of-type(2),
 	&:last-of-type {
@@ -89,6 +89,7 @@
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: flex-start;
+	margin-right: rem(8);
 	border: rem(1) solid $silver-sand;
 	border-radius: rem(4);
 	padding: 0 rem(2) 0 rem(5);
