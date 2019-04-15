@@ -1,0 +1,11 @@
+.top-controls {
+	padding-top: rem(15);
+	padding-bottom: rem(5);
+	max-width: none;
+}
+
+.top-controls__logo {
+	&--yota {
+		@include sprite("yota-details-big");
+	}
+}

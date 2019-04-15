@@ -1,0 +1,52 @@
+.top-controls {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: rem(34) 0 rem(54) 0;
+	width: 100%;
+	max-width: 93.475%;
+	background-color: $athens-gray;
+}
+
+.top-controls__backward {
+	@include ripple-effect($porcelain, $nevada);
+
+	border-radius: 50%;
+	width: rem(45);
+	height: rem(45);
+	text-align: center;
+}
+
+.top-controls__backward-icon {
+	display: inline-block;
+	height: 100%;
+}
+
+.top-controls__logo {
+	&--yota {
+		@include sprite("yota-details");
+	}
+}
+
+.top-controls__share {
+	@include ripple-effect($porcelain, $nevada);
+
+	border: 0;
+	border-radius: 50%;
+	padding: 0;
+	width: rem(45);
+	height: rem(45);
+	text-align: center;
+	background: none;
+}
+
+.top-controls__share-icon {
+	display: inline-block;
+	fill: none;
+}
+
+@media screen and (min-width: rem($tablet-width)) {
+	@import "tablet";
+}
