@@ -55,6 +55,14 @@
 	}
 }
 
+.main__content-wrap {
+	&--narrow {
+		p {
+			color: $storm-gray;
+		}
+	}
+}
+
 @media screen and (min-width: rem($tablet-width)) {
 	@import "tablet";
 }
