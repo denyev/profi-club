@@ -233,12 +233,13 @@
 .filters__slider,
 .filters__slider.ui-widget.ui-widget-content {
 	position: relative;
+	left: rem(11);
 	display: inline-block;
 	margin: 0 0 rem(14) 0;
 	border: 0;
 	border-radius: rem(6);
 	padding: 0;
-	width: 100%;
+	width: 94%;
 	height: rem(4);
 	background-color: $mercury;
 }
