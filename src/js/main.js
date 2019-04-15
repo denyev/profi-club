@@ -21,23 +21,31 @@ const tabletScreenWidth = window.matchMedia('(min-width: 992px)');
 /**
  * Search form.
  */
-try {
-	const searchFields = Array.prototype.slice.call(document.querySelectorAll('.search__field'));
+const checkSearchField = () => {
+	let searchFields = [...document.querySelectorAll('.search__field')];
 
-	searchFields.forEach((searchField) => {
-		searchField.addEventListener('change', () => {
-			let fieldValue = searchField.value;
+	try {
+		searchFields.forEach((searchField) => {
+			const checkValue = (searchField) => {
+				let fieldValue = searchField.value;
 
-			if (fieldValue.length !== 0) {
-				searchField.classList.add('js-hasvalue');
-			} else {
-				searchField.classList.remove('js-hasvalue');
-			}
+				if (fieldValue.length !== 0) {
+					searchField.classList.add('js-hasvalue');
+				} else {
+					searchField.classList.remove('js-hasvalue');
+				}
+			};
+
+			checkValue(searchField);
+
+			searchField.addEventListener('change', () => {
+				checkValue(searchField);
+			});
 		});
-	});
-} catch(error) {
-	console.error(error);
-}
+	} catch (error) {
+		console.error(error);
+	}
+};
 
 /**
  * Slider range.
@@ -736,6 +744,8 @@ const mainSliderControls = (slider) => {
 };
 
 window.onload = () => {
+	checkSearchField();
+
 	reorganizeGallery();
 
 	staffSlider();
