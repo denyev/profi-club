@@ -735,28 +735,6 @@ const mainSliderControls = (slider) => {
 	}
 };
 
-const rotateArrow = () => {
-	let selectLabel = $('select').closest('label');
-
-	try {
-		if(selectLabel.length > 0) {
-			selectLabel.on('click', (event) => {
-				let current = $(event.target);
-				let label = current.closest('label');
-				let selectButton = label.find('.ui-selectmenu-button');
-
-				if(selectButton.hasClass('ui-selectmenu-button-open')) {
-					label.addClass('opened');
-				} else {
-					label.removeClass('opened');
-				}
-			});
-		}
-	} catch(error) {
-		console.error(error);
-	}
-};
-
 window.onload = () => {
 	reorganizeGallery();
 
@@ -813,8 +791,6 @@ window.onload = () => {
 	playVideo('.video');
 
 	$('select').selectmenu();
-
-	rotateArrow();
 };
 
 window.onresize = () => {
