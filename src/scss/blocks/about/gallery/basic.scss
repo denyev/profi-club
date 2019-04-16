@@ -28,6 +28,23 @@
 	margin: 0 rem(27);
 }
 
+.gallery__content {
+	@include fluid-type(rem(16), rem(24));
+
+	margin-bottom: 0;
+	padding: rem(25) rem(15) rem(65) rem(30);
+	box-shadow: 0 rem(-1) 0 0 $vivid-blue;
+	color: $white;
+	background-color: $vivid-blue;
+}
+
+.gallery__headline {
+	@include fluid-type(rem(24), rem(64));
+
+	margin: rem(22) auto;
+	font-weight: $font-weight-primary;
+}
+
 @media screen and (min-width: rem($tablet-width)) {
 	@import "tablet";
 }

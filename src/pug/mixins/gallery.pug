@@ -2,33 +2,40 @@
 	@example
 
 	```
-		+gallery([
-			{
-				src: '',
-				srcset: [
-					'',
-					''
-				],
-				width: '',
-				height: '',
-				alt: ''
+		+gallery({
+			images: [
+				{
+					src: '',
+					srcset: [
+						'',
+						''
+					],
+					width: '',
+					height: '',
+					alt: ''
+				},
+				{
+					src: '',
+					srcset: [
+						'',
+						''
+					],
+					width: '',
+					height: '',
+					alt: ''
+				}
+			],
+			headline: {
+				tag: '',
+				text: ''
 			},
-			{
-				src: '',
-				srcset: [
-					'',
-					''
-				],
-				width: '',
-				height: '',
-				alt: ''
-			}
-		])
+			content: '<p></p>'
+		})
 	```
 
 mixin gallery(options)
 	.gallery.owl-carousel&attributes(attributes)
-		each image in options
+		each image in options.images
 			- var alt = typeof image.alt !== 'undefined' ? image.alt : null
 			- var width = typeof image.width !== 'undefined' ? image.width : null
 			- var height = typeof image.height !== 'undefined' ? image.height : null
@@ -56,3 +63,14 @@ mixin gallery(options)
 			aria-label="Следующий слайд"
 		)
 			+svg("arrow-next")(class="gallery__arrow-icon" width="12" height="21")
+
+	if options.headline.tag.toString().substring(0, 2).match(/h\d/i)
+		- var contentTag = 'section'
+	else
+		- var contentTag = 'div'
+
+	#{contentTag}.gallery__content
+		.gallery__content-wrap
+			#{options.headline.tag}.gallery__headline
+				| !{options.headline.text}
+			| !{options.content}

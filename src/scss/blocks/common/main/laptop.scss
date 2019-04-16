@@ -8,14 +8,6 @@
 }
 
 .main__content {
-	&--brand-color {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		min-height: rem(627);
-	}
-
 	&--narrow {
 		display: flex;
 		flex-direction: column;
@@ -44,10 +36,6 @@
 .main__headline {
 	&--center {
 		margin: rem(122) 0 rem(137) 0;
-	}
-
-	.main__content--brand-color & {
-		margin: rem(17) 0;
 	}
 }
 
