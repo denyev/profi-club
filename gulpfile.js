@@ -3,6 +3,7 @@ let gulpLoadPlugins = require('gulp-load-plugins');
 let yargs = require('yargs');
 let path = require('path');
 let webpackConfig = require('./webpack.config');
+let del = require('del');
 
 let emittyPug;
 let errorHandler;
@@ -106,6 +107,13 @@ function svgoConfig(minify = argv.minifySvg) {
 		};
 	};
 }
+
+gulp.task('del', () => {
+	return del([
+		'build/**/*.*',
+		'build/**/.*'
+	]);
+});
 
 gulp.task('copy', () => {
 	return gulp.src([
@@ -446,6 +454,7 @@ gulp.task('build', gulp.parallel(
 ));
 
 gulp.task('default', gulp.series(
+	'del',
 	'build',
 	gulp.parallel(
 		'watch',
