@@ -24,6 +24,10 @@
 		margin: 0 rem(30) 0 0;
 		height: 100%;
 	}
+
+	.is-browser-ie &:not(:last-child) {
+		height: 1.35rem;
+	}
 }
 
 .account-menu__link {
