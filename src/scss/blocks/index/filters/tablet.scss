@@ -16,4 +16,10 @@
 
 .filters__form {
 	padding: rem(36);
+
+	&--closed {
+		padding: rem(36);
+		max-height: none;
+		opacity: 1;
+	}
 }
