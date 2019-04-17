@@ -38,7 +38,7 @@ const checkSearchField = () => {
 
 			checkValue(searchField);
 
-			searchField.addEventListener('change', () => {
+			searchField.addEventListener('input', () => {
 				checkValue(searchField);
 			});
 		});
@@ -111,28 +111,28 @@ let switchToggle = (options) => {
 
 	options = $.extend(defaults, options);
 
-	let wrapper = document.querySelector('.' + options.wrapperName);
-	let handler = document.querySelector('.' + options.handlerName);
+	let wrapper = $('.' + options.wrapperName);
+	let handler = $('.' + options.handlerName);
 	let wrapperModifier = options.wrapperName + '--' + options.wrapperModifierName;
 	let handlerModifier = options.handlerName + '--' + options.handlerModifierName;
 	let breakPoint = window.matchMedia('(min-width: ' + options.breakPoint + 'px)');
 
 	try{
 		if(wrapper) {
-			if (breakPoint.matches) {
-				wrapper.classList.remove(wrapperModifier);
-				handler.classList.remove(handlerModifier);
-			} else {
-				wrapper.classList.add(wrapperModifier);
-				handler.addEventListener('click', (event) => {
-					event.preventDefault();
-					if (wrapper.classList.contains(wrapperModifier)) {
-						wrapper.classList.remove(wrapperModifier);
-						handler.classList.add(handlerModifier);
-					} else {
-						wrapper.classList.add(wrapperModifier);
-						handler.classList.remove(handlerModifier);
-					}
+			if (!breakPoint.matches) {
+				const toggleInit = (wrapper, handler) => {
+					handler.on('click', (event) => {
+						event.preventDefault();
+						event.stopPropagation();
+						wrapper.toggleClass(wrapperModifier);
+						handler.toggleClass(handlerModifier);
+					});
+				};
+
+				toggleInit(wrapper, handler);
+
+				$(window).on('resize', () => {
+					toggleInit(wrapper, handler);
 				});
 			}
 		}
@@ -805,12 +805,6 @@ window.onload = () => {
 
 window.onresize = () => {
 	reorganizeGallery();
-
-	// Toggles the navigation menu
-	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
-
-	// Toggles the filters
-	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
 
 	// Toggles the view of job list items.
 	switchJobView(tabletScreenWidth);
