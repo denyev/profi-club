@@ -29,9 +29,8 @@
 	justify-content: space-between;
 	margin: 0;
 
-	span {
+	span:not(.announcement__text) {
 		margin-right: rem(11);
-		margin-bottom: rem(11);
 	}
 }
 
@@ -49,6 +48,25 @@
 	text-decoration: none;
 	color: currentColor;
 	background-color: rgba($cornflower-blue, 0.5);
+
+	/* For IE 11 */
+	&::after {
+		content: "";
+		min-height: inherit;
+		font-size: 0;
+	}
+
+	/* For IE 11 */
+	.is-browser-ie & {
+		height: rem(36);
+	}
+}
+
+.announcement__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0;
 
 	/* For IE 11 */
 	&::after {
