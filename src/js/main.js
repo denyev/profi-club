@@ -614,7 +614,7 @@ const videoSlider = () => {
 			},
 			onResized: () => {
 				$.fn.matchHeight._update();
-				setVideoSize($('.video-slider__video'));
+				setVideoSize('.video-slider__video');
 			}
 		});
 	} catch(error) {
@@ -626,7 +626,9 @@ const videoSlider = () => {
 	playVideo('.video-slider__item');
 };
 
-const setVideoSize = (video) => {
+const setVideoSize = (videoClassName) => {
+	let video = $(videoClassName);
+
 	try {
 		if(tabletScreenWidth.matches) {
 			video.css('width', '404');
@@ -802,7 +804,7 @@ window.onload = () => {
 
 		setOwlStageHeight($('.gallery'));
 
-		setVideoSize($('.video-slider__video'));
+		setVideoSize('.video-slider__video');
 
 		setHeightLikeThis({
 			items: [
