@@ -698,6 +698,7 @@ const blockquoteSlider = () => {
  * @param {Object[]} options - The list of options.
  * @param {Array} options.items - The list of elements that need to change the height.
  * @param {string} options.target - The element whose height is taken as a basis.
+ * @param {number} options.breakPointMatches - The media query, which removes the binding.
  * @example
  * ```
  * let options = {
@@ -705,7 +706,8 @@ const blockquoteSlider = () => {
  *				'.blockquote-slider__item',
  *				'.video-slider__poster'
  *			],
- *			target: '.video-slider__video.lazyloaded'
+ *			target: '.video-slider__video.lazyloaded',
+ *			breakPointMatches: 768
  *		}
  *
  * setHeightLikeThis(options);
