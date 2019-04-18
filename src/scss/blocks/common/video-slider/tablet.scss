@@ -12,7 +12,10 @@
 }
 
 .video-slider__poster {
+	left: 0;
 	height: rem(562);
+	max-width: rem(404);
+	transform: none;
 }
 
 .video-slider__play-button {

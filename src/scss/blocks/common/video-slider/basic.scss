@@ -8,12 +8,15 @@
 
 .video-slider__poster {
 	position: absolute;
-	left: 0;
+	left: 50%;
 	top: 0;
 	display: block;
+	margin: 0 auto;
 	width: 100%;
 	height: rem(314);
+	max-width: rem(226);
 	object-fit: cover;
+	transform: translateX(-50%);
 	cursor: pointer;
 }
 
