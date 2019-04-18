@@ -712,15 +712,43 @@ const blockquoteSlider = () => {
  * ```
  */
 const setHeightLikeThis = (options) => {
-	try {
-		$.each(options.items, (index, item) => {
-			$(item).matchHeight({
-				target: $(options.target)
-			});
-		});
-	} catch(error) {
-		console.error(error);
-	}
+	let resizeTimeout;
+
+	const init = (options) => {
+		let breakPointMatches = typeof options.breakPointMatches !== 'undefined'
+			? window.matchMedia('(min-width: ' + options.breakPointMatches + 'px)').matches
+			: true;
+
+		try {
+			if (breakPointMatches) {
+				$.each(options.items, (index, item) => {
+					$(item).matchHeight({
+						target: $(options.target)
+					});
+				});
+			} else {
+				$.each(options.items, (index, item) => {
+					$(item).matchHeight({
+						remove: true
+					});
+				});
+			}
+		} catch(error) {
+			console.error(error);
+		}
+	};
+
+	init(options);
+
+	$(window).on('resize', () => {
+		if(!!resizeTimeout){
+			clearTimeout(resizeTimeout);
+		}
+
+		resizeTimeout = setTimeout(() => {
+			init(options);
+		},500);
+	});
 };
 
 const mainSliderControls = (slider) => {
@@ -781,14 +809,13 @@ window.onload = () => {
 			target: '.video-slider__video.lazyloaded'
 		});
 
-		if(tabletScreenWidth.matches) {
-			setHeightLikeThis({
-				items: [
-					'.blockquote-slider__item'
-				],
-				target: '.video-slider__video.lazyloaded'
-			});
-		}
+		setHeightLikeThis({
+			items: [
+				'.blockquote-slider__item'
+			],
+			target: '.video-slider__video.lazyloaded',
+			breakPointMatches: 992
+		});
 
 		setHeightLikeThis({
 			items: [
