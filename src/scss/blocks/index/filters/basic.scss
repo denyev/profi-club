@@ -22,7 +22,7 @@
 	fill: none;
 	stroke: $black;
 	stroke-linecap: round;
-	stroke-width: rem(2);
+	stroke-width: 2px;
 	transform: translate(rem(-1), rem(3));
 
 	.filters__toggle--active & {

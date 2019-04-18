@@ -65,7 +65,7 @@
 	z-index: 2;
 	fill: none;
 	stroke: $black;
-	stroke-width: rem(2);
+	stroke-width: 2px;
 }
 
 @media screen and (min-width: rem($phablet-width)) {
