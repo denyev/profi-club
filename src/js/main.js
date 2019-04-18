@@ -835,27 +835,4 @@ window.onresize = () => {
 
 	// Toggles the view of job list items.
 	switchJobView(tabletScreenWidth);
-
-	setHeightLikeThis({
-		items: [
-			'.video-slider__poster.lazyloaded'
-		],
-		target: '.video-slider__video.lazyloaded'
-	});
-
-	if(tabletScreenWidth.matches) {
-		setHeightLikeThis({
-			items: [
-				'.blockquote-slider__item'
-			],
-			target: '.video-slider__video.lazyloaded'
-		});
-	}
-
-	setHeightLikeThis({
-		items: [
-			'.video__poster.lazyloaded'
-		],
-		target: '.video__file.lazyloaded'
-	});
 };
