@@ -78,70 +78,6 @@ try {
 }
 
 /**
- * Action, when user press the toggle.
- *
- * @param {Object} options - Function arguments.
- * @param {string} options.wrapperName - The class name for the wrapper.
- * @param {string} options.handlerName - The class name for the handler.
- * @param {string} [options.wrapperModifierName=closed] - The wrapper modifier name.
- * @param {string} [options.handlerModifierName=active] - The handler modifier name.
- * @param {number} [options.breakPoint=992] - The media query at which modifiers should be removed.
- * @example
- * ```javascript
- * switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
- * ```
- * @example
- * ```javascript
- * let options = {
- *      wrapperName: 'filters__form',
- *      handlerName: 'filters__toggle'
- *      wrapperModifierName: 'closed',
- *      handlerModifierName: 'active',
- *      breakPoint: 992
- * };
- * switchToggle(options);
- * ```
- */
-let switchToggle = (options) => {
-	let defaults = {
-		wrapperModifierName: 'closed',
-		handlerModifierName: 'active',
-		breakPoint: 992
-	};
-
-	options = $.extend(defaults, options);
-
-	let wrapper = $('.' + options.wrapperName);
-	let handler = $('.' + options.handlerName);
-	let wrapperModifier = options.wrapperName + '--' + options.wrapperModifierName;
-	let handlerModifier = options.handlerName + '--' + options.handlerModifierName;
-	let breakPoint = window.matchMedia('(min-width: ' + options.breakPoint + 'px)');
-
-	try{
-		if(wrapper) {
-			if (!breakPoint.matches) {
-				const toggleInit = (wrapper, handler) => {
-					handler.on('click', (event) => {
-						event.preventDefault();
-						event.stopPropagation();
-						wrapper.toggleClass(wrapperModifier);
-						handler.toggleClass(handlerModifier);
-					});
-				};
-
-				toggleInit(wrapper, handler);
-
-				$(window).on('resize', () => {
-					toggleInit(wrapper, handler);
-				});
-			}
-		}
-	} catch(error) {
-		console.error(error);
-	}
-};
-
-/**
  * Toggles the navigation menu
  */
 const switchMenu = () => {
@@ -161,6 +97,27 @@ const switchMenu = () => {
 };
 
 switchMenu();
+
+/**
+ * Toggles the filters.
+ */
+const switchFilters = () => {
+	try {
+		let wrapper = $('.filters__form');
+		let handler = $('.filters__toggle');
+
+		handler.on('click', (event) => {
+			event.preventDefault();
+			event.stopPropagation();
+			wrapper.toggleClass('filters__form--closed');
+			handler.toggleClass('filters__toggle--active');
+		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+switchFilters();
 
 /**
  * Toggles the view of job list items.
@@ -806,9 +763,6 @@ window.onload = () => {
 	videoSlider();
 
 	blockquoteSlider();
-
-	// Toggles the filters
-	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
 
 	// Toggles the view of job list items.
 	switchJobView(tabletScreenWidth);
