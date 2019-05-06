@@ -4,22 +4,20 @@ $toggle-top: rem(-8);
 $toggle-element-height: rem(1);
 
 .toggle {
-	position: static;
+	position: absolute;
+	top: 0;
 	margin: 0;
 	border: 0;
 	padding: 0;
-	width: $toggle-width;
-	height: $toggle-height;
+	width: 32px;
+	height: 32px;
 	background-color: transparent;
-
-	&:focus,
-	&:active {
-		outline: rem(1) dotted rgba($iron, 0.9);
-	}
+	transform: translateY(-50%);
 }
 
 .toggle__wrap {
 	position: relative;
+	top: 25%;
 	width: $toggle-width;
 	height: $toggle-height;
 }
@@ -62,6 +60,7 @@ $toggle-element-height: rem(1);
 		transform: translate(-1px, 8px) rotate(-45deg);
 
 		&::before {
+			width: 0;
 			opacity: 0;
 		}
 

@@ -141,6 +141,24 @@ let switchToggle = (options) => {
 	}
 };
 
+const switchMenu = () => {
+	try {
+		let wrapper = $('.header__navigation');
+		let handler = $('.toggle');
+
+		handler.on('click', (event) => {
+				event.preventDefault();
+				event.stopPropagation();
+				wrapper.toggleClass('header__navigation--closed');
+				handler.toggleClass('toggle--active');
+		});
+	} catch(error) {
+		console.error(error);
+	}
+};
+
+switchMenu();
+
 /**
  * Toggles the view of job list items.
  *
@@ -787,8 +805,8 @@ window.onload = () => {
 	blockquoteSlider();
 
 	// Toggles the navigation menu
-	switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
-
+	// switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
+	// switchMenu();
 	// Toggles the filters
 	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
 
