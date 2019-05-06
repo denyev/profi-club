@@ -141,6 +141,9 @@ let switchToggle = (options) => {
 	}
 };
 
+/**
+ * Toggles the navigation menu
+ */
 const switchMenu = () => {
 	try {
 		let wrapper = $('.header__navigation');
@@ -804,9 +807,6 @@ window.onload = () => {
 
 	blockquoteSlider();
 
-	// Toggles the navigation menu
-	// switchToggle({wrapperName: 'header__navigation', handlerName: 'toggle'});
-	// switchMenu();
 	// Toggles the filters
 	switchToggle({wrapperName: 'filters__form', handlerName: 'filters__toggle'});
 
